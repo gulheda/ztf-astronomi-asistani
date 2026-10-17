@@ -1,5 +1,9 @@
 # Başlangıç teslimi - 17 Ekim 2026
 
+## İlk gerçek pilot eğitim tamamlandı
+
+Paralel veri ve güvenlik/test çalışması ardından 2146 gerçek SNAD görüntüsünde CNN ve lojistik baseline eğitildi. 108 eksik boyutlu artefakt dışlandı. Ayrık alan/OID grupları: eğitim1477, doğrulama332, test337. CNN %83,09, lojistik baseline %89,91 accuracy. Bunlar ayrı nominal/artefakt pilotunun sonuçlarıdır. [Kanıtlar ve sınırlamalar](experiments/snad-pilot-2026-10-17/README.md).
+
 ## SNAD veri hazırlığı
 
 SNAD arşivleri indirilip bütünlükleri doğrulandı. 1127 artefakt ve 1127 nominal için iki boyutta toplam 4508 FITS dosyası mevcut; 24 örneğin görüntü şekli, piksel tipi ve metadata alanları incelendi. [Denetim raporu ve sonraki eğitim sözleşmesi](experiments/snad-data-2026-10-17/README.md). Bu aşama model eğitimi içermez.
