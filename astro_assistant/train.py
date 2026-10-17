@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from .dataset import load_dataset, group_split
+from .provenance import validate_provenance
 
 
 def main():
@@ -15,11 +16,10 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
     provenance = json.loads(args.provenance.read_text())
-    for field in ("source_url", "retrieved_at", "label_definition", "label_source", "license", "sha256"):
-        if not provenance.get(field):
-            parser.error("Kaynak kaydında eksik alan: " + field)
-    if provenance.get("is_demo") is not False:
-        parser.error("Gerçek veri için is_demo açıkça false olmalı.")
+    try:
+        validate_provenance(provenance)
+    except ValueError as error:
+        parser.error(str(error))
     digest = hashlib.sha256()
     with args.dataset.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024*1024), b""):

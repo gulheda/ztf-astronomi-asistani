@@ -42,6 +42,17 @@ class AssistantTests(unittest.TestCase):
     def test_demo_excluded_by_default(self):
         self.assertEqual(self.run_query("olaylar"), [])
 
+    def test_politeness_alone_is_not_a_query(self):
+        with self.assertRaises(ValueError):
+            parse_query("lütfen")
+
+    def test_standalone_supported_filters_are_queries(self):
+        for text, attribute, expected in (("son 24 saat", "hours", 24),
+                                          ("en yeni", "order", "recent"),
+                                          ("ilk 5", "limit", 5)):
+            with self.subTest(text=text):
+                self.assertEqual(getattr(parse_query(text), attribute), expected)
+
     def test_threshold_and_type(self):
         rows = self.run_query("son 3 gündeki süpernovalar", demo=True, threshold=0.8)
         self.assertTrue(rows)
@@ -61,6 +72,26 @@ class AssistantTests(unittest.TestCase):
         row.update(ra=20, kind="supernova", kind_source=None)
         with self.assertRaises(ValueError):
             insert_alerts(self.db, [row])
+
+    def test_microsecond_time_boundaries_are_inclusive_and_precise(self):
+        # Sentetik kayıtlar; yarım saniye sınırı eski saniyeye kırpma hatasını yakalar.
+        now = self.now.replace(microsecond=500000)
+        lower = now - timedelta(hours=24)
+        template = dict(self.db.execute("SELECT * FROM alerts LIMIT 1").fetchone())
+        cases = {"synthetic-lower-out": lower - timedelta(microseconds=1),
+                 "synthetic-lower-in": lower,
+                 "synthetic-upper-in": now,
+                 "synthetic-upper-out": now + timedelta(microseconds=1)}
+        records = [dict(template, alert_id=alert_id, observed_at=observed_at, real_score=1)
+                   for alert_id, observed_at in cases.items()]
+        insert_alerts(self.db, records)
+        query = parse_query("son 24 saatteki ilk 200 olaylar")
+        results = query_alerts(self.db, query, now, demo=True)
+        selected = {row["alert_id"] for row in results} & set(cases)
+        self.assertEqual(selected, {"synthetic-lower-in", "synthetic-upper-in"})
+        for row in results:
+            if row["alert_id"] in cases:
+                self.assertEqual(datetime.fromisoformat(row["observed_at"]), cases[row["alert_id"]])
 
     def test_group_split_no_object_leakage(self):
         ids = ["obj-%02d" % i for i in range(30) for _ in range(3)]
