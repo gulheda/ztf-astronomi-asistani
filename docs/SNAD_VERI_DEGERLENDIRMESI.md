@@ -1,5 +1,7 @@
 # SNAD nominal/artefakt verisinin değerlendirilmesi
 
+**Sonraki doğrulama tamamlandı:** İki arşiv indirildi, boyut/MD5 eşleşti ve SHA256 kaydedildi. 4508 FITS dosyası sayıldı; 24 kesit ve başlığı incelendi. [Gerçek veri denetimi raporu](experiments/snad-data-2026-10-17/README.md). Aşağıdaki ilk değerlendirme, indirme öncesi araştırmanın tarihsel kaydıdır.
+
 Doğrulama: **17 Ekim 2026, yaklaşık 13:14–13:15 Europe/Istanbul**. Zenodo kayıt API'si GET ile, arşiv erişimi yalnız HTTP HEAD ile kontrol edildi. Bu değerlendirme sırasında arşivler indirilmedi, FITS içerikleri incelenmedi ve model eğitilmedi.
 
 ## Kaynak ve erişim
