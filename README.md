@@ -30,9 +30,8 @@ python3 -m venv .venv
 .venv/bin/python -m streamlit run app.py
 ```
 
-Tarayıcı adresi: http://localhost:8501. Yerel demo internetten veri çekmez; API anahtarı gerekmez.
-Mevcut `.venv` varsa yeniden oluşturmanız gerekmez. Grafik arayüzü demo modundadır.
-Yerel paket indirmesi tamamlanamadı. GitHub Actions üzerinde genel testler, ayrı FITS testleri ve gerçek model çıkarımı başarılı; uygulama ve çıkarım bağımlılık taramaları temiz. Tarayıcıda görsel arayüz incelemesi henüz yapılmadı. Ayrıntılı durum `docs/DURUM.md` içindedir.
+Tarayıcı adresi: http://localhost:8501. API anahtarı gerekmez. Kenar çubuğundaki **Veri kaynağı** ile sentetik **Demo** ve kaynaklı **Gerçek ZTF arşivi** arasında geçiş yapabilirsiniz. Gerçek arşivde 2018/2019 tarihli iki yayımlanmış örnek kullanılır; canlı veri çekilmez. [Arşiv modu kullanım notu](docs/GERCEK_ARSIV_ARAYUZU.md).
+Mevcut `.venv` varsa yeniden oluşturmanız gerekmez. Yerel paket indirmesi tamamlanamadı; otomatik çalışma kontrolleri GitHub ortamında yürütülüyor. Ayrıntılı durum `docs/DURUM.md` içindedir.
 
 ## Desteklenen sorgular
 
@@ -48,7 +47,8 @@ Varsayılan: son 24 saat, en yeni 20 uyarı, skor ≥ 0.5. Zamanlar UTC'dir. “
 
 | Dosya | İşlev |
 |---|---|
-| `app.py` | Demo sorgu arayüzü, tablo, RA/Dec dağılımı, CSV indirme |
+| `app.py` | Demo/gerçek arşiv sorgusu, tablo, RA/Dec dağılımı, CSV indirme |
+| `astro_assistant/archive.py` | Sabit gerçek arşiv kaynağı, model ve zaman doğrulaması |
 | `astro_assistant/core.py` | Türkçe çözümleme, doğrulama, parametreli SQL, demo üretimi |
 | `astro_assistant/dataset.py` | NPZ kontrolü, normalizasyon, nesne bazlı bölme |
 | `astro_assistant/train.py` | Gerçek veri bekleyen TensorFlow eğitim iskeleti |
@@ -79,4 +79,4 @@ python -m astro_assistant.train data/processed/ztf.npz --provenance data/process
 
 Bu komut şu an veri dosyası olmadığı için çalıştırılamaz. `models/run-001` yeni bir klasör olmalıdır. Model eşik değeri başlangıç deneyi için 0.5'tir; yüzde 85 doğruluk bir hedef olup elde edilmiş sonuç değildir.
 
-Gerçek skorların veritabanına alınması için `insert_alerts` fonksiyonu hazırdır; kaynak dosyası dönüştürücüsü, model çıkarımı ve canlı akış bağlantısı sonraki aşamadır. Gerçek veritabanı hazır olduğunda `python3 -m astro_assistant --db data/alerts.sqlite "Son 24 saatteki olaylar"` kullanılabilir. Demo kayıtları bu sorgulardan otomatik dışlanır.
+İki gerçek örneğin yayımlanmış model skorları hem terminalden hem arayüzdeki gerçek arşiv modundan sorgulanabilir. Yeni eğitim verisi, daha geniş arşiv içe aktarma ve canlı akış bağlantısı sonraki aşamalardır. Demo kayıtları gerçek arşiv sorgularından dışlanır.

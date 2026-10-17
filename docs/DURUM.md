@@ -1,5 +1,9 @@
 # Başlangıç teslimi - 17 Ekim 2026
 
+## Gerçek arşiv artık arayüzde sorgulanabiliyor
+
+Demo/gerçek ZTF arşivi seçimi, 2019 UTC referansı, gerçek skor filtresi, kaynak/model bilgileri ve ayrı CSV dışa aktarımı eklendi. Sabit iki yayımlanmış örnek kullanılıyor; canlı akış yok. Arşiv kimliği, köken, model ve zaman kontrolleri sıkılaştırıldı. Chromium'da kaynak geçişi çalıştırıldı ve ekran görüntüsü incelendi. [Kullanım ve görüntü](GERCEK_ARSIV_ARAYUZU.md).
+
 ## İlk gerçek pilot eğitim tamamlandı
 
 Paralel veri ve güvenlik/test çalışması ardından 2146 gerçek SNAD görüntüsünde CNN ve lojistik baseline eğitildi. 108 eksik boyutlu artefakt dışlandı. Ayrık alan/OID grupları: eğitim1477, doğrulama332, test337. CNN %83,09, lojistik baseline %89,91 accuracy. Bunlar ayrı nominal/artefakt pilotunun sonuçlarıdır. [Kanıtlar ve sınırlamalar](experiments/snad-pilot-2026-10-17/README.md).

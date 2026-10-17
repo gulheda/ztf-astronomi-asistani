@@ -31,3 +31,25 @@ jobs:
         run: |
           python -m pip install --upgrade 'setuptools>=83' pip-audit
           python -m pip_audit
+
+  archive-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install browser check dependencies
+        run: python -m pip install -r requirements.txt playwright
+      - name: Install headless Chromium
+        run: python -m playwright install --with-deps --only-shell chromium
+      - name: Capture real archive and demo interface
+        run: python tests/capture_archive_ui.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: archive-interface-captures
+          path: output/ui
+          retention-days: 30
