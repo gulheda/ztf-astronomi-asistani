@@ -1,5 +1,9 @@
 # Başlangıç teslimi - 17 Ekim 2026
 
+## SNAD veri hazırlığı
+
+SNAD arşivleri indirilip bütünlükleri doğrulandı. 1127 artefakt ve 1127 nominal için iki boyutta toplam 4508 FITS dosyası mevcut; 24 örneğin görüntü şekli, piksel tipi ve metadata alanları incelendi. [Denetim raporu ve sonraki eğitim sözleşmesi](experiments/snad-data-2026-10-17/README.md). Bu aşama model eğitimi içermez.
+
 ## Güncel ilerleme: gerçek çıkarım ve incelemeler
 
 Üç paralel inceleme güvenlik, doğruluk ve testleri ele aldı. Zaman hassasiyeti, parser koşul tanıma ve byte kimlik sorunları düzeltildi. Bağımsız insan etiketi beyanı eğitim kabulüne eklendi.
