@@ -35,7 +35,7 @@ jobs:
         run: python -m pip freeze > output/real-inference/environment.txt
       - name: Audit installed inference dependencies
         run: |
-          python -m pip install pip-audit
+          python -m pip install --upgrade 'setuptools>=83' pip-audit
           python -m pip_audit --format json --output output/real-inference/dependency-audit.json
       - uses: actions/upload-artifact@v4
         if: always()
