@@ -28,7 +28,7 @@ python3 -m venv .venv
 
 Tarayıcı adresi: http://localhost:8501. Yerel demo internetten veri çekmez; API anahtarı gerekmez.
 Mevcut `.venv` varsa yeniden oluşturmanız gerekmez. Grafik arayüzü demo modundadır.
-Bu oturumda paket indirmesi tamamlanamadı; arayüz çalıştırılarak doğrulanmadı. Ayrıntılı doğrulama durumu `docs/DURUM.md` içindedir.
+Yerel paket indirmesi tamamlanamadı. GitHub Actions üzerinde Python 3.11 ile 8 çekirdek ve 2 Streamlit çalışma testi başarıyla tamamlandı; tarayıcıda görsel inceleme henüz yapılmadı. Ayrıntılı doğrulama durumu `docs/DURUM.md` içindedir.
 
 ## Desteklenen sorgular
 
