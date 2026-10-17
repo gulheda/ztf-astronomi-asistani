@@ -20,10 +20,14 @@ jobs:
           python-version: '3.11'
           cache: pip
       - name: Install interface dependencies
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.txt 'numpy>=1.24,<3'
       - name: Run core and interface tests
         run: python -m unittest discover -s tests -v
       - name: Check Python syntax
         run: python -m compileall -q astro_assistant app.py tests
       - name: Run terminal demo
         run: python -m astro_assistant --demo
+      - name: Audit installed application dependencies
+        run: |
+          python -m pip install --upgrade 'setuptools>=83' pip-audit
+          python -m pip_audit

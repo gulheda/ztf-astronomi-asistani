@@ -13,3 +13,4 @@ models/
 .streamlit/secrets.toml
 *.pem
 *.key
+output/

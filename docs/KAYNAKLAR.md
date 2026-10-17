@@ -17,6 +17,8 @@ Yerel ana belge: kullanıcı tarafından sağlanan `2209_A_arastirma_onerisi_for
 
 ## Bulunan somut veri adayı
 
+**Güncelleme (17 Ekim 2026):** Aşağıdaki iki GCS adresi canlı HEAD kontrolünde HTTP 404 döndü. Geçmiş not defteri çıktısı güncel erişim kanıtı olarak kullanılmamalı. Erişilebilir örnekler ve alternatif veri araştırması için [araştırma notuna](ARASTIRMA_NOTLARI_2026-10-17.md) bakın.
+
 [Not defterinin ham içeriği](https://raw.githubusercontent.com/dmitryduev/braai/master/nb/braai_train.ipynb), 11.5 bin etiketli uyarı için şu dosyaları kullanıyor:
 
 - [Aday meta verisi ve etiketler (CSV)](https://storage.googleapis.com/ztf-braai/braai.candidates.programid1.csv)

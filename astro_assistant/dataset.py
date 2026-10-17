@@ -43,8 +43,8 @@ def load_dataset(path):
     if set(np.unique(y)) != {0, 1}:
         raise ValueError("Etiketler her iki sınıfı içermeli: 0=bogus, 1=real.")
     for ids in (objects, alerts):
-        if ids.dtype.kind not in "US" or any(not str(v).strip() for v in ids):
-            raise ValueError("Kimlikler boş olmayan Unicode/string dizileri olmalıdır.")
+        if ids.dtype.kind != "U" or any(not str(v).strip() for v in ids):
+            raise ValueError("Kimlikler boş olmayan Unicode dizileri olmalıdır; byte dizilerini önce UTF-8 çözün.")
     if len(set(alerts.tolist())) != len(alerts):
         raise ValueError("Tekrarlanan alert_id bulundu.")
     hashes = [hashlib.sha256(image.tobytes()).hexdigest() for image in x]

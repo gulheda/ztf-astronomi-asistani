@@ -1,5 +1,17 @@
 # Başlangıç teslimi - 17 Ekim 2026
 
+## Güncel ilerleme: gerçek çıkarım ve incelemeler
+
+Üç paralel inceleme güvenlik, doğruluk ve testleri ele aldı. Zaman hassasiyeti, parser koşul tanıma ve byte kimlik sorunları düzeltildi. Bağımsız insan etiketi beyanı eğitim kabulüne eklendi.
+
+Yayımlanmış braai modeliyle iki gerçek ZTF uyarısı işlendi; gerçek kayıtlar SQLite'a yazılıp Türkçe sorgu yerelde de doğrulandı. [Deney raporu ve kalıcı çıktılar](experiments/braai-2026-10-17/README.md). Kendi CNN eğitimimiz ve bağımsız bilimsel doğrulama henüz yapılmadı.
+
+Son CI: genel ortamda 35 test geçti, 3 FITS testi ayrı ortamda çalıştırıldı; çıkarım ortamındaki 5 kaynak/FITS testi başarılı. Uygulama ve çıkarım bağımlılık taramaları bilinen açık bulmadı. Önceki setuptools bulgusu yükseltmeyle giderildi. Haftalık Dependabot takibi yapılandırıldı.
+
+Eski GCS eğitim dosyaları bugün HTTP404. [Kaynak araştırması](ARASTIRMA_NOTLARI_2026-10-17.md) ve [SNAD alternatif veri değerlendirmesi](SNAD_VERI_DEGERLENDIRMESI.md) eklendi. Sonraki iş: bilimsel hedefe uygun bağımsız etiketli eğitim kaynağını kesinleştirmek; SNAD pilotu seçilirse ayrı nominal/artefakt deneyi olarak yürütmek.
+
+Aşağıdaki bölümler ilk teslimin tarihsel kaydıdır; güncel durum yukarıdadır.
+
 ## GitHub üzerinden çalışma
 
 Public repo: https://github.com/gulheda/ztf-astronomi-asistani

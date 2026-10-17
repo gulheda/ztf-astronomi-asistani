@@ -37,11 +37,15 @@ Yerel dönüştürücünün hedefi `ztf.npz`; bu, kaynak arşivin doğal format�
   "label_source": "",
   "license": "",
   "sha256": "",
+  "label_kind": "human_reviewed",
+  "labels_independent_of_model": true,
+  "label_review_reference": "",
   "is_demo": false
 }
 ```
 
 `sha256` dönüştürülmüş NPZ'nin özetidir. Kaynak ham dosyaların özetleri ayrıca saklanmalı. Formu doldurmak bilimsel kaynak doğrulamasının yerine geçmez.
+Eğitim komutu insan tarafından incelenmiş, modelden bağımsız etiket beyanını zorunlu tutar. Bu beyanın doğruluğu ayrıca kaynak incelemesiyle denetlenir; otomatik şema kontrolü etiketi kanıtlamaz.
 
 ## Ön işleme ve bölme
 

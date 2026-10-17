@@ -15,7 +15,7 @@ def utc(value):
 
 
 def iso(value):
-    return utc(value).isoformat(timespec="seconds")
+    return utc(value).isoformat(timespec="microseconds")
 
 
 @dataclass
@@ -31,26 +31,32 @@ def parse_query(text):
     text = text.translate(str.maketrans("İI", "iı")).lower()
     text = text.translate(str.maketrans("çğıöşü", "cgiosu")).strip()
     q = Query()
+    recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
     match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da)?\b", text)
     if match:
+        recognized = True
         q.hours = int(match[1]) * (24 if match[2] == "gun" else 1)
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.hours <= 24 * 365:
         raise ValueError("Zaman aralığı 1 saat ile 365 gün arasında olmalı.")
     if "en parlak" in text:
+        recognized = True
         q.order = "brightest"
         text = text.replace("en parlak", " ", 1)
     elif "en yeni" in text:
+        recognized = True
         text = text.replace("en yeni", " ", 1)
     match = re.search(r"\bilk\s+(\d+)\b", text)
     if match:
+        recognized = True
         q.limit = int(match[1])
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.limit <= 200:
         raise ValueError("Sonuç sayısı 1–200 arasında olmalı.")
     match = re.search(r"\b([gri])\s+bandinda\b", text)
     if match:
+        recognized = True
         q.band = match[1]
         text = text[:match.start()] + " " + text[match.end():]
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
@@ -58,14 +64,13 @@ def parse_query(text):
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olaylar", "olaylari", "gercek", "aday", "adaylari",
                "goster", "listele", "lutfen"}
-    recognized = bool(match) or q.order == "brightest"
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and not q.kind:
             q.kind = kinds[token]
             recognized = True
         elif token in fillers:
-            recognized = True
+            recognized = recognized or token != "lutfen"
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:
@@ -87,6 +92,13 @@ def connect(path=":memory:"):
         is_demo INTEGER NOT NULL CHECK(is_demo IN (0,1)),
         CHECK(kind IS NULL OR kind_source IS NOT NULL))""")
     db.execute("CREATE INDEX IF NOT EXISTS alert_time ON alerts(observed_at)")
+    # Migrate earlier second-precision records to one comparable UTC format.
+    if db.execute("PRAGMA user_version").fetchone()[0] < 1:
+        with db:
+            rows = db.execute("SELECT alert_id, observed_at FROM alerts").fetchall()
+            db.executemany("UPDATE alerts SET observed_at=? WHERE alert_id=?",
+                           [(iso(r["observed_at"]), r["alert_id"]) for r in rows])
+            db.execute("PRAGMA user_version=1")
     return db
 
 

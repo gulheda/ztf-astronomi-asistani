@@ -1,0 +1,121 @@
+{
+  "experiment": "published_model_real_alert_inference",
+  "training_performed": false,
+  "independent_ground_truth_available": false,
+  "accuracy": null,
+  "warning": "Two upstream examples are not a representative or independent test set. No accuracy claim.",
+  "upstream_commit": "9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8",
+  "tensorflow_version": "2.21.0",
+  "numpy_version": "1.26.4",
+  "sources": {
+    "714287740515015072.json": {
+      "url": "https://raw.githubusercontent.com/dmitryduev/braai/9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8/nb/714287740515015072.json",
+      "bytes": 80380,
+      "sha256": "f4192eaaa22f747af573886dfd5d4dd65ac60554502b7c79bef19f59de87c869"
+    },
+    "893215910715010007.json": {
+      "url": "https://raw.githubusercontent.com/dmitryduev/braai/9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8/nb/893215910715010007.json",
+      "bytes": 156880,
+      "sha256": "0ef195d369cd4cb0f4d549bc4c535b784ef90b08f75f526c21fd8551dcad36a3"
+    },
+    "braai_d6_m9.weights.h5": {
+      "url": "https://raw.githubusercontent.com/dmitryduev/braai/9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8/models/braai_d6_m9.weights.h5",
+      "bytes": 1277944,
+      "sha256": "de0d198246d1a30effecf3bdd83ada0b8218ccdfaf7d5fdaf2de0af061413b2f"
+    }
+  },
+  "records": [
+    {
+      "alert_id": "714287740515015072",
+      "object_id": "ZTF18acrkaks",
+      "observed_at": "2018-12-16T06:54:21.003837+00:00",
+      "ra": 79.4757666,
+      "dec": 8.9142668,
+      "magnitude": 20.034793853759766,
+      "band": "r",
+      "real_score": 0.984453558921814,
+      "model_version": "braai_d6_m9@9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8",
+      "source": "https://raw.githubusercontent.com/dmitryduev/braai/9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8/nb/714287740515015072.json",
+      "kind": null,
+      "kind_source": null,
+      "is_demo": 0,
+      "upstream_rb": 0.4333333373069763,
+      "preprocessing": [
+        {
+          "channel": "cutoutScience",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 72
+        },
+        {
+          "channel": "cutoutTemplate",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 72
+        },
+        {
+          "channel": "cutoutDifference",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 72
+        }
+      ]
+    },
+    {
+      "alert_id": "893215910715010007",
+      "object_id": "ZTF19aazgdzh",
+      "observed_at": "2019-06-13T05:10:55.004145+00:00",
+      "ra": 249.6079899,
+      "dec": 22.735584,
+      "magnitude": 18.822711944580078,
+      "band": "g",
+      "real_score": 8.667551014696073e-07,
+      "model_version": "braai_d6_m9@9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8",
+      "source": "https://raw.githubusercontent.com/dmitryduev/braai/9fb2259542ec4b0a7dfa485012a23dc15a3f4ce8/nb/893215910715010007.json",
+      "kind": null,
+      "kind_source": null,
+      "is_demo": 0,
+      "upstream_rb": 0.04857143014669418,
+      "preprocessing": [
+        {
+          "channel": "cutoutScience",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 0
+        },
+        {
+          "channel": "cutoutTemplate",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 0
+        },
+        {
+          "channel": "cutoutDifference",
+          "original_shape": [
+            63,
+            63
+          ],
+          "nan_replaced": 0
+        }
+      ]
+    }
+  ],
+  "query": {
+    "text": "Son 365 gündeki olaylar",
+    "reference_time_utc": "2019-06-13T05:10:55.004145+00:00",
+    "threshold": 0.5,
+    "result_alert_ids": [
+      "714287740515015072"
+    ]
+  }
+}
