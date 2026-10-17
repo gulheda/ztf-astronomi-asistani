@@ -6,7 +6,9 @@
 
 ZTF görüntülerinde Real/Bogus sınıflandırması ile Türkçe sorgulamayı birleştiren 2209-A araştırmasının başlangıç deposu.
 
-**Durum (17 Ekim 2026):** Türkçe sorgu, SQLite ve demo arayüzü hazır. Yayımlanmış braai modeli iki gerçek ZTF uyarısı üzerinde çalıştırıldı; sonuçlar kaynak/model bilgileriyle veritabanına kaydedilip Türkçe sorguyla doğrulandı. Kendi CNN eğitimimiz ve bağımsız doğruluk ölçümü henüz yapılmadı. Arayüzün demo kayıtları sentetiktir.
+**Durum (17 Ekim 2026):** Türkçe sorgu, SQLite ve demo arayüzü hazır. Braai iki gerçek ZTF uyarısında çalıştırıldı. Ayrı SNAD nominal/artefakt pilotunda kendi CNN ve lojistik baseline modellerimiz eğitildi: 337 test görüntüsünde %83,09 ve %89,91 accuracy. Bunlar canlı uyarı Real/Bogus sonuçları değildir. Arayüz demo verisi sentetiktir.
+
+[İlk gerçek pilot eğitim raporu](docs/experiments/snad-pilot-2026-10-17/README.md)
 
 [Gerçek model deneyinin raporu](docs/experiments/braai-2026-10-17/README.md) · [Kaynak araştırması](docs/ARASTIRMA_NOTLARI_2026-10-17.md) · [Alternatif veri incelemesi](docs/SNAD_VERI_DEGERLENDIRMESI.md)
 

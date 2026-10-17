@@ -1,0 +1,1168 @@
+{
+  "dataset": "snad_nominal_artifact",
+  "source_record": "https://zenodo.org/records/15076426",
+  "label_kind": "human_reviewed",
+  "label_source": "https://arxiv.org/abs/2504.08053",
+  "label_note": "Expert reviewed source labels; active selection introduces bias; no model-score pseudo-labels.",
+  "license": "CC-BY-4.0",
+  "training_performed": false,
+  "status": "ready",
+  "seed": 42,
+  "limitation": "Single-channel science cutouts, not braai science/reference/difference triplets; nominal is not an astrophysical transient subtype.",
+  "normalization": "Per image: subtract median, divide by 1.4826*MAD; fallback population std; preserve signed values; no clipping.",
+  "split_method": "Fixed seeded 70/15/15 field connected components, union OID and <=1 arcsecond spherical proximity; both classes required.",
+  "archives": {
+    "Artefacts.zip": {
+      "url": "https://zenodo.org/api/records/15076426/files/Artefacts.zip/content",
+      "bytes": 33051444,
+      "md5": "66c2e35ad0a3284842b5374211043098",
+      "sha256": "5e7dd30b980a89bddd8a49b8da7a1ab66a1ba35a21fbfa319572ed4898fb57da",
+      "total": 1127,
+      "accepted": 1019,
+      "excluded_shapes": [
+        {
+          "member": "fits/284/284202400081039.fits",
+          "shape": [
+            49,
+            63
+          ],
+          "label": 0,
+          "field_id": 284,
+          "object_id": "284202400081039"
+        },
+        {
+          "member": "fits/284/284204200000574.fits",
+          "shape": [
+            38,
+            63
+          ],
+          "label": 0,
+          "field_id": 284,
+          "object_id": "284204200000574"
+        },
+        {
+          "member": "fits/284/284204400101907.fits",
+          "shape": [
+            63,
+            45
+          ],
+          "label": 0,
+          "field_id": 284,
+          "object_id": "284204400101907"
+        },
+        {
+          "member": "fits/284/284211400112682.fits",
+          "shape": [
+            49,
+            63
+          ],
+          "label": 0,
+          "field_id": 284,
+          "object_id": "284211400112682"
+        },
+        {
+          "member": "fits/284/284214100072481.fits",
+          "shape": [
+            38,
+            63
+          ],
+          "label": 0,
+          "field_id": 284,
+          "object_id": "284214100072481"
+        },
+        {
+          "member": "fits/331/331201400090879.fits",
+          "shape": [
+            63,
+            39
+          ],
+          "label": 0,
+          "field_id": 331,
+          "object_id": "331201400090879"
+        },
+        {
+          "member": "fits/331/331201400142771.fits",
+          "shape": [
+            63,
+            44
+          ],
+          "label": 0,
+          "field_id": 331,
+          "object_id": "331201400142771"
+        },
+        {
+          "member": "fits/331/331202300177499.fits",
+          "shape": [
+            63,
+            43
+          ],
+          "label": 0,
+          "field_id": 331,
+          "object_id": "331202300177499"
+        },
+        {
+          "member": "fits/331/331207300059433.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 331,
+          "object_id": "331207300059433"
+        },
+        {
+          "member": "fits/437/437201100090292.fits",
+          "shape": [
+            63,
+            51
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437201100090292"
+        },
+        {
+          "member": "fits/437/437206100054892.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437206100054892"
+        },
+        {
+          "member": "fits/437/437211200003278.fits",
+          "shape": [
+            35,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003278"
+        },
+        {
+          "member": "fits/437/437211200003316.fits",
+          "shape": [
+            36,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003316"
+        },
+        {
+          "member": "fits/437/437211200003348.fits",
+          "shape": [
+            34,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003348"
+        },
+        {
+          "member": "fits/437/437211200003404.fits",
+          "shape": [
+            40,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003404"
+        },
+        {
+          "member": "fits/437/437211200003574.fits",
+          "shape": [
+            43,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003574"
+        },
+        {
+          "member": "fits/437/437211200003650.fits",
+          "shape": [
+            47,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003650"
+        },
+        {
+          "member": "fits/437/437211200003735.fits",
+          "shape": [
+            46,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003735"
+        },
+        {
+          "member": "fits/437/437211200003774.fits",
+          "shape": [
+            62,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200003774"
+        },
+        {
+          "member": "fits/437/437211200051197.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200051197"
+        },
+        {
+          "member": "fits/437/437211200051283.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200051283"
+        },
+        {
+          "member": "fits/437/437211200051300.fits",
+          "shape": [
+            38,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200051300"
+        },
+        {
+          "member": "fits/437/437211200051429.fits",
+          "shape": [
+            50,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200051429"
+        },
+        {
+          "member": "fits/437/437211200089291.fits",
+          "shape": [
+            47,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200089291"
+        },
+        {
+          "member": "fits/437/437211200089545.fits",
+          "shape": [
+            58,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200089545"
+        },
+        {
+          "member": "fits/437/437211200089563.fits",
+          "shape": [
+            60,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200089563"
+        },
+        {
+          "member": "fits/437/437211200150209.fits",
+          "shape": [
+            60,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200150209"
+        },
+        {
+          "member": "fits/437/437211200172576.fits",
+          "shape": [
+            34,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211200172576"
+        },
+        {
+          "member": "fits/437/437211300088634.fits",
+          "shape": [
+            51,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211300088634"
+        },
+        {
+          "member": "fits/437/437211300116299.fits",
+          "shape": [
+            62,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211300116299"
+        },
+        {
+          "member": "fits/437/437211300147774.fits",
+          "shape": [
+            62,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211300147774"
+        },
+        {
+          "member": "fits/437/437211300157358.fits",
+          "shape": [
+            55,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211300157358"
+        },
+        {
+          "member": "fits/437/437211300162576.fits",
+          "shape": [
+            54,
+            63
+          ],
+          "label": 0,
+          "field_id": 437,
+          "object_id": "437211300162576"
+        },
+        {
+          "member": "fits/635/635211300025727.fits",
+          "shape": [
+            63,
+            51
+          ],
+          "label": 0,
+          "field_id": 635,
+          "object_id": "635211300025727"
+        },
+        {
+          "member": "fits/635/635214100042898.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 635,
+          "object_id": "635214100042898"
+        },
+        {
+          "member": "fits/649/649202400024201.fits",
+          "shape": [
+            57,
+            63
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649202400024201"
+        },
+        {
+          "member": "fits/649/649203400008758.fits",
+          "shape": [
+            49,
+            63
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649203400008758"
+        },
+        {
+          "member": "fits/649/649208400000649.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649208400000649"
+        },
+        {
+          "member": "fits/649/649208400000713.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649208400000713"
+        },
+        {
+          "member": "fits/649/649208400009862.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649208400009862"
+        },
+        {
+          "member": "fits/649/649210300008891.fits",
+          "shape": [
+            42,
+            63
+          ],
+          "label": 0,
+          "field_id": 649,
+          "object_id": "649210300008891"
+        },
+        {
+          "member": "fits/683/683205400038543.fits",
+          "shape": [
+            63,
+            62
+          ],
+          "label": 0,
+          "field_id": 683,
+          "object_id": "683205400038543"
+        },
+        {
+          "member": "fits/683/683206200046355.fits",
+          "shape": [
+            50,
+            63
+          ],
+          "label": 0,
+          "field_id": 683,
+          "object_id": "683206200046355"
+        },
+        {
+          "member": "fits/686/686202300024608.fits",
+          "shape": [
+            63,
+            61
+          ],
+          "label": 0,
+          "field_id": 686,
+          "object_id": "686202300024608"
+        },
+        {
+          "member": "fits/686/686202300136938.fits",
+          "shape": [
+            40,
+            63
+          ],
+          "label": 0,
+          "field_id": 686,
+          "object_id": "686202300136938"
+        },
+        {
+          "member": "fits/686/686204200155039.fits",
+          "shape": [
+            63,
+            62
+          ],
+          "label": 0,
+          "field_id": 686,
+          "object_id": "686204200155039"
+        },
+        {
+          "member": "fits/686/686207200085235.fits",
+          "shape": [
+            63,
+            35
+          ],
+          "label": 0,
+          "field_id": 686,
+          "object_id": "686207200085235"
+        },
+        {
+          "member": "fits/686/686211400105514.fits",
+          "shape": [
+            63,
+            37
+          ],
+          "label": 0,
+          "field_id": 686,
+          "object_id": "686211400105514"
+        },
+        {
+          "member": "fits/687/687216300001681.fits",
+          "shape": [
+            34,
+            63
+          ],
+          "label": 0,
+          "field_id": 687,
+          "object_id": "687216300001681"
+        },
+        {
+          "member": "fits/737/737208400010602.fits",
+          "shape": [
+            63,
+            58
+          ],
+          "label": 0,
+          "field_id": 737,
+          "object_id": "737208400010602"
+        },
+        {
+          "member": "fits/737/737208400026697.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 737,
+          "object_id": "737208400026697"
+        },
+        {
+          "member": "fits/757/757202400025436.fits",
+          "shape": [
+            63,
+            62
+          ],
+          "label": 0,
+          "field_id": 757,
+          "object_id": "757202400025436"
+        },
+        {
+          "member": "fits/758/758208400005169.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758208400005169"
+        },
+        {
+          "member": "fits/758/758208400008834.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758208400008834"
+        },
+        {
+          "member": "fits/758/758209100016700.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758209100016700"
+        },
+        {
+          "member": "fits/758/758209100039067.fits",
+          "shape": [
+            63,
+            43
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758209100039067"
+        },
+        {
+          "member": "fits/758/758211200006238.fits",
+          "shape": [
+            63,
+            35
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758211200006238"
+        },
+        {
+          "member": "fits/758/758213300014710.fits",
+          "shape": [
+            63,
+            52
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758213300014710"
+        },
+        {
+          "member": "fits/758/758214400006064.fits",
+          "shape": [
+            49,
+            63
+          ],
+          "label": 0,
+          "field_id": 758,
+          "object_id": "758214400006064"
+        },
+        {
+          "member": "fits/765/765201400039285.fits",
+          "shape": [
+            63,
+            48
+          ],
+          "label": 0,
+          "field_id": 765,
+          "object_id": "765201400039285"
+        },
+        {
+          "member": "fits/765/765210400016893.fits",
+          "shape": [
+            47,
+            63
+          ],
+          "label": 0,
+          "field_id": 765,
+          "object_id": "765210400016893"
+        },
+        {
+          "member": "fits/768/768203200002413.fits",
+          "shape": [
+            57,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768203200002413"
+        },
+        {
+          "member": "fits/768/768206100081243.fits",
+          "shape": [
+            38,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768206100081243"
+        },
+        {
+          "member": "fits/768/768210200000109.fits",
+          "shape": [
+            35,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768210200000109"
+        },
+        {
+          "member": "fits/768/768210200000431.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768210200000431"
+        },
+        {
+          "member": "fits/768/768210200039730.fits",
+          "shape": [
+            35,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768210200039730"
+        },
+        {
+          "member": "fits/768/768210200039949.fits",
+          "shape": [
+            34,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768210200039949"
+        },
+        {
+          "member": "fits/768/768210200058590.fits",
+          "shape": [
+            33,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768210200058590"
+        },
+        {
+          "member": "fits/768/768212100073149.fits",
+          "shape": [
+            36,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212100073149"
+        },
+        {
+          "member": "fits/768/768212200000431.fits",
+          "shape": [
+            41,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212200000431"
+        },
+        {
+          "member": "fits/768/768212200000647.fits",
+          "shape": [
+            36,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212200000647"
+        },
+        {
+          "member": "fits/768/768212200000859.fits",
+          "shape": [
+            39,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212200000859"
+        },
+        {
+          "member": "fits/768/768212200001511.fits",
+          "shape": [
+            41,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212200001511"
+        },
+        {
+          "member": "fits/768/768212200058069.fits",
+          "shape": [
+            36,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768212200058069"
+        },
+        {
+          "member": "fits/768/768216400031576.fits",
+          "shape": [
+            51,
+            63
+          ],
+          "label": 0,
+          "field_id": 768,
+          "object_id": "768216400031576"
+        },
+        {
+          "member": "fits/778/778208400009604.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 778,
+          "object_id": "778208400009604"
+        },
+        {
+          "member": "fits/794/794201200033073.fits",
+          "shape": [
+            63,
+            61
+          ],
+          "label": 0,
+          "field_id": 794,
+          "object_id": "794201200033073"
+        },
+        {
+          "member": "fits/794/794202200000158.fits",
+          "shape": [
+            36,
+            63
+          ],
+          "label": 0,
+          "field_id": 794,
+          "object_id": "794202200000158"
+        },
+        {
+          "member": "fits/794/794206200028255.fits",
+          "shape": [
+            63,
+            50
+          ],
+          "label": 0,
+          "field_id": 794,
+          "object_id": "794206200028255"
+        },
+        {
+          "member": "fits/794/794208200000318.fits",
+          "shape": [
+            37,
+            63
+          ],
+          "label": 0,
+          "field_id": 793,
+          "object_id": "794208200000318"
+        },
+        {
+          "member": "fits/797/797204400020279.fits",
+          "shape": [
+            63,
+            52
+          ],
+          "label": 0,
+          "field_id": 797,
+          "object_id": "797204400020279"
+        },
+        {
+          "member": "fits/800/800203400035610.fits",
+          "shape": [
+            54,
+            63
+          ],
+          "label": 0,
+          "field_id": 800,
+          "object_id": "800203400035610"
+        },
+        {
+          "member": "fits/800/800206300031622.fits",
+          "shape": [
+            63,
+            48
+          ],
+          "label": 0,
+          "field_id": 800,
+          "object_id": "800206300031622"
+        },
+        {
+          "member": "fits/813/813208400008531.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 813,
+          "object_id": "813208400008531"
+        },
+        {
+          "member": "fits/813/813208400024870.fits",
+          "shape": [
+            63,
+            58
+          ],
+          "label": 0,
+          "field_id": 813,
+          "object_id": "813208400024870"
+        },
+        {
+          "member": "fits/820/820202300024243.fits",
+          "shape": [
+            63,
+            45
+          ],
+          "label": 0,
+          "field_id": 820,
+          "object_id": "820202300024243"
+        },
+        {
+          "member": "fits/820/820202400013418.fits",
+          "shape": [
+            56,
+            63
+          ],
+          "label": 0,
+          "field_id": 820,
+          "object_id": "820202400013418"
+        },
+        {
+          "member": "fits/820/820213200019510.fits",
+          "shape": [
+            63,
+            58
+          ],
+          "label": 0,
+          "field_id": 820,
+          "object_id": "820213200019510"
+        },
+        {
+          "member": "fits/830/830208400016077.fits",
+          "shape": [
+            63,
+            58
+          ],
+          "label": 0,
+          "field_id": 830,
+          "object_id": "830208400016077"
+        },
+        {
+          "member": "fits/830/830208400053421.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 830,
+          "object_id": "830208400053421"
+        },
+        {
+          "member": "fits/830/830211200027655.fits",
+          "shape": [
+            63,
+            37
+          ],
+          "label": 0,
+          "field_id": 830,
+          "object_id": "830211200027655"
+        },
+        {
+          "member": "fits/830/830211200029380.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 830,
+          "object_id": "830211200029380"
+        },
+        {
+          "member": "fits/830/830211200043313.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 830,
+          "object_id": "830211200043313"
+        },
+        {
+          "member": "fits/831/831208400025217.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831208400025217"
+        },
+        {
+          "member": "fits/831/831210400054346.fits",
+          "shape": [
+            55,
+            63
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831210400054346"
+        },
+        {
+          "member": "fits/831/831211200009021.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831211200009021"
+        },
+        {
+          "member": "fits/831/831211200024366.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831211200024366"
+        },
+        {
+          "member": "fits/831/831211200037367.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831211200037367"
+        },
+        {
+          "member": "fits/831/831211200050755.fits",
+          "shape": [
+            63,
+            36
+          ],
+          "label": 0,
+          "field_id": 831,
+          "object_id": "831211200050755"
+        },
+        {
+          "member": "fits/843/843208400004599.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 843,
+          "object_id": "843208400004599"
+        },
+        {
+          "member": "fits/843/843208400005007.fits",
+          "shape": [
+            63,
+            59
+          ],
+          "label": 0,
+          "field_id": 843,
+          "object_id": "843208400005007"
+        },
+        {
+          "member": "fits/848/848201100022675.fits",
+          "shape": [
+            63,
+            57
+          ],
+          "label": 0,
+          "field_id": 848,
+          "object_id": "848201100022675"
+        },
+        {
+          "member": "fits/848/848201400026523.fits",
+          "shape": [
+            63,
+            58
+          ],
+          "label": 0,
+          "field_id": 848,
+          "object_id": "848201400026523"
+        },
+        {
+          "member": "fits/848/848205300021075.fits",
+          "shape": [
+            39,
+            63
+          ],
+          "label": 0,
+          "field_id": 848,
+          "object_id": "848205300021075"
+        },
+        {
+          "member": "fits/848/848213100007284.fits",
+          "shape": [
+            56,
+            63
+          ],
+          "label": 0,
+          "field_id": 848,
+          "object_id": "848213100007284"
+        },
+        {
+          "member": "fits/848/848215100023883.fits",
+          "shape": [
+            41,
+            63
+          ],
+          "label": 0,
+          "field_id": 848,
+          "object_id": "848215100023883"
+        },
+        {
+          "member": "fits/856/856208300032854.fits",
+          "shape": [
+            63,
+            44
+          ],
+          "label": 0,
+          "field_id": 856,
+          "object_id": "856208300032854"
+        },
+        {
+          "member": "fits/856/856210400019963.fits",
+          "shape": [
+            62,
+            63
+          ],
+          "label": 0,
+          "field_id": 856,
+          "object_id": "856210400019963"
+        }
+      ],
+      "invalid": [],
+      "nonfinite_pixels": 0,
+      "excluded_by_field": {
+        "284": 5,
+        "331": 4,
+        "437": 24,
+        "635": 2,
+        "649": 6,
+        "683": 2,
+        "686": 5,
+        "687": 1,
+        "737": 2,
+        "757": 1,
+        "758": 7,
+        "765": 2,
+        "768": 14,
+        "778": 1,
+        "794": 3,
+        "793": 1,
+        "797": 1,
+        "800": 2,
+        "813": 2,
+        "820": 3,
+        "830": 5,
+        "831": 6,
+        "843": 2,
+        "848": 5,
+        "856": 2
+      }
+    },
+    "Nominals.zip": {
+      "url": "https://zenodo.org/api/records/15076426/files/Nominals.zip/content",
+      "bytes": 32707445,
+      "md5": "d4b993aa502d844d64f9734141b801ca",
+      "sha256": "1a975661c35819f1f978777aec8bc3434804abf7b323bcc38611987991b71618",
+      "total": 1127,
+      "accepted": 1127,
+      "excluded_shapes": [],
+      "invalid": [],
+      "nonfinite_pixels": 0,
+      "excluded_by_field": {}
+    }
+  },
+  "duplicates": {
+    "raw_sha256": [],
+    "pixels_sha256": [],
+    "object_id": []
+  },
+  "split_counts": {
+    "train": {
+      "0": 703,
+      "1": 774
+    },
+    "validation": {
+      "0": 157,
+      "1": 175
+    },
+    "test": {
+      "0": 159,
+      "1": 178
+    }
+  },
+  "field_components": 40,
+  "dataset_sha256": "660dbe0756aa6b21847fb57aac6884e7eb802bd26953973ca35073b2ad56fbeb"
+}
