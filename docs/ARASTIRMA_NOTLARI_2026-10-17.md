@@ -19,7 +19,7 @@ python -m pip install -r requirements-inference.txt
 python -m astro_assistant.braai --output output/real-inference
 ```
 
-Çıktı klasörü yeni olmalı. Dosyalar: `inference.json`, `alerts.sqlite`, `real_alert_triplets.png`. GitHub Actions paket sürümlerini de kaydeder. İlk başarılı çalışma sonrası kalıcı deney raporu eklenecek.
+Çıktı klasörü yeni olmalı. Dosyalar: `inference.json`, `alerts.sqlite`, `real_alert_triplets.png`. GitHub Actions paket sürümlerini de kaydeder. [Başarılı çalışma ve kalıcı deney raporu](experiments/braai-2026-10-17/README.md) eklendi.
 
 ## Alternatif eğitim kaynağı
 

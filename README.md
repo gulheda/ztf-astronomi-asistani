@@ -6,7 +6,9 @@
 
 ZTF görüntülerinde Real/Bogus sınıflandırması ile Türkçe sorgulamayı birleştiren 2209-A araştırmasının başlangıç deposu.
 
-**Durum (17 Ekim 2026):** Türkçe sorgu + SQLite + demo arayüzü oluşturuldu. Gerçek ZTF verisi indirilmedi, CNN eğitilmedi, bilimsel başarı ölçülmedi. Demo kayıtları ve skorları tamamen sentetiktir.
+**Durum (17 Ekim 2026):** Türkçe sorgu, SQLite ve demo arayüzü hazır. Yayımlanmış braai modeli iki gerçek ZTF uyarısı üzerinde çalıştırıldı; sonuçlar kaynak/model bilgileriyle veritabanına kaydedilip Türkçe sorguyla doğrulandı. Kendi CNN eğitimimiz ve bağımsız doğruluk ölçümü henüz yapılmadı. Arayüzün demo kayıtları sentetiktir.
+
+[Gerçek model deneyinin raporu](docs/experiments/braai-2026-10-17/README.md) · [Kaynak araştırması](docs/ARASTIRMA_NOTLARI_2026-10-17.md) · [Alternatif veri incelemesi](docs/SNAD_VERI_DEGERLENDIRMESI.md)
 
 ## Hemen çalıştır
 
@@ -28,7 +30,7 @@ python3 -m venv .venv
 
 Tarayıcı adresi: http://localhost:8501. Yerel demo internetten veri çekmez; API anahtarı gerekmez.
 Mevcut `.venv` varsa yeniden oluşturmanız gerekmez. Grafik arayüzü demo modundadır.
-Yerel paket indirmesi tamamlanamadı. GitHub Actions üzerinde Python 3.11 ile 8 çekirdek ve 2 Streamlit çalışma testi başarıyla tamamlandı; tarayıcıda görsel inceleme henüz yapılmadı. Ayrıntılı doğrulama durumu `docs/DURUM.md` içindedir.
+Yerel paket indirmesi tamamlanamadı. GitHub Actions üzerinde genel testler, ayrı FITS testleri ve gerçek model çıkarımı başarılı; uygulama ve çıkarım bağımlılık taramaları temiz. Tarayıcıda görsel arayüz incelemesi henüz yapılmadı. Ayrıntılı durum `docs/DURUM.md` içindedir.
 
 ## Desteklenen sorgular
 
@@ -55,6 +57,16 @@ Varsayılan: son 24 saat, en yeni 20 uyarı, skor ≥ 0.5. Zamanlar UTC'dir. “
 | `docs/KAYNAKLAR.md` | Doğrulanan kaynaklar ve açık sorular |
 
 ## Gerçek veriye geçiş
+
+Yayımlanmış modelle gerçek çıkarımı tekrar etmek için Python 3.11 ortamında:
+
+```bash
+python -m pip install -r requirements-inference.txt
+python -m astro_assistant.braai --output output/real-inference
+python -m astro_assistant --db output/real-inference/alerts.sqlite --at 2019-06-13T05:10:55.004145+00:00 "Son 365 gündeki olaylar"
+```
+
+İki örnek bağımsız doğrulama seti değildir; buradan accuracy hesaplanmaz. Çıkarım, sabit GitHub commit'inden SHA256 ile doğrulanan örnek/ağırlık dosyalarını kullanır. Eski GCS eğitim bağlantıları bugün 404 döndüğünden eğitim kaynağı araştırması sürüyor.
 
 Önce `docs/VERI_VE_YONTEM.md` içindeki kaynak ve etiket kontrolünü tamamlayın. Eğitim için Colab üzerinde Python 3.11/3.12 ortamı hedeflenmiştir; bu bilgisayardaki Python 3.9 ortamında TensorFlow kurulumu doğrulanmadı.
 
