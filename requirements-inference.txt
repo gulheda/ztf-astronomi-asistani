@@ -1,0 +1,6 @@
+# Reproducible CPU environment for the published braai inference experiment (Python 3.11).
+tensorflow-cpu==2.15.1
+numpy==1.26.4
+astropy==6.1.7
+matplotlib==3.9.4
+h5py==3.11.0
