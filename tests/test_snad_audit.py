@@ -31,3 +31,19 @@ class ArchiveTests(unittest.TestCase):
                 archive.writestr("readme.txt","synthetic fixture")
             with self.assertRaises(ValueError):
                 inspect_archive(path)
+
+    def test_one_nested_zip_level_supported(self):
+        import numpy as np
+        from astropy.io import fits
+        data=io.BytesIO()
+        fits.PrimaryHDU(np.ones((28,28),dtype="float32")).writeto(data)
+        child=io.BytesIO()
+        with ZipFile(child,"w") as archive:
+            archive.writestr("synthetic.fits",data.getvalue())
+        outer=io.BytesIO()
+        with ZipFile(outer,"w") as archive:
+            archive.writestr("28x28/fits.zip",child.getvalue())
+        outer.seek(0)
+        report=inspect_archive(outer)
+        self.assertEqual(report["fits_count"],1)
+        self.assertEqual(report["nested_archives"]["28x28/fits.zip"]["samples"][0]["shape"],[28,28])

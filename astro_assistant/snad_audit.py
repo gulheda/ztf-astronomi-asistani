@@ -13,7 +13,7 @@ SOURCES = {
 }
 
 
-def inspect_archive(path, sample_size=6):
+def inspect_archive(path, sample_size=6, depth=0):
     import numpy as np
     from astropy.io import fits
     samples = []
@@ -23,7 +23,16 @@ def inspect_archive(path, sample_size=6):
             raise ValueError("Archive exceeds declared inspection limits")
         candidates = sorted((m for m in members if m.filename.lower().endswith(".fits")), key=lambda m:m.filename)
         if not candidates:
-            raise ValueError("No uncompressed FITS members found; inspect archive layout before proceeding")
+            nested = [m for m in members if m.filename.lower().endswith(".zip")]
+            if depth >= 1 or not nested or len(nested)>4:
+                raise ValueError("Unsupported or excessive nested archive layout")
+            children = {}
+            for member in nested:
+                if member.file_size > 64_000_000:
+                    raise ValueError("Nested archive exceeds limit")
+                children[member.filename] = inspect_archive(io.BytesIO(archive.read(member)), sample_size, depth+1)
+            return dict(member_count=len(members), first_paths=[m.filename for m in members[:12]],
+                fits_count=sum(c["fits_count"] for c in children.values()), nested_archives=children, sample_only=True)
         # Bounded deterministic spread, covering both image sizes when present.
         indices = sorted(set(round(i*(len(candidates)-1)/max(1,sample_size-1)) for i in range(sample_size)))
         for i in indices:
