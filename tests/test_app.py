@@ -45,7 +45,8 @@ class InterfaceTests(unittest.TestCase):
             self.assertTrue(rows["kind_source"].isna().all())
 
         # Lowering the score cutoff reveals both dated examples.
-        threshold = next(item for item in app.slider if "eşik" in item.label.lower())
+        threshold = next(item for item in app.slider
+                         if item.label == "Real/Bogus skor eşiği")
         threshold.set_value(0.0).run()
         self.assertEqual(len(app.exception), 0)
         self.assertEqual(set(app.dataframe[0].value["alert_id"]),
