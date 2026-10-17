@@ -93,7 +93,15 @@ def build_model(weights):
         l.MaxPooling2D(4), l.Dropout(0.25), l.Flatten(),
         l.Dense(256, activation="relu", name="fc_1"), l.Dropout(0.5),
         l.Dense(1, activation="sigmoid", name="fc_out")])
-    model.load_weights(str(weights))
+    # Upstream's legacy HDF5 uses a name now reserved for Keras' new format.
+    # A verified copy with plain .h5 selects the legacy weight reader, not a
+    # serialized model loader. No architecture/custom object is deserialized.
+    import shutil
+    import tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        legacy = Path(directory) / "braai_legacy.h5"
+        shutil.copyfile(weights, legacy)
+        model.load_weights(str(legacy))
     return model
 
 
