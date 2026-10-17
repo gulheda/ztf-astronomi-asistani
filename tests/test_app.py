@@ -52,7 +52,9 @@ class InterfaceTests(unittest.TestCase):
         self.assertEqual(set(app.dataframe[0].value["alert_id"]),
                          {"714287740515015072", "893215910715010007"})
 
-        real_selector.select("Demo").run()
+        current_source = next(item for item in app.selectbox
+                              if item.label == "Veri kaynağı")
+        current_source.select("Demo").run()
         self.assertEqual(len(app.exception), 0)
         self.assertTrue(all(str(value).startswith("DEMO-")
                             for value in app.dataframe[0].value["alert_id"]))
