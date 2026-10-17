@@ -1,5 +1,11 @@
 # Gerçek ZTF arşiv arayüzü
 
+![Gerçek arşiv modunun üst görünümü](interface/real-archive.png)
+
+Chromium ile gerçek tarayıcı kontrolünde kaynak seçimi ve tekrar demoya dönüş
+çalıştırıldı; ekran görüntüsü görsel olarak incelendi. Kaynak ve gözlem zamanları
+görünür, arşiv ile demo uyarıları ayrıdır. [Tarayıcı kontrol kaydı](https://github.com/gulheda/ztf-astronomi-asistani/actions/runs/39030417841/job/117389575226).
+
 Uygulama varsayılan olarak sentetik demo kayıtlarını gösterir. Kenar çubuğundaki
 veri kaynağı seçicisinden **Gerçek ZTF arşivi** seçilerek sabitlenmiş iki gerçek
 ZTF alert örneği incelenebilir. Örnekler ve model çıktıları
@@ -16,6 +22,17 @@ Skorlar, sabitlenmiş `braai_d6_m9` model ağırlıklarından üretilmiştir. Bu
 veya bağımsız doğruluk ölçümü yapılmaz; skorlar kalibre olasılık değildir.
 Arayüzde gerçek olay türü etiketi yoktur.
 SNAD veri kümesi ve sınıfları bu iki alert arşivinden ayrı tutulur.
+
+Tablo, gökyüzü dağılımı ve CSV dışa aktarımı aynı filtrelenmiş sonuçları kullanır.
+CSV düğmesi grafiğin altındadır. Model sürümü ve kaynak URL bilgisi korunur.
+Kaynaklar her geçişte ayrı bir bellek içi veritabanına yüklenir; iki modun
+kayıtları birleştirilmez. Sorgu metinleri de ayrı tutulur.
+
+Arşiv yükleyicisi sabitlenmiş iki uyarı kimliğini, model/commit/kaynak eşleşmesini,
+bildirilen kaynak boyutu ve SHA256 tanımlarını, UTC referansını ve kayıt alanlarını
+denetler. Dosya 1 MB ile sınırlıdır. Hatalı arşiv açık bir hata gösterir ve sorgu
+başlatılmaz. Bu şema/köken kontrolüdür; yeni bir model çıkarımı veya bağımsız
+bilimsel doğrulama değildir.
 
 Proje kökünde uygulamayı çalıştırın:
 
