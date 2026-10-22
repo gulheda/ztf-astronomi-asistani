@@ -31,7 +31,9 @@ python3 -m venv .venv
 ```
 
 Tarayıcı adresi: http://localhost:8501. API anahtarı gerekmez. Kenar çubuğundaki **Veri kaynağı** ile sentetik **Demo** ve kaynaklı **Gerçek ZTF arşivi** arasında geçiş yapabilirsiniz. Gerçek arşivde 2018/2019 tarihli iki yayımlanmış örnek kullanılır; canlı veri çekilmez. [Arşiv modu kullanım notu](docs/GERCEK_ARSIV_ARAYUZU.md).
-Mevcut `.venv` varsa yeniden oluşturmanız gerekmez. Yerel paket indirmesi tamamlanamadı; otomatik çalışma kontrolleri GitHub ortamında yürütülüyor. Ayrıntılı durum `docs/DURUM.md` içindedir.
+`.venv` yoksa veya paketler eksikse yukarıdaki iki kurulum komutunu çalıştırın. Önerilen sürüm Python 3.11'dir; 3.9 ile arayüz ve çekirdek testleri çalışır, Astropy/TensorFlow testleri atlanır.
+
+Apple Silicon Mac'te, çıkarım ve eğitim paketleri için: `tensorflow-cpu==2.21.0` macOS arm64 wheel'i yayımlamıyor, yerelde aynı sürümün `tensorflow==2.21.0` paketini kurun (CI dosyalarını değiştirmeyin). `numpy==1.26.4` ile Streamlit birlikte kurulacaksa `pyarrow<21` gerekir; aksi halde yeni pyarrow NumPy 2 ister ve arayüz testleri hata verir. Ayrıntılı durum `docs/DURUM.md` içindedir.
 
 ## Desteklenen sorgular
 
@@ -52,7 +54,7 @@ Varsayılan: son 24 saat, en yeni 20 uyarı, skor ≥ 0.5. Zamanlar UTC'dir. “
 | `astro_assistant/core.py` | Türkçe çözümleme, doğrulama, parametreli SQL, demo üretimi |
 | `astro_assistant/dataset.py` | NPZ kontrolü, normalizasyon, nesne bazlı bölme |
 | `astro_assistant/train.py` | Gerçek veri bekleyen TensorFlow eğitim iskeleti |
-| `tests/` | Sorgu, veri bütünlüğü ve sızıntı önleme testleri |
+| `tests/` | Sorgu, veri bütünlüğü ve sızıntı önleme testleri; 56 sorgulu [değerlendirme seti](docs/SORGU_DEGERLENDIRMESI.md) |
 | `docs/PROJE_PLANI.md` | İş paketleri, kabul ölçütleri, öncelikler |
 | `docs/VERI_VE_YONTEM.md` | Veri sözleşmesi ve bilimsel kararlar |
 | `docs/DENEY_PLANI.md` | Model ve kullanıcı değerlendirmesi |

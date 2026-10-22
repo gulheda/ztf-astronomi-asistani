@@ -25,6 +25,18 @@ python -m astro_assistant.braai --output output/real-inference
 
 [SNAD değerlendirme notu](SNAD_VERI_DEGERLENDIRMESI.md) açık lisanslı 2025 veri kaynağını ele alıyor. Tek görüntüde nominal/artefakt pilotu için adaydır; üç kanallı uyarı modeliyle aynı deney sayılmamalı.
 
+## Üç kanallı etiketli ZTF verisi araması (21 Ekim 2026)
+
+Yalnız yayın metinleri ve GitHub meta verisi okundu; hiçbir veri indirilmedi, içerik ve etiketler doğrulanmadı.
+
+| Aday | Bulunan | Projeye uygunluk |
+|---|---|---|
+| [RB-C1000](https://github.com/cherry0116/RB-C1000) / [arXiv:2412.02409](https://arxiv.org/abs/2412.02409) | Üç ZTF kümesi (g, r, karışık), her biri 13000 real ve 30000 bogus. Veri Google Drive bağlantısında; depo kodu MIT, veri için ayrı lisans belirtilmemiş, SHA256 yok. | Real etiketi TNS'de bildirilmiş süpernovalardan geliyor, tek tek insan incelemesi anlatılmıyor. Bogus, SExtractor ile rastgele seçilmiş ve "birkaç gerçek tespit içerebilir". Yazarlar kümeleri yalnız yöntem testi için uygun görüyor. `validate_provenance` insan incelemeli, modelden bağımsız etiket istediğinden bu haliyle eğitim kabulünü geçemez. |
+| [arXiv:2606.15705](https://arxiv.org/abs/2606.15705) | ZTF için 6640 real ve 6041 bogus, 63×63×3, elle ayıklanmış. | Veri herkese açık yayımlanmamış, "makul istek üzerine". Yazarlara yazılabilir; lisans ve etiket tanımı yazılı alınmalı. |
+| Braai (Duev ve ark. 2019) | 30 binden fazla örnek, etiketleme Zwickyverse'te. | Veri bağlantısı bulunamadı; eski GCS adresleri 404. |
+
+Sonuç: Kabul ölçütümüze (kaynaklı, insan incelemeli, modelden bağımsız etiket) uyan, doğrudan indirilebilir üç kanallı küme henüz yok. Öneri sırası: (1) danışmanla, RB-C1000 gibi bir kümenin etiket sınırlamaları açıkça yazılarak ayrı bir deney olarak kullanılıp kullanılmayacağına karar vermek; (2) 2606.15705 yazarlarından veri ve lisans istemek; (3) gerekirse IRSA/ALeRCE damgalarından kendi etiketli alt kümemizi oluşturmak. Hiçbiri Real/Bogus %85 hedefini bağımsız doğrulanmış etiketle ölçmek için yeterli kanıt değildir.
+
 ## Araştırma odağı
 
 [Fink portalı](https://doc.ztf.fink-broker.org/services/search/getting_started/) astronomik sorgulama/görselleştirme sağlıyor. Astro-COLIBRI geliştiricileri [2024'te GPT entegrasyonu duyurmuş](https://forum.astro-colibri.science/t/new-astro-colibri-release-v2-9-1/76). “Astronomide ilk doğal dil arayüzü” iddiası kullanılmamalı.
