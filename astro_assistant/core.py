@@ -60,9 +60,10 @@ def parse_query(text):
         q.band = match[1]
         text = text[:match.start()] + " " + text[match.end():]
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
-             "asteroid": "asteroid", "asteroidler": "asteroid"}
+             "supernovalari": "supernova", "asteroid": "asteroid",
+             "asteroidler": "asteroid", "asteroidleri": "asteroid"}
     tokens = re.findall(r"\S+", text)
-    fillers = {"olay", "olaylar", "olaylari", "gercek", "aday", "adaylari",
+    fillers = {"olay", "olaylar", "olaylari", "gercek", "aday", "adaylar", "adaylari",
                "goster", "listele", "lutfen"}
     for token in tokens:
         token = token.rstrip(".?!,")

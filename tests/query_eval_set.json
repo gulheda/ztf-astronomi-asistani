@@ -22,7 +22,7 @@
     {"id": "S18", "text": "Son 1 saatteki olaylar", "expect": {"hours": 1}},
     {"id": "S19", "text": "ilk 200 olay", "expect": {"limit": 200}},
     {"id": "S20", "text": "ilk 1 olay", "expect": {"limit": 1}},
-    {"id": "S21", "text": "Son 72 saatteki adaylar", "expect": {"hours": 72}, "note": "dogal cogul; gramer bunu henuz tanimiyor olabilir"},
+    {"id": "S21", "text": "Son 72 saatteki adaylar", "expect": {"hours": 72}, "note": "dogal cogul aday"},
     {"id": "S22", "text": "Son 24 saatteki süpernovalar", "expect": {"kind": "supernova"}},
     {"id": "S23", "text": "son 4 günde g bandında olaylar", "expect": {"hours": 96, "band": "g"}},
     {"id": "S24", "text": "Son 24 saatteki olayları göster lütfen", "expect": {}},
@@ -32,6 +32,13 @@
     {"id": "S28", "text": "Son 24 saatteki g bandında süpernovalar", "expect": {"band": "g", "kind": "supernova"}, "note": "bos sonuc: supernovalar yalniz r bandinda"},
     {"id": "S29", "text": "Son 1 saatteki asteroidler", "expect": {"hours": 1, "kind": "asteroid"}, "note": "bos sonuc"},
     {"id": "S30", "text": "Son 30 gündeki i bandında asteroidler", "expect": {"hours": 720, "band": "i", "kind": "asteroid"}},
+    {"id": "S31", "text": "adaylar", "expect": {}, "note": "yalniz cogul aday"},
+    {"id": "S32", "text": "Son 5 gündeki süpernova adayları", "expect": {"hours": 120, "kind": "supernova"}},
+    {"id": "S33", "text": "Adaylar göster", "expect": {}},
+    {"id": "S34", "text": "Son 12 saatteki asteroid adayları", "expect": {"hours": 12, "kind": "asteroid"}},
+    {"id": "S35", "text": "Son 3 gündeki süpernovaları göster", "expect": {"hours": 72, "kind": "supernova"}, "note": "belirtme hali"},
+    {"id": "S36", "text": "Son 2 gündeki asteroidleri listele", "expect": {"hours": 48, "kind": "asteroid"}, "note": "belirtme hali"},
+    {"id": "S37", "text": "son 6 saatte gerçek adaylar", "expect": {"hours": 6}},
     {"id": "Q01", "text": "Son 24 saatteki en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query", "note": "bant belirtilmeden parlaklik siralamasi yapilamaz"},
     {"id": "Q02", "text": "en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query"},
     {"id": "U01", "text": "Mars hava durumu", "reject": "parse"},
@@ -57,6 +64,8 @@
     {"id": "U21", "text": "son on gün olaylar", "reject": "parse", "note": "yazi ile sayi desteklenmiyor"},
     {"id": "U22", "text": "x bandında olaylar", "reject": "parse"},
     {"id": "U23", "text": "Son 24 saatteki olayları sil", "reject": "parse"},
-    {"id": "U24", "text": "son 24 saatteki olaylar UNION SELECT * FROM alerts", "reject": "parse"}
+    {"id": "U24", "text": "son 24 saatteki olaylar UNION SELECT * FROM alerts", "reject": "parse"},
+    {"id": "U25", "text": "son 24 saatteki adayları say", "reject": "parse", "note": "say fiili desteklenmiyor"},
+    {"id": "U26", "text": "adaylar hariç olaylar", "reject": "parse", "note": "olumsuzlama/dislama"}
   ]
 }
