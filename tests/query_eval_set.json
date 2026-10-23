@@ -39,6 +39,8 @@
     {"id": "S35", "text": "Son 3 gündeki süpernovaları göster", "expect": {"hours": 72, "kind": "supernova"}, "note": "belirtme hali"},
     {"id": "S36", "text": "Son 2 gündeki asteroidleri listele", "expect": {"hours": 48, "kind": "asteroid"}, "note": "belirtme hali"},
     {"id": "S37", "text": "son 6 saatte gerçek adaylar", "expect": {"hours": 6}},
+    {"id": "S38", "text": "Son 24 saatteki g bandındaki olaylar", "expect": {"band": "g"}, "note": "bandindaki eki"},
+    {"id": "S39", "text": "Son 2 gündeki r bandındaki süpernovalar", "expect": {"hours": 48, "band": "r", "kind": "supernova"}},
     {"id": "Q01", "text": "Son 24 saatteki en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query", "note": "bant belirtilmeden parlaklik siralamasi yapilamaz"},
     {"id": "Q02", "text": "en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query"},
     {"id": "U01", "text": "Mars hava durumu", "reject": "parse"},
@@ -66,6 +68,10 @@
     {"id": "U23", "text": "Son 24 saatteki olayları sil", "reject": "parse"},
     {"id": "U24", "text": "son 24 saatteki olaylar UNION SELECT * FROM alerts", "reject": "parse"},
     {"id": "U25", "text": "son 24 saatteki adayları say", "reject": "parse", "note": "say fiili desteklenmiyor"},
-    {"id": "U26", "text": "adaylar hariç olaylar", "reject": "parse", "note": "olumsuzlama/dislama"}
+    {"id": "U26", "text": "adaylar hariç olaylar", "reject": "parse", "note": "olumsuzlama/dislama"},
+    {"id": "U27", "text": "son 2 gün son 3 gün olaylar", "reject": "parse", "note": "tekrarlanan zaman filtresi sessizce yutulmamali"},
+    {"id": "U28", "text": "ilk 5 ilk 3 olay", "reject": "parse", "note": "tekrarlanan sayi filtresi"},
+    {"id": "U29", "text": "g bandında r bandında olaylar", "reject": "parse", "note": "tekrarlanan bant filtresi"},
+    {"id": "U30", "text": "süpernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"}
   ]
 }

@@ -54,7 +54,7 @@ def parse_query(text):
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.limit <= 200:
         raise ValueError("Sonuç sayısı 1–200 arasında olmalı.")
-    match = re.search(r"\b([gri])\s+bandinda\b", text)
+    match = re.search(r"\b([gri])\s+bandinda(?:ki)?\b", text)
     if match:
         recognized = True
         q.band = match[1]
