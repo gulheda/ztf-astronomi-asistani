@@ -41,6 +41,12 @@
     {"id": "S37", "text": "son 6 saatte gerçek adaylar", "expect": {"hours": 6}},
     {"id": "S38", "text": "Son 24 saatteki g bandındaki olaylar", "expect": {"band": "g"}, "note": "bandindaki eki"},
     {"id": "S39", "text": "Son 2 gündeki r bandındaki süpernovalar", "expect": {"hours": 48, "band": "r", "kind": "supernova"}},
+    {"id": "S40", "text": "Son 24 saat içindeki olaylar", "expect": {}, "note": "icindeki zaman eki"},
+    {"id": "S41", "text": "son 3 gün içinde süpernovalar", "expect": {"hours": 72, "kind": "supernova"}, "note": "icinde zaman eki"},
+    {"id": "S42", "text": "Son 6 saat içinde g bandındaki adaylar", "expect": {"hours": 6, "band": "g"}},
+    {"id": "S43", "text": "son 2 günde süpernova adayı", "expect": {"hours": 48, "kind": "supernova"}, "note": "adayi tekil belirtme hali"},
+    {"id": "S44", "text": "Bana son 24 saatteki olayları göster", "expect": {}, "note": "bana dolgu sozcugu"},
+    {"id": "S45", "text": "son 12 saatteki olayları getir", "expect": {"hours": 12}, "note": "getir fiili"},
     {"id": "Q01", "text": "Son 24 saatteki en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query", "note": "bant belirtilmeden parlaklik siralamasi yapilamaz"},
     {"id": "Q02", "text": "en parlak olaylar", "expect": {"order": "brightest"}, "reject": "query"},
     {"id": "U01", "text": "Mars hava durumu", "reject": "parse"},
@@ -72,6 +78,8 @@
     {"id": "U27", "text": "son 2 gün son 3 gün olaylar", "reject": "parse", "note": "tekrarlanan zaman filtresi sessizce yutulmamali"},
     {"id": "U28", "text": "ilk 5 ilk 3 olay", "reject": "parse", "note": "tekrarlanan sayi filtresi"},
     {"id": "U29", "text": "g bandında r bandında olaylar", "reject": "parse", "note": "tekrarlanan bant filtresi"},
-    {"id": "U30", "text": "süpernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"}
+    {"id": "U30", "text": "süpernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"},
+    {"id": "U31", "text": "Son 24 saatteki en parlak 5 olay", "reject": "parse", "note": "ilk olmadan sayi belirsiz"},
+    {"id": "U32", "text": "son 24 saat içinde dışındaki olaylar", "reject": "parse", "note": "yalniz icinde/icindeki desteklenir"}
   ]
 }
