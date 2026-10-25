@@ -30,10 +30,11 @@ class Query:
 def parse_query(text):
     text = text.translate(str.maketrans("İI", "iı")).lower()
     text = text.translate(str.maketrans("çğıöşü", "cgiosu")).strip()
+    text = text.replace(",", " ")
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da|\s+icindeki|\s+icinde)?\b", text)
+    match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|\s+icindeki|\s+icinde)?\b", text)
     if match:
         recognized = True
         q.hours = int(match[1]) * (24 if match[2] == "gun" else 1)
@@ -61,9 +62,10 @@ def parse_query(text):
         text = text[:match.start()] + " " + text[match.end():]
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
              "supernovalari": "supernova", "asteroid": "asteroid",
-             "asteroidler": "asteroid", "asteroidleri": "asteroid"}
+             "asteroidler": "asteroid", "asteroidleri": "asteroid",
+             "asteroit": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid"}
     tokens = re.findall(r"\S+", text)
-    fillers = {"olay", "olaylar", "olaylari", "gercek", "aday", "adayi", "adaylar", "adaylari",
+    fillers = {"olay", "olayi", "olaylar", "olaylari", "gercek", "aday", "adayi", "adaylar", "adaylari",
                "goster", "listele", "getir", "bana", "lutfen"}
     for token in tokens:
         token = token.rstrip(".?!,")

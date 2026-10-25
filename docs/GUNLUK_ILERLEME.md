@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-25
+Çözümleyici virgül ayırıcıyı ("son 24 saat, olaylar" önceden boş belirteçli hata veriyordu), "olayı", "asteroit" yazımını ve "saatlik/günlük" ekini tanıyor; değerlendirme seti 79'dan 87 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-10-24
 Çözümleyici "saat/gün içinde", "içindeki", "adayı", "getir" ve "bana" ifadelerini tanıyor; değerlendirme seti 71'den 79 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). SORGU_DEGERLENDIRMESI.md'deki yanlış n sayıları (37/28 yerine 39/32) düzeltildi.
 

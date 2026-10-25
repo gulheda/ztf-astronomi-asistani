@@ -1,22 +1,22 @@
 # Türkçe sorgu değerlendirmesi ve kullanıcı çalışması taslağı
 
-24 Ekim 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
+25 Ekim 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 79 sorgu (45 desteklenen, 2 bant belirtilmeden parlaklık sıralaması, 32 desteklenmeyen). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 87 sorgu (52 desteklenen, 2 bant belirtilmeden parlaklık sıralaması, 33 desteklenmeyen). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=45) | 45/45 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=45) | 45/45 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=34) | 34/34 |
-| Boş sonuçlu doğru sorgu | 4 |
+| Koşul çözümleme (desteklenen, n=52) | 52/52 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=52) | 52/52 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=35) | 35/35 |
+| Boş sonuçlu doğru sorgu | 5 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
 Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karşılandı. Bunlar proje kararıdır, bilimsel eşik değildir.
 
-**Düzeltilen açıklar:** İlk ölçümde tek hata S21 idi: "adaylar" çoğulu tanınmıyordu. 22 Ekim'de beklenen davranış önce elle yazıldı (S31–S37, U25–U26 eklendi), ardından gramer genişletildi: "adaylar", "süpernovaları" ve "asteroidleri" biçimleri tanınıyor. S21 ve eklenen S31, S33, S35, S36 önceki gramerde reddediliyordu. Önceki oran (29/30) bu düzeltmeden önceki ölçümdür; yeni sonuç daha geniş ve bu açıklara bakılarak genişletilmiş bir kümedir, bu yüzden daha da iyimsel okunmalıdır. Küme yazarı sorguları grameri bilerek yazdığından oran iyimserdir: kullanıcıların kendi cümleleri pilotta toplanana kadar gerçek tanıma oranı bilinmiyor. **24 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S40–S45 desteklenen, U31–U32 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 39/45'e düşüyordu: koşul çözümleme %86,7). Gramer genişletildi: "saat/gün içinde" ve "içindeki" zaman ekleri, "adayı", "getir" ve "bana". "en parlak 5 olay" (ilk olmadan sayı) belirsiz olduğu için reddedilmeye devam ediyor. Önceki 37/37 ve 28/28 sayıları da yanlıştı: ölçüm çıktısı 39 desteklenen ve 32 reddedilen gösteriyordu.
+**Düzeltilen açıklar:** İlk ölçümde tek hata S21 idi: "adaylar" çoğulu tanınmıyordu. 22 Ekim'de beklenen davranış önce elle yazıldı (S31–S37, U25–U26 eklendi), ardından gramer genişletildi: "adaylar", "süpernovaları" ve "asteroidleri" biçimleri tanınıyor. S21 ve eklenen S31, S33, S35, S36 önceki gramerde reddediliyordu. Önceki oran (29/30) bu düzeltmeden önceki ölçümdür; yeni sonuç daha geniş ve bu açıklara bakılarak genişletilmiş bir kümedir, bu yüzden daha da iyimsel okunmalıdır. Küme yazarı sorguları grameri bilerek yazdığından oran iyimserdir: kullanıcıların kendi cümleleri pilotta toplanana kadar gerçek tanıma oranı bilinmiyor. **24 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S40–S45 desteklenen, U31–U32 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 39/45'e düşüyordu: koşul çözümleme %86,7). Gramer genişletildi: "saat/gün içinde" ve "içindeki" zaman ekleri, "adayı", "getir" ve "bana". "en parlak 5 olay" (ilk olmadan sayı) belirsiz olduğu için reddedilmeye devam ediyor. **25 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S46–S52 desteklenen, U33 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 46/52: %88,5). Gramer genişletildi: virgül ayırıcı ("son 24 saat, olaylar" önceden boş belirteçli "Desteklenmeyen ifade: ." hatası veriyordu), "olayı", Türkçe yazım "asteroit/asteroitler/asteroitleri" ve "saatlik/günlük" sıfat ekleri. "ve" virgülle de reddedilmeye devam ediyor. Önceki 37/37 ve 28/28 sayıları da yanlıştı: ölçüm çıktısı 39 desteklenen ve 32 reddedilen gösteriyordu.
 
 Desteklenmeyen sorgu örnekleri (hafta/ay, mutlak tarih, koordinat, olumsuzlama, "ve") bilinçli olarak reddediliyor.
 

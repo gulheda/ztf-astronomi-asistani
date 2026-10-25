@@ -80,6 +80,14 @@
     {"id": "U29", "text": "g bandında r bandında olaylar", "reject": "parse", "note": "tekrarlanan bant filtresi"},
     {"id": "U30", "text": "süpernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"},
     {"id": "U31", "text": "Son 24 saatteki en parlak 5 olay", "reject": "parse", "note": "ilk olmadan sayi belirsiz"},
-    {"id": "U32", "text": "son 24 saat içinde dışındaki olaylar", "reject": "parse", "note": "yalniz icinde/icindeki desteklenir"}
+    {"id": "U32", "text": "son 24 saat içinde dışındaki olaylar", "reject": "parse", "note": "yalniz icinde/icindeki desteklenir"},
+    {"id": "S46", "text": "son 24 saat, olaylar", "expect": {}, "note": "virgul ayirici"},
+    {"id": "S47", "text": "ilk 5, en parlak, r bandındaki olaylar", "expect": {"limit": 5, "order": "brightest", "band": "r"}, "note": "virgul ayirici"},
+    {"id": "S48", "text": "ilk 3 olayı göster", "expect": {"limit": 3}, "note": "belirtme hali olayi"},
+    {"id": "S49", "text": "son 7 gündeki asteroitler", "expect": {"hours": 168, "kind": "asteroid"}, "note": "Turkce yazim asteroit"},
+    {"id": "S50", "text": "g bandındaki süpernova adayları", "expect": {"band": "g", "kind": "supernova"}, "note": "sozcuk sirasi"},
+    {"id": "S51", "text": "son 3 günlük adaylar", "expect": {"hours": 72}, "note": "gunluk sifat eki"},
+    {"id": "S52", "text": "son 6 saatlik olaylar", "expect": {"hours": 6}, "note": "saatlik sifat eki"},
+    {"id": "U33", "text": "son 24 saat, ve asteroit", "reject": "parse", "note": "virgul tolere edilir ama 've' hala reddedilir"}
   ]
 }
