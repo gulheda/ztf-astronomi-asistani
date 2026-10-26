@@ -34,7 +34,7 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|\s+icindeki|\s+icinde)?\b", text)
+    match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
     if match:
         recognized = True
         q.hours = int(match[1]) * (24 if match[2] == "gun" else 1)
@@ -66,14 +66,14 @@ def parse_query(text):
              "asteroit": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "gercek", "aday", "adayi", "adaylar", "adaylari",
-               "goster", "listele", "getir", "bana", "lutfen"}
+               "goster", "listele", "getir", "bana", "lutfen", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and not q.kind:
             q.kind = kinds[token]
             recognized = True
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "bana")
+            recognized = recognized or token not in ("lutfen", "bana", "tane", "adet", "tum", "butun")
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:

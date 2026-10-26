@@ -88,6 +88,14 @@
     {"id": "S50", "text": "g bandındaki süpernova adayları", "expect": {"band": "g", "kind": "supernova"}, "note": "sozcuk sirasi"},
     {"id": "S51", "text": "son 3 günlük adaylar", "expect": {"hours": 72}, "note": "gunluk sifat eki"},
     {"id": "S52", "text": "son 6 saatlik olaylar", "expect": {"hours": 6}, "note": "saatlik sifat eki"},
-    {"id": "U33", "text": "son 24 saat, ve asteroit", "reject": "parse", "note": "virgul tolere edilir ama 've' hala reddedilir"}
+    {"id": "U33", "text": "son 24 saat, ve asteroit", "reject": "parse", "note": "virgul tolere edilir ama 've' hala reddedilir"},
+    {"id": "S53", "text": "ilk 5 tane olay", "expect": {"limit": 5}, "note": "tane dolgu sozcugu"},
+    {"id": "S54", "text": "ilk 3 adet aday", "expect": {"limit": 3}, "note": "adet dolgu sozcugu"},
+    {"id": "S55", "text": "son 24 saatteki tüm olaylar", "expect": {}, "note": "tum dolgu sozcugu"},
+    {"id": "S56", "text": "Son 2 gündeki bütün süpernovalar", "expect": {"hours": 48, "kind": "supernova"}, "note": "butun dolgu sozcugu"},
+    {"id": "S57", "text": "son 24 saat içerisinde olaylar", "expect": {}, "note": "icerisinde zaman eki"},
+    {"id": "S58", "text": "son 3 gün içerisindeki r bandında en parlak ilk 2 aday", "expect": {"hours": 72, "band": "r", "order": "brightest", "limit": 2}, "note": "icerisindeki zaman eki"},
+    {"id": "U34", "text": "tüm", "reject": "parse", "note": "yalniz dolgu sozcugu sorgu degildir"},
+    {"id": "U35", "text": "ilk 0 tane olay", "reject": "parse", "note": "sayi siniri dolgu sozcugunden etkilenmez"}
   ]
 }

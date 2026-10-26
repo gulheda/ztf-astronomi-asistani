@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-26
+Çözümleyici "tane/adet/tüm/bütün" dolgu sözcüklerini ve "içerisinde/içerisindeki" zaman ekini tanıyor; değerlendirme seti 87'den 95 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-10-25
 Çözümleyici virgül ayırıcıyı ("son 24 saat, olaylar" önceden boş belirteçli hata veriyordu), "olayı", "asteroit" yazımını ve "saatlik/günlük" ekini tanıyor; değerlendirme seti 79'dan 87 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 
