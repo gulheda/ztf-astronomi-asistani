@@ -34,10 +34,10 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(\d+)\s+(saat|gun)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
+    match = re.search(r"\bson\s+(\d+)\s+(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
     if match:
         recognized = True
-        q.hours = int(match[1]) * (24 if match[2] == "gun" else 1)
+        q.hours = int(match[1]) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.hours <= 24 * 365:
         raise ValueError("Zaman aralığı 1 saat ile 365 gün arasında olmalı.")
@@ -61,11 +61,11 @@ def parse_query(text):
         q.band = match[1]
         text = text[:match.start()] + " " + text[match.end():]
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
-             "supernovalari": "supernova", "asteroid": "asteroid",
-             "asteroidler": "asteroid", "asteroidleri": "asteroid",
-             "asteroit": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid"}
+             "supernovalari": "supernova", "supernovalarini": "supernova", "asteroid": "asteroid",
+             "asteroidler": "asteroid", "asteroidleri": "asteroid", "asteroidlerini": "asteroid",
+             "asteroit": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid", "asteroitlerini": "asteroid"}
     tokens = re.findall(r"\S+", text)
-    fillers = {"olay", "olayi", "olaylar", "olaylari", "gercek", "aday", "adayi", "adaylar", "adaylari",
+    fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
                "goster", "listele", "getir", "bana", "lutfen", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")

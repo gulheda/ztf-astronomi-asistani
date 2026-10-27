@@ -58,7 +58,7 @@
     {"id": "U07", "text": "ilk 0 olay", "reject": "parse"},
     {"id": "U08", "text": "süpernova olmayan olaylar", "reject": "parse"},
     {"id": "U09", "text": "olaylar parlaklık 18 altında", "reject": "parse"},
-    {"id": "U10", "text": "son 1 hafta olaylar", "reject": "parse"},
+    {"id": "U10", "text": "son 1 yıl olaylar", "reject": "parse", "note": "hafta artik desteklenir (S62); yil desteklenmez"},
     {"id": "U11", "text": "son 2 ay olaylar", "reject": "parse"},
     {"id": "U12", "text": "dün gece olaylar", "reject": "parse"},
     {"id": "U13", "text": "5 Ekim'deki olaylar", "reject": "parse"},
@@ -96,6 +96,15 @@
     {"id": "S57", "text": "son 24 saat içerisinde olaylar", "expect": {}, "note": "icerisinde zaman eki"},
     {"id": "S58", "text": "son 3 gün içerisindeki r bandında en parlak ilk 2 aday", "expect": {"hours": 72, "band": "r", "order": "brightest", "limit": 2}, "note": "icerisindeki zaman eki"},
     {"id": "U34", "text": "tüm", "reject": "parse", "note": "yalniz dolgu sozcugu sorgu degildir"},
-    {"id": "U35", "text": "ilk 0 tane olay", "reject": "parse", "note": "sayi siniri dolgu sozcugunden etkilenmez"}
+    {"id": "U35", "text": "ilk 0 tane olay", "reject": "parse", "note": "sayi siniri dolgu sozcugunden etkilenmez"},
+    {"id": "S59", "text": "son 24 saatteki süpernova adaylarını göster", "expect": {"kind": "supernova"}, "note": "belirtme hali cogul adaylarini"},
+    {"id": "S60", "text": "son 3 günün olayları", "expect": {"hours": 72}, "note": "tamlayan eki gunun"},
+    {"id": "S61", "text": "son 12 saatin g bandındaki olayları", "expect": {"hours": 12, "band": "g"}, "note": "tamlayan eki saatin"},
+    {"id": "S62", "text": "son 1 hafta", "expect": {"hours": 168}, "note": "hafta birimi"},
+    {"id": "S63", "text": "son 2 haftadaki asteroitler", "expect": {"hours": 336, "kind": "asteroid"}, "note": "hafta birimi ve haftadaki eki"},
+    {"id": "S64", "text": "Son 2 haftalık adaylar", "expect": {"hours": 336}, "note": "haftalik sifat eki"},
+    {"id": "U36", "text": "son 2 ay", "reject": "parse", "note": "ay birimi desteklenmez"},
+    {"id": "U37", "text": "son 0 hafta", "reject": "parse", "note": "sifir hafta gecersiz aralik"},
+    {"id": "U38", "text": "son 53 hafta", "reject": "parse", "note": "365 gunu asan hafta sayisi"}
   ]
 }

@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-27
+Çözümleyici "hafta" birimini (1 hafta = 168 saat), tamlayan ekini ("son 3 günün olayları") ve "adaylarını/olaylarını" biçimlerini tanıyor; değerlendirme seti 95'ten 104 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). Eski "son 1 hafta" ret vakası bilinçli olarak "yıl" ile değiştirildi; belgeler güncellendi.
+
 ## 2026-10-26
 Çözümleyici "tane/adet/tüm/bütün" dolgu sözcüklerini ve "içerisinde/içerisindeki" zaman ekini tanıyor; değerlendirme seti 87'den 95 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 
