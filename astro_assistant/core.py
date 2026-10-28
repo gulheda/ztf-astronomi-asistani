@@ -27,10 +27,17 @@ class Query:
     band: str = ""
 
 
+NUMBER_WORDS = {"bir": 1, "iki": 2, "uc": 3, "dort": 4, "bes": 5,
+                "alti": 6, "yedi": 7, "sekiz": 8, "dokuz": 9, "on": 10}
+
+
 def parse_query(text):
     text = text.translate(str.maketrans("İI", "iı")).lower()
     text = text.translate(str.maketrans("çğıöşü", "cgiosu")).strip()
     text = text.replace(",", " ")
+    # Yalniz "son"/"ilk" sonrasindaki bir-on sayi sozcukleri rakama cevrilir.
+    text = re.sub(r"\b(son|ilk)\s+(" + "|".join(NUMBER_WORDS) + r")\b",
+                  lambda m: "%s %d" % (m[1], NUMBER_WORDS[m[2]]), text)
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
@@ -55,7 +62,7 @@ def parse_query(text):
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.limit <= 200:
         raise ValueError("Sonuç sayısı 1–200 arasında olmalı.")
-    match = re.search(r"\b([gri])\s+bandinda(?:ki)?\b", text)
+    match = re.search(r"\b([gri])\s+(?:bandinda|filtresinde)(?:ki)?\b", text)
     if match:
         recognized = True
         q.band = match[1]

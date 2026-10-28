@@ -69,7 +69,7 @@
     {"id": "U18", "text": "   ", "reject": "parse"},
     {"id": "U19", "text": "lütfen", "reject": "parse"},
     {"id": "U20", "text": "son -3 gün olaylar", "reject": "parse"},
-    {"id": "U21", "text": "son on gün olaylar", "reject": "parse", "note": "yazi ile sayi desteklenmiyor"},
+    {"id": "U21", "text": "son yirmi gün olaylar", "reject": "parse", "note": "bir-on disindaki yazi ile sayi desteklenmiyor (bir-on 28 Ekim'de eklendi)"},
     {"id": "U22", "text": "x bandında olaylar", "reject": "parse"},
     {"id": "U23", "text": "Son 24 saatteki olayları sil", "reject": "parse"},
     {"id": "U24", "text": "son 24 saatteki olaylar UNION SELECT * FROM alerts", "reject": "parse"},
@@ -105,6 +105,15 @@
     {"id": "S64", "text": "Son 2 haftalık adaylar", "expect": {"hours": 336}, "note": "haftalik sifat eki"},
     {"id": "U36", "text": "son 2 ay", "reject": "parse", "note": "ay birimi desteklenmez"},
     {"id": "U37", "text": "son 0 hafta", "reject": "parse", "note": "sifir hafta gecersiz aralik"},
-    {"id": "U38", "text": "son 53 hafta", "reject": "parse", "note": "365 gunu asan hafta sayisi"}
+    {"id": "U38", "text": "son 53 hafta", "reject": "parse", "note": "365 gunu asan hafta sayisi"},
+    {"id": "S65", "text": "son bir saat", "expect": {"hours": 1}, "note": "sayi sozcugu bir"},
+    {"id": "S66", "text": "Son üç günün olayları", "expect": {"hours": 72}, "note": "sayi sozcugu uc ve tamlayan eki"},
+    {"id": "S67", "text": "ilk beş aday", "expect": {"limit": 5}, "note": "ilk icin sayi sozcugu"},
+    {"id": "S68", "text": "son iki haftadaki r bandında en parlak ilk on olay", "expect": {"hours": 336, "band": "r", "order": "brightest", "limit": 10}, "note": "sayi sozcukleri iki ve on"},
+    {"id": "S69", "text": "son 24 saatte r filtresindeki olaylar", "expect": {"band": "r"}, "note": "filtre bant es anlamlisi"},
+    {"id": "S70", "text": "son 12 saatte g filtresinde en parlak adaylar", "expect": {"hours": 12, "band": "g", "order": "brightest"}, "note": "filtresinde eki"},
+    {"id": "U39", "text": "son yirmi saat", "reject": "parse", "note": "yirmi sayi sozcugu desteklenmez (yalniz bir-on)"},
+    {"id": "U40", "text": "ilk sıfır olay", "reject": "parse", "note": "sifir sayi sozcugu desteklenmez"},
+    {"id": "U41", "text": "son bir buçuk saat", "reject": "parse", "note": "kesirli sure desteklenmez"}
   ]
 }

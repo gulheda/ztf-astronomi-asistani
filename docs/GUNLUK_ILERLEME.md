@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-28
+Çözümleyici "son/ilk" sonrasında bir–on yazıyla sayıları ("son üç gün", "ilk beş aday") ve "filtre" sözcüğünü ("r filtresindeki") tanıyor; değerlendirme seti 104'ten 113 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). Eski "son on gün" ret vakası bilinçli olarak "yirmi" ile değiştirildi; belgeler güncellendi.
+
 ## 2026-10-27
 Çözümleyici "hafta" birimini (1 hafta = 168 saat), tamlayan ekini ("son 3 günün olayları") ve "adaylarını/olaylarını" biçimlerini tanıyor; değerlendirme seti 95'ten 104 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). Eski "son 1 hafta" ret vakası bilinçli olarak "yıl" ile değiştirildi; belgeler güncellendi.
 

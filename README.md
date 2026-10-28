@@ -54,7 +54,7 @@ Varsayılan: son 24 saat, en yeni 20 uyarı, skor ≥ 0.5. Zamanlar UTC'dir. “
 | `astro_assistant/core.py` | Türkçe çözümleme, doğrulama, parametreli SQL, demo üretimi |
 | `astro_assistant/dataset.py` | NPZ kontrolü, normalizasyon, nesne bazlı bölme |
 | `astro_assistant/train.py` | Gerçek veri bekleyen TensorFlow eğitim iskeleti |
-| `tests/` | Sorgu, veri bütünlüğü ve sızıntı önleme testleri; 104 sorgulu [değerlendirme seti](docs/SORGU_DEGERLENDIRMESI.md) |
+| `tests/` | Sorgu, veri bütünlüğü ve sızıntı önleme testleri; 113 sorgulu [değerlendirme seti](docs/SORGU_DEGERLENDIRMESI.md) |
 | `docs/PROJE_PLANI.md` | İş paketleri, kabul ölçütleri, öncelikler |
 | `docs/VERI_VE_YONTEM.md` | Veri sözleşmesi ve bilimsel kararlar |
 | `docs/DENEY_PLANI.md` | Model ve kullanıcı değerlendirmesi |
