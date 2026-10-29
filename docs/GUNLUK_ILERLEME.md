@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-29
+Çözümleyici "g bandı olayları", "r filtresi adayları", "i bandı için ..." yalın biçimlerini ve "son 24 saati göster" gibi belirtme halini tanıyor; değerlendirme seti 113'ten 121 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). SORGU_DEGERLENDIRMESI.md'deki eskimiş n sayıları ölçüm çıktısına göre düzeltildi.
+
 ## 2026-10-28
 Çözümleyici "son/ilk" sonrasında bir–on yazıyla sayıları ("son üç gün", "ilk beş aday") ve "filtre" sözcüğünü ("r filtresindeki") tanıyor; değerlendirme seti 104'ten 113 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). Eski "son on gün" ret vakası bilinçli olarak "yirmi" ile değiştirildi; belgeler güncellendi.
 

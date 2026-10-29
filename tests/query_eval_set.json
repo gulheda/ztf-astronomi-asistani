@@ -114,6 +114,14 @@
     {"id": "S70", "text": "son 12 saatte g filtresinde en parlak adaylar", "expect": {"hours": 12, "band": "g", "order": "brightest"}, "note": "filtresinde eki"},
     {"id": "U39", "text": "son yirmi saat", "reject": "parse", "note": "yirmi sayi sozcugu desteklenmez (yalniz bir-on)"},
     {"id": "U40", "text": "ilk sıfır olay", "reject": "parse", "note": "sifir sayi sozcugu desteklenmez"},
-    {"id": "U41", "text": "son bir buçuk saat", "reject": "parse", "note": "kesirli sure desteklenmez"}
+    {"id": "U41", "text": "son bir buçuk saat", "reject": "parse", "note": "kesirli sure desteklenmez"},
+    {"id": "S71", "text": "g bandı olayları", "expect": {"band": "g"}, "note": "yalin 'bandi' tamlama bicimi"},
+    {"id": "S72", "text": "son 24 saat içindeki r bandı adayları", "expect": {"band": "r"}, "note": "zaman eki ve 'bandi'"},
+    {"id": "S73", "text": "i bandı için en parlak ilk 5 olay", "expect": {"band": "i", "order": "brightest", "limit": 5}, "note": "'icin' edati"},
+    {"id": "S74", "text": "g filtresi supernova adayları", "expect": {"band": "g", "kind": "supernova"}, "note": "yalin 'filtresi'"},
+    {"id": "S75", "text": "son 24 saati göster", "expect": {}, "note": "belirtme hali 'saati'"},
+    {"id": "S76", "text": "son 2 günü listele", "expect": {"hours": 48}, "note": "belirtme hali 'gunu'"},
+    {"id": "U42", "text": "g bandı r bandı olayları", "reject": "parse", "note": "tekrarlanan bant filtresi sessizce birlestirilmez"},
+    {"id": "U43", "text": "g için olaylar", "reject": "parse", "note": "bant sozcugu olmadan tek harf bant sayilmaz"}
   ]
 }

@@ -41,7 +41,7 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(\d+)\s+(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
+    match = re.search(r"\bson\s+(\d+)\s+(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
     if match:
         recognized = True
         q.hours = int(match[1]) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
@@ -62,7 +62,7 @@ def parse_query(text):
         text = text[:match.start()] + " " + text[match.end():]
     if not 1 <= q.limit <= 200:
         raise ValueError("Sonuç sayısı 1–200 arasında olmalı.")
-    match = re.search(r"\b([gri])\s+(?:bandinda|filtresinde)(?:ki)?\b", text)
+    match = re.search(r"\b([gri])\s+(?:(?:bandinda|filtresinde)(?:ki)?|bandi|filtresi)(?:\s+icin)?\b", text)
     if match:
         recognized = True
         q.band = match[1]
