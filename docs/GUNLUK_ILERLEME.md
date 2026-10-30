@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-30
+Çözümleyici "gözlenen/gelen" sıfat-fiillerini, "listesi" ve "olayların/adayların/adaylarının" tamlayan biçimlerini tanıyor; değerlendirme seti 121'den 127 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu; olumsuzlama ve sayım sorusu reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-10-29
 Çözümleyici "g bandı olayları", "r filtresi adayları", "i bandı için ..." yalın biçimlerini ve "son 24 saati göster" gibi belirtme halini tanıyor; değerlendirme seti 113'ten 121 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). SORGU_DEGERLENDIRMESI.md'deki eskimiş n sayıları ölçüm çıktısına göre düzeltildi.
 

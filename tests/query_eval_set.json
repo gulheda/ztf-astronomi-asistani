@@ -121,7 +121,15 @@
     {"id": "S74", "text": "g filtresi supernova adayları", "expect": {"band": "g", "kind": "supernova"}, "note": "yalin 'filtresi'"},
     {"id": "S75", "text": "son 24 saati göster", "expect": {}, "note": "belirtme hali 'saati'"},
     {"id": "S76", "text": "son 2 günü listele", "expect": {"hours": 48}, "note": "belirtme hali 'gunu'"},
+    {"id": "S77", "text": "son 3 günde gözlenen olayları göster", "expect": {"hours": 72}, "note": "'gozlenen' sifat-fiili dolgu"},
+    {"id": "S78", "text": "son 6 saatte gelen asteroit adayları", "expect": {"hours": 6, "kind": "asteroid"}, "note": "'gelen' sifat-fiili dolgu"},
+    {"id": "S79", "text": "son 48 saat olayların listesi", "expect": {"hours": 48}, "note": "tamlayan eki 'olayların' ve 'listesi'"},
+    {"id": "S80", "text": "son 24 saatteki supernova adaylarının listesi", "expect": {"kind": "supernova"}, "note": "'adaylarının listesi'"},
+    {"id": "S81", "text": "r bandında gözlenen olaylar", "expect": {"band": "r"}, "note": "bant sonrasi 'gozlenen'"},
+    {"id": "S82", "text": "en parlak ilk 3 g bandında gelen aday", "expect": {"band": "g", "order": "brightest", "limit": 3}, "note": "tekil 'aday' ile 'gelen'"},
     {"id": "U42", "text": "g bandı r bandı olayları", "reject": "parse", "note": "tekrarlanan bant filtresi sessizce birlestirilmez"},
-    {"id": "U43", "text": "g için olaylar", "reject": "parse", "note": "bant sozcugu olmadan tek harf bant sayilmaz"}
+    {"id": "U43", "text": "g için olaylar", "reject": "parse", "note": "bant sozcugu olmadan tek harf bant sayilmaz"},
+    {"id": "U44", "text": "son 3 günde gözlenmeyen olaylar", "reject": "parse", "note": "olumsuzlama 'gozlenmeyen' sessizce yok sayilmaz"},
+    {"id": "U45", "text": "son 24 saatte kaç olay var", "reject": "parse", "note": "sayim sorusu desteklenmez"}
   ]
 }
