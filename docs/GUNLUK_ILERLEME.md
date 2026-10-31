@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-10-31
+Çözümleyici anlamı değiştirmeyen "için" dolgu sözcüğünü tanıyor ("son 24 saat için g bandındaki olaylar"); değerlendirme seti 129'dan 137 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md'deki yanlış sayılar (127, n=47) ölçüm çıktısına göre düzeltildi.
+
 ## 2026-10-30
 Çözümleyici "gözlenen/gelen" sıfat-fiillerini, "listesi" ve "olayların/adayların/adaylarının" tamlayan biçimlerini tanıyor; değerlendirme seti 121'den 127 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu; olumsuzlama ve sayım sorusu reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

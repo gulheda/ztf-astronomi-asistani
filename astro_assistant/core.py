@@ -74,14 +74,14 @@ def parse_query(text):
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen",
-               "goster", "listele", "getir", "bana", "lutfen", "tane", "adet", "tum", "butun"}
+               "goster", "listele", "getir", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and not q.kind:
             q.kind = kinds[token]
             recognized = True
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "bana", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "listesi")
+            recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "listesi")
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:

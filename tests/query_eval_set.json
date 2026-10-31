@@ -127,9 +127,17 @@
     {"id": "S80", "text": "son 24 saatteki supernova adaylarının listesi", "expect": {"kind": "supernova"}, "note": "'adaylarının listesi'"},
     {"id": "S81", "text": "r bandında gözlenen olaylar", "expect": {"band": "r"}, "note": "bant sonrasi 'gozlenen'"},
     {"id": "S82", "text": "en parlak ilk 3 g bandında gelen aday", "expect": {"band": "g", "order": "brightest", "limit": 3}, "note": "tekil 'aday' ile 'gelen'"},
+    {"id": "S83", "text": "son 24 saat için g bandındaki olaylar", "expect": {"band": "g"}, "note": "zaman ifadesinden sonra 'icin'"},
+    {"id": "S84", "text": "son 3 gün için supernova adayları", "expect": {"hours": 72, "kind": "supernova"}, "note": "gun birimi + 'icin'"},
+    {"id": "S85", "text": "son 12 saat için g bandında en parlak olaylar", "expect": {"hours": 12, "order": "brightest", "band": "g"}, "note": "'icin' + en parlak"},
+    {"id": "S86", "text": "Son 2 hafta için ilk 5 asteroit", "expect": {"hours": 336, "limit": 5, "kind": "asteroid"}, "note": "hafta birimi + 'icin' + ilk N"},
+    {"id": "S87", "text": "r filtresi için son 48 saat olayları", "expect": {"hours": 48, "band": "r"}, "note": "filtre + 'icin' sonrasi zaman ifadesi"},
+    {"id": "S88", "text": "olaylar için son 6 saat", "expect": {"hours": 6}, "note": "'icin' olaylar sonrasi da dolgu"},
     {"id": "U42", "text": "g bandı r bandı olayları", "reject": "parse", "note": "tekrarlanan bant filtresi sessizce birlestirilmez"},
     {"id": "U43", "text": "g için olaylar", "reject": "parse", "note": "bant sozcugu olmadan tek harf bant sayilmaz"},
     {"id": "U44", "text": "son 3 günde gözlenmeyen olaylar", "reject": "parse", "note": "olumsuzlama 'gozlenmeyen' sessizce yok sayilmaz"},
-    {"id": "U45", "text": "son 24 saatte kaç olay var", "reject": "parse", "note": "sayim sorusu desteklenmez"}
+    {"id": "U45", "text": "son 24 saatte kaç olay var", "reject": "parse", "note": "sayim sorusu desteklenmez"},
+    {"id": "U46", "text": "için", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
+    {"id": "U47", "text": "son 24 saat için kaç olay", "reject": "parse", "note": "'icin' dolgusu bilinmeyen sozcugu gizlemez"}
   ]
 }
