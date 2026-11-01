@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-01
+Çözümleyici "olan", "neler" ve "nelerdir" dolgu sözcüklerini tanıyor ("son 24 saatteki olaylar nelerdir"); değerlendirme seti 137'den 141 sorguya çıkarıldı (beklenen davranış önce elle yazıldı). "en parlak 5 olay" (ilk olmadan sayı) belgelenmiş karar gereği reddedilmeye devam ediyor. README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-10-31
 Çözümleyici anlamı değiştirmeyen "için" dolgu sözcüğünü tanıyor ("son 24 saat için g bandındaki olaylar"); değerlendirme seti 129'dan 137 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, altı sorgu önceki gramerde reddediliyordu). README ve SORGU_DEGERLENDIRMESI.md'deki yanlış sayılar (127, n=47) ölçüm çıktısına göre düzeltildi.
 

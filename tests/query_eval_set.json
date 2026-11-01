@@ -138,6 +138,10 @@
     {"id": "U44", "text": "son 3 günde gözlenmeyen olaylar", "reject": "parse", "note": "olumsuzlama 'gozlenmeyen' sessizce yok sayilmaz"},
     {"id": "U45", "text": "son 24 saatte kaç olay var", "reject": "parse", "note": "sayim sorusu desteklenmez"},
     {"id": "U46", "text": "için", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
-    {"id": "U47", "text": "son 24 saat için kaç olay", "reject": "parse", "note": "'icin' dolgusu bilinmeyen sozcugu gizlemez"}
+    {"id": "U47", "text": "son 24 saat için kaç olay", "reject": "parse", "note": "'icin' dolgusu bilinmeyen sozcugu gizlemez"},
+    {"id": "S89", "text": "son 24 saatte g bandında olan olaylar", "expect": {"band": "g"}, "note": "'olan' sifat-fiili dolgu"},
+    {"id": "S90", "text": "son 36 saatteki adaylar neler", "expect": {"hours": 36}, "note": "soru sozcugu 'neler' sorguyu degistirmez"},
+    {"id": "S91", "text": "son 24 saatteki olaylar nelerdir", "expect": {}, "note": "soru sozcugu 'nelerdir'"},
+    {"id": "U48", "text": "neler", "reject": "parse", "note": "tek basina soru sozcugu sorgu sayilmaz"}
   ]
 }

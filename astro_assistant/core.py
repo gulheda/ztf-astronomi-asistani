@@ -73,7 +73,7 @@ def parse_query(text):
              "asteroit": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid", "asteroitlerini": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
-               "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen",
+               "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen", "olan", "neler", "nelerdir",
                "goster", "listele", "getir", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
@@ -81,7 +81,7 @@ def parse_query(text):
             q.kind = kinds[token]
             recognized = True
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "listesi")
+            recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "listesi", "olan", "neler", "nelerdir")
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:
