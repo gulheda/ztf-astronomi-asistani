@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-02
+Çözümleyici sorgu ortasındaki noktalamayı ("son 24 saat? olaylar", "son 3 gün. g bandındaki olaylar") ayırıcı sayıyor; önceden boş belirteçli "Desteklenmeyen ifade: ." hatası veriyordu. Değerlendirme seti 141'den 145 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-01
 Çözümleyici "olan", "neler" ve "nelerdir" dolgu sözcüklerini tanıyor ("son 24 saatteki olaylar nelerdir"); değerlendirme seti 137'den 141 sorguya çıkarıldı (beklenen davranış önce elle yazıldı). "en parlak 5 olay" (ilk olmadan sayı) belgelenmiş karar gereği reddedilmeye devam ediyor. README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

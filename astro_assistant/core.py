@@ -35,6 +35,8 @@ def parse_query(text):
     text = text.translate(str.maketrans("İI", "iı")).lower()
     text = text.translate(str.maketrans("çğıöşü", "cgiosu")).strip()
     text = text.replace(",", " ")
+    # Bosluk/sonla cevrili noktalama ayirici sayilir; "2.5" gibi sayilar bozulmaz.
+    text = re.sub(r"[.?!;]+(?=\s|$)", " ", text)
     # Yalniz "son"/"ilk" sonrasindaki bir-on sayi sozcukleri rakama cevrilir.
     text = re.sub(r"\b(son|ilk)\s+(" + "|".join(NUMBER_WORDS) + r")\b",
                   lambda m: "%s %d" % (m[1], NUMBER_WORDS[m[2]]), text)

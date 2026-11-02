@@ -142,6 +142,10 @@
     {"id": "S89", "text": "son 24 saatte g bandında olan olaylar", "expect": {"band": "g"}, "note": "'olan' sifat-fiili dolgu"},
     {"id": "S90", "text": "son 36 saatteki adaylar neler", "expect": {"hours": 36}, "note": "soru sozcugu 'neler' sorguyu degistirmez"},
     {"id": "S91", "text": "son 24 saatteki olaylar nelerdir", "expect": {}, "note": "soru sozcugu 'nelerdir'"},
-    {"id": "U48", "text": "neler", "reject": "parse", "note": "tek basina soru sozcugu sorgu sayilmaz"}
+    {"id": "U48", "text": "neler", "reject": "parse", "note": "tek basina soru sozcugu sorgu sayilmaz"},
+    {"id": "S92", "text": "son 24 saat? olaylar", "expect": {}, "note": "sorgu ortasindaki soru isareti ayirici sayilir"},
+    {"id": "S93", "text": "son 3 gun. g bandındaki olaylar", "expect": {"hours": 72, "band": "g"}, "note": "cumle sonu noktasi ayirici sayilir"},
+    {"id": "S94", "text": "son 12 saatteki g bandı supernovalar; en parlak", "expect": {"hours": 12, "band": "g", "kind": "supernova", "order": "brightest"}, "note": "noktali virgul ayirici sayilir"},
+    {"id": "U49", "text": "son 24 saat? ve olaylar", "reject": "parse", "note": "noktalama bilinmeyen sozcugu gizlemez"}
   ]
 }
