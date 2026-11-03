@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-03
+Çözümleyici tür sözcüklerinin tamlayan ekini ("supernovaların", "asteroidlerin") ve "gözlenmiş/gelmiş" dolgu sıfat-fiillerini tanıyor; değerlendirme seti 145'ten 151 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; "gözlenmemiş" reddedilmeye devam ediyor). SORGU_DEGERLENDIRMESI.md'deki eskimiş n sayıları (88/49) ölçüm çıktısına göre düzeltildi.
+
 ## 2026-11-02
 Çözümleyici sorgu ortasındaki noktalamayı ("son 24 saat? olaylar", "son 3 gün. g bandındaki olaylar") ayırıcı sayıyor; önceden boş belirteçli "Desteklenmeyen ifade: ." hatası veriyordu. Değerlendirme seti 141'den 145 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

@@ -146,6 +146,12 @@
     {"id": "S92", "text": "son 24 saat? olaylar", "expect": {}, "note": "sorgu ortasindaki soru isareti ayirici sayilir"},
     {"id": "S93", "text": "son 3 gun. g bandındaki olaylar", "expect": {"hours": 72, "band": "g"}, "note": "cumle sonu noktasi ayirici sayilir"},
     {"id": "S94", "text": "son 12 saatteki g bandı supernovalar; en parlak", "expect": {"hours": 12, "band": "g", "kind": "supernova", "order": "brightest"}, "note": "noktali virgul ayirici sayilir"},
-    {"id": "U49", "text": "son 24 saat? ve olaylar", "reject": "parse", "note": "noktalama bilinmeyen sozcugu gizlemez"}
+    {"id": "U49", "text": "son 24 saat? ve olaylar", "reject": "parse", "note": "noktalama bilinmeyen sozcugu gizlemez"},
+    {"id": "S95", "text": "son 48 saatteki supernovaların listesi", "expect": {"hours": 48, "kind": "supernova"}, "note": "tur sozcugunun tamlayan eki"},
+    {"id": "S96", "text": "son 3 gün asteroidlerin en parlak olayları g bandında", "expect": {"hours": 72, "kind": "asteroid", "order": "brightest", "band": "g"}, "note": "asteroidlerin tamlayan eki; asteroit yazimi"},
+    {"id": "S97", "text": "son 24 saatte gözlenmiş olaylar", "expect": {}, "note": "'gozlenmis' dolgu sifat-fiili"},
+    {"id": "S98", "text": "son 3 günde gelmiş supernova adayları", "expect": {"hours": 72, "kind": "supernova"}, "note": "'gelmis' dolgu sifat-fiili"},
+    {"id": "U50", "text": "gözlenmiş", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
+    {"id": "U51", "text": "son 24 saatte gözlenmemiş olaylar", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"}
   ]
 }
