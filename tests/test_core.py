@@ -17,6 +17,15 @@ class AssistantTests(unittest.TestCase):
     def run_query(self, text, **kwargs):
         return query_alerts(self.db, parse_query(text), self.now, **kwargs)
 
+    def test_unsupported_time_unit_error_names_the_unit(self):
+        for text, unit in (("son 5 dakikadaki olaylar", "dakika"), ("son 2 ay olaylar", "ay"),
+                           ("son 1 yıl", "yil"), ("son 30 saniye olaylar", "saniye")):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("zaman birimi: " + unit, str(ctx.exception))
+        # Desteklenen birimler ve ay/yil ile baslayan baska sozcukler etkilenmez.
+        self.assertEqual(parse_query("son 2 hafta olaylar").hours, 336)
+
     def test_turkish_and_time_window(self):
         q = parse_query("SON 3 GÜNDEKİ SÜPERNOVALAR")
         self.assertEqual((q.hours, q.kind), (72, "supernova"))

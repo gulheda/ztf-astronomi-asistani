@@ -1,16 +1,16 @@
 # Türkçe sorgu değerlendirmesi ve kullanıcı çalışması taslağı
 
-3 Kasım 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
+4 Kasım 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 151 sorgu (98 desteklenen, 53 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 154 sorgu (98 desteklenen, 56 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
 | Koşul çözümleme (desteklenen, n=98) | 98/98 |
 | Sonuç kümesi tam eşleşmesi (desteklenen, n=98) | 98/98 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=53) | 53/53 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=56) | 56/56 |
 | Boş sonuçlu doğru sorgu | 9 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
@@ -20,6 +20,8 @@ Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karş
 **3 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S95–S98 desteklenen, U50–U51 reddedilen); dört desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 94/98). Gramer genişletildi: tür sözcüklerinin tamlayan eki ("supernovaların/supernovanın/asteroidlerin/asteroitlerin") ve anlamı değiştirmeyen "gözlenmiş/gelmiş" sıfat-fiilleri (tek başına sorgu sayılmaz). Olumsuz "gözlenmemiş" reddedilmeye devam ediyor. Önceki tablodaki n=88/n=49 sayıları eskimişti; ölçüm çıktısıyla düzeltildi.
 **29 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S71–S76 desteklenen, U42–U43 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 70/76: %92,1). Gramer genişletildi: yalın tamlama biçimleri "g bandı olayları", "r filtresi adayları", "i bandı için ..." ve belirtme hali "son 24 saati göster", "son 2 günü listele". Tek harf bant ("g için olaylar") ve tekrarlanan bant ("g bandı r bandı") reddedilmeye devam ediyor. Önceki tablodaki n=64/n=40 sayıları eskimişti; ölçüm çıktısıyla (76 desteklenen, 45 desteklenmeyen) düzeltildi.
 **30 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S77–S82 desteklenen, U44–U45 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 76/82: %92,7). Gramer genişletildi: anlamı değiştirmeyen "gözlenen/gelen" sıfat-fiilleri, "listesi" ve tamlayan ekli "olayların/adayların/adaylarının". Olumsuzlama ("gözlenmeyen") ve sayım sorusu ("kaç olay var") reddedilmeye devam ediyor. **31 Ekim eklemesi:** Beklenen davranış önce elle yazıldı (S83–S88 desteklenen, U46–U47 reddedilen); altı desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 82/88: %93,2). Gramer genişletildi: anlamı değiştirmeyen "için" dolgu sözcüğü ("son 24 saat için g bandındaki olaylar"); tek başına "için" veya bilinmeyen sözcükle birlikte kullanımı ("son 24 saat için kaç olay") reddedilir. Elle yazılan ilk S85 beklentisi bant belirtmediği için yanlıştı (parlaklık sıralaması bant ister); beklenti düzeltildi. Önceki "127 sorgu" ifadesi de yanlıştı (gerçek: 129).
+
+**4 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U52–U54 reddedilen); üçü de önceki gramerde de reddediliyordu, değişen şey hata iletisi: "son 5 dakikadaki olaylar", "son 2 ay" gibi desteklenmeyen zaman birimleri önceden yanıltıcı "Desteklenmeyen ifade: son" veriyordu, artık "Desteklenmeyen zaman birimi: dakika. Saat, gün veya hafta kullanın." deniyor (pilot görevi G5'teki hata iletisinden yeniden ifade etme için). Desteklenen sorgu sayısı ve gramer değişmedi.
 
 Desteklenmeyen sorgu örnekleri (ay/yıl, mutlak tarih, koordinat, olumsuzlama, "ve") bilinçli olarak reddediliyor.
 

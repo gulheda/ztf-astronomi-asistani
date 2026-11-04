@@ -152,6 +152,9 @@
     {"id": "S97", "text": "son 24 saatte gözlenmiş olaylar", "expect": {}, "note": "'gozlenmis' dolgu sifat-fiili"},
     {"id": "S98", "text": "son 3 günde gelmiş supernova adayları", "expect": {"hours": 72, "kind": "supernova"}, "note": "'gelmis' dolgu sifat-fiili"},
     {"id": "U50", "text": "gözlenmiş", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
-    {"id": "U51", "text": "son 24 saatte gözlenmemiş olaylar", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"}
+    {"id": "U51", "text": "son 24 saatte gözlenmemiş olaylar", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"},
+    {"id": "U52", "text": "son 5 dakikadaki olaylar", "reject": "parse", "note": "dakika birimi desteklenmez"},
+    {"id": "U53", "text": "son 3 aydaki supernovalar", "reject": "parse", "note": "ay eki ile de reddedilir"},
+    {"id": "U54", "text": "son 2 saat son 3 ay olaylar", "reject": "parse", "note": "ikinci zaman ifadesi sessizce yok sayilmaz"}
   ]
 }

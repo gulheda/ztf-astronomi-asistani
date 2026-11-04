@@ -48,6 +48,9 @@ def parse_query(text):
         recognized = True
         q.hours = int(match[1]) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
         text = text[:match.start()] + " " + text[match.end():]
+    unit = re.search(r"\bson\s+\d+\s+(dakika|saniye|ay|yil|sene)\w*", text)
+    if unit and not match:
+        raise ValueError("Desteklenmeyen zaman birimi: %s. Saat, gün veya hafta kullanın. Örnek: Son 24 saatteki olaylar" % unit[1])
     if not 1 <= q.hours <= 24 * 365:
         raise ValueError("Zaman aralığı 1 saat ile 365 gün arasında olmalı.")
     if "en parlak" in text:

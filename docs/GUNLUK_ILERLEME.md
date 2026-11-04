@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-04
+Desteklenmeyen zaman birimleri (dakika, saniye, ay, yıl) artık yanıltıcı "Desteklenmeyen ifade: son" yerine birimi adlandıran açık bir hata veriyor ("Saat, gün veya hafta kullanın"); gramer kapsamı değişmedi. Değerlendirme seti 151'den 154 sorguya çıkarıldı (U52–U54, hepsi reddedilen), hata iletisi için birim testi eklendi; README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-03
 Çözümleyici tür sözcüklerinin tamlayan ekini ("supernovaların", "asteroidlerin") ve "gözlenmiş/gelmiş" dolgu sıfat-fiillerini tanıyor; değerlendirme seti 145'ten 151 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; "gözlenmemiş" reddedilmeye devam ediyor). SORGU_DEGERLENDIRMESI.md'deki eskimiş n sayıları (88/49) ölçüm çıktısına göre düzeltildi.
 
