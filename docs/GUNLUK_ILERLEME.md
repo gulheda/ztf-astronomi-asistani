@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-05
+Çözümleyici isimleşmiş "olanlar/gelenler/gözlenenler" dolgu sözcüklerini tanıyor ("son 6 saatte olanlar"); değerlendirme seti 154'ten 160 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; olumsuz "gözlenmeyenler" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-04
 Desteklenmeyen zaman birimleri (dakika, saniye, ay, yıl) artık yanıltıcı "Desteklenmeyen ifade: son" yerine birimi adlandıran açık bir hata veriyor ("Saat, gün veya hafta kullanın"); gramer kapsamı değişmedi. Değerlendirme seti 151'den 154 sorguya çıkarıldı (U52–U54, hepsi reddedilen), hata iletisi için birim testi eklendi; README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

@@ -155,6 +155,12 @@
     {"id": "U51", "text": "son 24 saatte gözlenmemiş olaylar", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"},
     {"id": "U52", "text": "son 5 dakikadaki olaylar", "reject": "parse", "note": "dakika birimi desteklenmez"},
     {"id": "U53", "text": "son 3 aydaki supernovalar", "reject": "parse", "note": "ay eki ile de reddedilir"},
-    {"id": "U54", "text": "son 2 saat son 3 ay olaylar", "reject": "parse", "note": "ikinci zaman ifadesi sessizce yok sayilmaz"}
+    {"id": "U54", "text": "son 2 saat son 3 ay olaylar", "reject": "parse", "note": "ikinci zaman ifadesi sessizce yok sayilmaz"},
+    {"id": "S99", "text": "son 6 saatte olanlar", "expect": {"hours": 6}, "note": "'olanlar' isimlesmis dolgu"},
+    {"id": "S100", "text": "son 2 günde gelenler", "expect": {"hours": 48}, "note": "'gelenler' isimlesmis dolgu"},
+    {"id": "S101", "text": "son 24 saatte g bandında gözlenenler", "expect": {"hours": 24, "band": "g"}, "note": "'gozlenenler' isimlesmis dolgu"},
+    {"id": "S102", "text": "son 12 saatte supernova olanlar", "expect": {"hours": 12, "kind": "supernova"}, "note": "tur sozcugu + 'olanlar'"},
+    {"id": "U55", "text": "olanlar", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
+    {"id": "U56", "text": "son 24 saatte gözlenmeyenler", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"}
   ]
 }
