@@ -43,10 +43,10 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(\d+)\s+(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
+    match = re.search(r"\bson\s+(?:(\d+)\s+)?(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
     if match:
         recognized = True
-        q.hours = int(match[1]) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
+        q.hours = int(match[1] or 1) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
         text = text[:match.start()] + " " + text[match.end():]
     unit = re.search(r"\bson\s+\d+\s+(dakika|saniye|ay|yil|sene)\w*", text)
     if unit and not match:

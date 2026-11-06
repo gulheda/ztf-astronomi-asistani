@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-06
+Çözümleyici sayısız "son hafta/gün/saat" biçimini 1 birim olarak tanıyor ("son hafta olaylar" = 168 saat); değerlendirme seti 160'tan 165 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; "son ay" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-05
 Çözümleyici isimleşmiş "olanlar/gelenler/gözlenenler" dolgu sözcüklerini tanıyor ("son 6 saatte olanlar"); değerlendirme seti 154'ten 160 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; olumsuz "gözlenmeyenler" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

@@ -1,17 +1,17 @@
 # Türkçe sorgu değerlendirmesi ve kullanıcı çalışması taslağı
 
-5 Kasım 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
+6 Kasım 2026 (ilk ölçüm 21 Ekim). [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin ilk ölçümü ve kullanıcı pilotunun görev taslağı.
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 160 sorgu (102 desteklenen, 58 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 165 sorgu (106 desteklenen, 59 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=102) | 102/102 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=102) | 102/102 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=58) | 58/58 |
-| Boş sonuçlu doğru sorgu | 9 |
+| Koşul çözümleme (desteklenen, n=106) | 106/106 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=106) | 106/106 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=59) | 59/59 |
+| Boş sonuçlu doğru sorgu | 10 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
 Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karşılandı. Bunlar proje kararıdır, bilimsel eşik değildir.
@@ -24,6 +24,8 @@ Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karş
 **4 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U52–U54 reddedilen); üçü de önceki gramerde de reddediliyordu, değişen şey hata iletisi: "son 5 dakikadaki olaylar", "son 2 ay" gibi desteklenmeyen zaman birimleri önceden yanıltıcı "Desteklenmeyen ifade: son" veriyordu, artık "Desteklenmeyen zaman birimi: dakika. Saat, gün veya hafta kullanın." deniyor (pilot görevi G5'teki hata iletisinden yeniden ifade etme için). Desteklenen sorgu sayısı ve gramer değişmedi.
 
 **5 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S99–S102 desteklenen, U55–U56 reddedilen); dört desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 98/102). Gramer genişletildi: anlamı değiştirmeyen isimleşmiş "olanlar/gelenler/gözlenenler" dolgu sözcükleri (tek başına sorgu sayılmaz). Olumsuz "gözlenmeyenler" reddedilmeye devam ediyor.
+
+**6 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S103–S106 desteklenen, U57 reddedilen); dört desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 102/106). Gramer genişletildi: sayısız "son hafta/gün/saat" biçimi 1 birim sayılır ("son hafta olaylar" = 168 saat, "son haftanın ..." dahil). Sayısız "son ay" desteklenmeyen birim olarak reddedilmeye devam ediyor.
 
 Desteklenmeyen sorgu örnekleri (ay/yıl, mutlak tarih, koordinat, olumsuzlama, "ve") bilinçli olarak reddediliyor.
 

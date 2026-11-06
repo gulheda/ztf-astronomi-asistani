@@ -161,6 +161,11 @@
     {"id": "S101", "text": "son 24 saatte g bandında gözlenenler", "expect": {"hours": 24, "band": "g"}, "note": "'gozlenenler' isimlesmis dolgu"},
     {"id": "S102", "text": "son 12 saatte supernova olanlar", "expect": {"hours": 12, "kind": "supernova"}, "note": "tur sozcugu + 'olanlar'"},
     {"id": "U55", "text": "olanlar", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
-    {"id": "U56", "text": "son 24 saatte gözlenmeyenler", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"}
+    {"id": "U56", "text": "son 24 saatte gözlenmeyenler", "reject": "parse", "note": "olumsuzlama sessizce yok sayilmaz"},
+    {"id": "S103", "text": "son hafta olaylar", "expect": {"hours": 168}, "note": "sayisiz 'son hafta' = 1 hafta"},
+    {"id": "S104", "text": "son gunde g bandindaki adaylar", "expect": {"hours": 24, "band": "g"}, "note": "sayisiz 'son gun' = 1 gun"},
+    {"id": "S105", "text": "son saatteki olaylar", "expect": {"hours": 1}, "note": "sayisiz 'son saat' = 1 saat"},
+    {"id": "S106", "text": "son haftanin supernova adaylari", "expect": {"hours": 168, "kind": "supernova"}, "note": "sayisiz hafta + tamlayan eki"},
+    {"id": "U57", "text": "son ay olaylar", "reject": "parse", "note": "sayisiz 'ay' desteklenmeyen birim"}
   ]
 }
