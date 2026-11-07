@@ -166,6 +166,11 @@
     {"id": "S104", "text": "son gunde g bandindaki adaylar", "expect": {"hours": 24, "band": "g"}, "note": "sayisiz 'son gun' = 1 gun"},
     {"id": "S105", "text": "son saatteki olaylar", "expect": {"hours": 1}, "note": "sayisiz 'son saat' = 1 saat"},
     {"id": "S106", "text": "son haftanin supernova adaylari", "expect": {"hours": 168, "kind": "supernova"}, "note": "sayisiz hafta + tamlayan eki"},
-    {"id": "U57", "text": "son ay olaylar", "reject": "parse", "note": "sayisiz 'ay' desteklenmeyen birim"}
+    {"id": "U57", "text": "son ay olaylar", "reject": "parse", "note": "sayisiz 'ay' desteklenmeyen birim"},
+    {"id": "S107", "text": "son 24 saatteki supernovalar nedir", "expect": {"hours": 24, "kind": "supernova"}, "note": "'nedir' dolgu sozcugu (nelerdir ile ayni)"},
+    {"id": "S108", "text": "son 3 gunde g bandindaki olaylar nedir", "expect": {"hours": 72, "band": "g"}, "note": "'nedir' + bant"},
+    {"id": "U58", "text": "nedir", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
+    {"id": "U59", "text": "son 1.5 saat olaylar", "reject": "parse", "note": "kesirli sure (noktali) reddedilir"},
+    {"id": "U60", "text": "son 2,5 gun olaylar", "reject": "parse", "note": "kesirli sure (virgullu) reddedilir"}
   ]
 }

@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-07
+Çözümleyici "nedir" dolgu sözcüğünü tanıyor ("son 24 saatteki supernovalar nedir"); kesirli süreler ("son 1.5 saat", "son 2,5 gün") yanıltıcı "Desteklenmeyen ifade: son" yerine "Kesirli süre desteklenmez" hatası veriyor (gramer kapsamı aynı, hata iletisi için birim testi eklendi). Değerlendirme seti 165'ten 170 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-06
 Çözümleyici sayısız "son hafta/gün/saat" biçimini 1 birim olarak tanıyor ("son hafta olaylar" = 168 saat); değerlendirme seti 160'tan 165 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu; "son ay" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

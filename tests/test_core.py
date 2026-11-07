@@ -26,6 +26,12 @@ class AssistantTests(unittest.TestCase):
         # Desteklenen birimler ve ay/yil ile baslayan baska sozcukler etkilenmez.
         self.assertEqual(parse_query("son 2 hafta olaylar").hours, 336)
 
+    def test_fractional_duration_has_clear_error(self):
+        for text in ("son 1.5 saat olaylar", "son 2,5 gün olaylar"):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Kesirli süre desteklenmez", str(ctx.exception))
+
     def test_turkish_and_time_window(self):
         q = parse_query("SON 3 GÜNDEKİ SÜPERNOVALAR")
         self.assertEqual((q.hours, q.kind), (72, "supernova"))

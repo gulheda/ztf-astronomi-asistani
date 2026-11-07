@@ -34,6 +34,9 @@ NUMBER_WORDS = {"bir": 1, "iki": 2, "uc": 3, "dort": 4, "bes": 5,
 def parse_query(text):
     text = text.translate(str.maketrans("İI", "iı")).lower()
     text = text.translate(str.maketrans("çğıöşü", "cgiosu")).strip()
+    fraction = re.search(r"\bson\s+\d+[.,]\d+\s+(?:saat|gun|hafta)", text)
+    if fraction:
+        raise ValueError("Kesirli süre desteklenmez: %s. Tam sayı kullanın. Örnek: Son 2 gündeki olaylar" % fraction[0])
     text = text.replace(",", " ")
     # Bosluk/sonla cevrili noktalama ayirici sayilir; "2.5" gibi sayilar bozulmaz.
     text = re.sub(r"[.?!;]+(?=\s|$)", " ", text)
@@ -80,7 +83,7 @@ def parse_query(text):
              "asteroit": "asteroid", "asteroitin": "asteroid", "asteroitlerin": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid", "asteroitlerini": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
-               "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "olanlar", "gelenler", "gozlenenler",
+               "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
                "goster", "listele", "getir", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
@@ -88,7 +91,7 @@ def parse_query(text):
             q.kind = kinds[token]
             recognized = True
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "olanlar", "gelenler", "gozlenenler")
+            recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:
