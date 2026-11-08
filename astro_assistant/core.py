@@ -92,6 +92,8 @@ def parse_query(text):
             recognized = True
         elif token in fillers:
             recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
+        elif token in ("ve", "veya", "ile"):
+            raise ValueError("Birleşik sorgu desteklenmez: '%s'. Tek tür ve tek bant kullanın. Örnek: Son 24 saatteki supernovalar" % token)
         else:
             raise ValueError("Desteklenmeyen ifade: %s. Örnek: Son 24 saatteki en parlak olaylar" % token)
     if not recognized:

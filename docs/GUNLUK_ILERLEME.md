@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-08
+"ve/veya/ile" ile birleştirilen sorgular ("supernova veya asteroid") genel "Desteklenmeyen ifade" yerine "Birleşik sorgu desteklenmez" hatası veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 170'ten 173 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-07
 Çözümleyici "nedir" dolgu sözcüğünü tanıyor ("son 24 saatteki supernovalar nedir"); kesirli süreler ("son 1.5 saat", "son 2,5 gün") yanıltıcı "Desteklenmeyen ifade: son" yerine "Kesirli süre desteklenmez" hatası veriyor (gramer kapsamı aynı, hata iletisi için birim testi eklendi). Değerlendirme seti 165'ten 170 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

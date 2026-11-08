@@ -32,6 +32,17 @@ class AssistantTests(unittest.TestCase):
                 parse_query(text)
             self.assertIn("Kesirli süre desteklenmez", str(ctx.exception))
 
+    def test_conjunction_has_clear_error(self):
+        for text in ("son 24 saatte supernova veya asteroid", "supernova ve asteroidler",
+                     "son 3 gunde supernova ile asteroid"):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Birleşik sorgu desteklenmez", str(ctx.exception))
+        # Bagli sozcuk olmadan hata iletisi degismez.
+        with self.assertRaises(ValueError) as ctx:
+            parse_query("son 24 saat bilinmeyen")
+        self.assertIn("Desteklenmeyen ifade: bilinmeyen", str(ctx.exception))
+
     def test_turkish_and_time_window(self):
         q = parse_query("SON 3 GÜNDEKİ SÜPERNOVALAR")
         self.assertEqual((q.hours, q.kind), (72, "supernova"))

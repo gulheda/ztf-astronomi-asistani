@@ -4,13 +4,13 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 170 sorgu (108 desteklenen, 62 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 173 sorgu (108 desteklenen, 65 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
 | Koşul çözümleme (desteklenen, n=108) | 108/108 |
 | Sonuç kümesi tam eşleşmesi (desteklenen, n=108) | 108/108 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=62) | 62/62 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=65) | 65/65 |
 | Boş sonuçlu doğru sorgu | 10 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
@@ -28,6 +28,8 @@ Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karş
 **6 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S103–S106 desteklenen, U57 reddedilen); dört desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 102/106). Gramer genişletildi: sayısız "son hafta/gün/saat" biçimi 1 birim sayılır ("son hafta olaylar" = 168 saat, "son haftanın ..." dahil). Sayısız "son ay" desteklenmeyen birim olarak reddedilmeye devam ediyor.
 
 **7 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S107–S108 desteklenen, U58–U60 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 106/108). Gramer genişletildi: "nedir" dolgu sözcüğü ("nelerdir" gibi; tek başına sorgu sayılmaz). Kesirli süreler ("son 1.5 saat", "son 2,5 gün") hâlâ desteklenmiyor, ama önceden yanıltıcı "Desteklenmeyen ifade: son" veriyordu; artık "Kesirli süre desteklenmez ... Tam sayı kullanın" deniyor.
+
+**8 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U61–U63, hepsi reddedilen). "ve/veya/ile" ile birleştirilen sorgular ("supernova veya asteroid", "g ve r bandı") hâlâ desteklenmiyor, ama önceden genel "Desteklenmeyen ifade: ve" veriyordu; artık "Birleşik sorgu desteklenmez ... Tek tür ve tek bant kullanın" deniyor. Gramer kapsamı değişmedi.
 
 Desteklenmeyen sorgu örnekleri (ay/yıl, mutlak tarih, koordinat, olumsuzlama, "ve") bilinçli olarak reddediliyor.
 
