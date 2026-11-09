@@ -43,6 +43,17 @@ class AssistantTests(unittest.TestCase):
             parse_query("son 24 saat bilinmeyen")
         self.assertIn("Desteklenmeyen ifade: bilinmeyen", str(ctx.exception))
 
+    def test_negation_and_count_have_clear_errors(self):
+        for text in ("son 24 saatteki supernova olmayanlar", "supernova olmayan olaylar",
+                     "son 24 saatteki supernovalar haric", "son 24 saatteki asteroid degil"):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Olumsuzlama veya hariç tutma desteklenmez", str(ctx.exception))
+        for text in ("son 24 saatteki olaylarin sayisi", "son 24 saatte kac supernova var"):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Sayım sorusu desteklenmez", str(ctx.exception))
+
     def test_turkish_and_time_window(self):
         q = parse_query("SON 3 GÜNDEKİ SÜPERNOVALAR")
         self.assertEqual((q.hours, q.kind), (72, "supernova"))

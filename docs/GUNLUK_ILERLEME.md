@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-09
+Olumsuzlama/hariç tutma ("olmayanlar", "haric", "degil") ve sayım soruları ("sayisi", "kac") genel "Desteklenmeyen ifade" yerine açık hata iletisi veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 173'ten 176 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-08
 "ve/veya/ile" ile birleştirilen sorgular ("supernova veya asteroid") genel "Desteklenmeyen ifade" yerine "Birleşik sorgu desteklenmez" hatası veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 170'ten 173 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

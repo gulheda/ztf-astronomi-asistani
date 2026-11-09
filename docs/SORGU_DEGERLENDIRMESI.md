@@ -4,13 +4,13 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 173 sorgu (108 desteklenen, 65 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 176 sorgu (108 desteklenen, 68 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
 | Koşul çözümleme (desteklenen, n=108) | 108/108 |
 | Sonuç kümesi tam eşleşmesi (desteklenen, n=108) | 108/108 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=65) | 65/65 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=68) | 68/68 |
 | Boş sonuçlu doğru sorgu | 10 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
@@ -46,3 +46,5 @@ Henüz çalıştırılmadı. Veri kaynağı (issue #1) kesinleşmeden son görev
 | G5 | Desteklenmeyen bir isteği (ör. "son 2 ay") yerine getir | Hata iletisinden yeniden ifade eder |
 
 Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlama (0/1), süre (sn), kullanıcı işlemi sayısı, hata sayısı, kısa geri bildirim. Ayrı not edilecekler: işlem sayısının neyi kapsadığı pilot öncesi yazılı tanımlanmalı; pilot (3 kişi) sonuçları nihai örneklemle karıştırılmaz; kurumun gerekli gördüğü etik/katılım süreci danışmanla netleştirilmeli.
+
+**9 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U64–U66, hepsi reddedilen; ölçüm 68/68). Gramer kapsamı değişmedi: olumsuzlama/hariç tutma ("olmayanlar", "haric", "degil") ve sayım soruları ("sayisi", "kac") hâlâ desteklenmiyor, ama önceden genel "Desteklenmeyen ifade" veriyordu; artık "Olumsuzlama veya hariç tutma desteklenmez" ve "Sayım sorusu desteklenmez" iletileri veriliyor.
