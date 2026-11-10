@@ -54,6 +54,16 @@ class AssistantTests(unittest.TestCase):
                 parse_query(text)
             self.assertIn("Sayım sorusu desteklenmez", str(ctx.exception))
 
+    def test_repeated_kind_band_and_bare_number_have_clear_errors(self):
+        cases = {"son 24 saatte supernova asteroid": "Birden fazla tür",
+                 "son 24 saatte supernova supernova": "Birden fazla tür",
+                 "son 24 saatte g bandinda r bandinda olaylar": "Birden fazla bant",
+                 "en parlak 5 supernova": "Tek başına sayı"}
+        for text, message in cases.items():
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn(message, str(ctx.exception))
+
     def test_turkish_and_time_window(self):
         q = parse_query("SON 3 GÜNDEKİ SÜPERNOVALAR")
         self.assertEqual((q.hours, q.kind), (72, "supernova"))

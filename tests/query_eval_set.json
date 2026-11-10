@@ -177,6 +177,10 @@
     {"id": "U63", "text": "son 3 gunde supernova ile asteroid", "reject": "parse", "note": "'ile' ile birlestirme desteklenmiyor"},
     {"id": "U64", "text": "son 24 saatteki supernovalar haric olaylar", "reject": "parse", "note": "haric tutma desteklenmiyor"},
     {"id": "U65", "text": "son 24 saatteki olaylarin sayisi", "reject": "parse", "note": "sayim sorusu desteklenmiyor"},
-    {"id": "U66", "text": "son 2 gunde kac asteroid", "reject": "parse", "note": "sayim sorusu desteklenmiyor"}
+    {"id": "U66", "text": "son 2 gunde kac asteroid", "reject": "parse", "note": "sayim sorusu desteklenmiyor"},
+    {"id": "U67", "text": "son 24 saatte supernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"},
+    {"id": "U68", "text": "son 24 saatte supernova supernova", "reject": "parse", "note": "tekrarlanan tur sessizce birlestirilmez"},
+    {"id": "U69", "text": "son 24 saatte g bandinda r bandinda olaylar", "reject": "parse", "note": "iki bant birlikte desteklenmiyor"},
+    {"id": "U70", "text": "en parlak 5 supernova", "reject": "parse", "note": "'ilk' olmadan tek basina sayi desteklenmiyor"}
   ]
 }

@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-10
+İki tür ("supernova asteroid"), iki bant ("g bandında r bandında") ve "ilk" olmadan tek başına sayı ("en parlak 5 supernova") yanıltıcı "Desteklenmeyen ifade: ..." yerine açık hata iletisi veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 176'dan 180 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-09
 Olumsuzlama/hariç tutma ("olmayanlar", "haric", "degil") ve sayım soruları ("sayisi", "kac") genel "Desteklenmeyen ifade" yerine açık hata iletisi veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 173'ten 176 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

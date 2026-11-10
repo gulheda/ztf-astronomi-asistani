@@ -75,6 +75,8 @@ def parse_query(text):
         recognized = True
         q.band = match[1]
         text = text[:match.start()] + " " + text[match.end():]
+        if re.search(r"\b[gri]\s+(?:(?:bandinda|filtresinde)(?:ki)?|bandi|filtresi)\b", text):
+            raise ValueError("Birden fazla bant desteklenmez. Tek bant yazın. Örnek: Son 24 saatteki g bandındaki olaylar")
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
              "supernovalari": "supernova", "supernovalarini": "supernova",
              "supernovanin": "supernova", "supernovalarin": "supernova", "asteroid": "asteroid",
@@ -87,9 +89,13 @@ def parse_query(text):
                "goster", "listele", "getir", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
-        if token in kinds and not q.kind:
+        if token in kinds and q.kind:
+            raise ValueError("Birden fazla tür desteklenmez: '%s'. Tek tür yazın. Örnek: Son 24 saatteki supernovalar" % token)
+        elif token in kinds:
             q.kind = kinds[token]
             recognized = True
+        elif token.isdigit():
+            raise ValueError("Tek başına sayı desteklenmez: '%s'. Sonuç sayısı için 'ilk N' yazın. Örnek: Son 24 saatteki ilk 5 olay" % token)
         elif token in fillers:
             recognized = recognized or token not in ("lutfen", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         elif token in ("olmayan", "olmayanlar", "degil", "haric", "disinda", "gozlenmemis", "gozlenmeyen", "gozlenmeyenler"):
