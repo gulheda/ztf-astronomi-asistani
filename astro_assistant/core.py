@@ -79,9 +79,9 @@ def parse_query(text):
             raise ValueError("Birden fazla bant desteklenmez. Tek bant yazın. Örnek: Son 24 saatteki g bandındaki olaylar")
     kinds = {"supernova": "supernova", "supernovalar": "supernova",
              "supernovalari": "supernova", "supernovalarini": "supernova",
-             "supernovanin": "supernova", "supernovalarin": "supernova", "asteroid": "asteroid",
+             "supernovanin": "supernova", "supernovayi": "supernova", "supernovalarin": "supernova", "asteroid": "asteroid",
              "asteroidler": "asteroid", "asteroidleri": "asteroid", "asteroidlerini": "asteroid",
-             "asteroidin": "asteroid", "asteroidlerin": "asteroid",
+             "asteroidin": "asteroid", "asteroidi": "asteroid", "asteroiti": "asteroid", "asteroidlerin": "asteroid",
              "asteroit": "asteroid", "asteroitin": "asteroid", "asteroitlerin": "asteroid", "asteroitler": "asteroid", "asteroitleri": "asteroid", "asteroitlerini": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",

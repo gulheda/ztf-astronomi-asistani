@@ -169,6 +169,10 @@
     {"id": "U57", "text": "son ay olaylar", "reject": "parse", "note": "sayisiz 'ay' desteklenmeyen birim"},
     {"id": "S107", "text": "son 24 saatteki supernovalar nedir", "expect": {"hours": 24, "kind": "supernova"}, "note": "'nedir' dolgu sozcugu (nelerdir ile ayni)"},
     {"id": "S108", "text": "son 3 gunde g bandindaki olaylar nedir", "expect": {"hours": 72, "band": "g"}, "note": "'nedir' + bant"},
+    {"id": "S109", "text": "son 24 saatteki supernovayi goster", "expect": {"hours": 24, "kind": "supernova"}, "note": "tekil belirtme hali"},
+    {"id": "S110", "text": "son 3 gundeki asteroidi getir", "expect": {"hours": 72, "kind": "asteroid"}, "note": "tekil belirtme hali asteroid"},
+    {"id": "S111", "text": "son 24 saatteki asteroiti listele", "expect": {"hours": 24, "kind": "asteroid"}, "note": "asteroit yazimi belirtme hali"},
+    {"id": "S112", "text": "son 1 haftadaki g bandindaki en parlak supernovayi goster", "expect": {"hours": 168, "kind": "supernova", "order": "brightest", "band": "g"}, "note": "belirtme hali + en parlak"},
     {"id": "U58", "text": "nedir", "reject": "parse", "note": "tek basina dolgu sozcugu sorgu sayilmaz"},
     {"id": "U59", "text": "son 1.5 saat olaylar", "reject": "parse", "note": "kesirli sure (noktali) reddedilir"},
     {"id": "U60", "text": "son 2,5 gun olaylar", "reject": "parse", "note": "kesirli sure (virgullu) reddedilir"},
@@ -181,6 +185,7 @@
     {"id": "U67", "text": "son 24 saatte supernova asteroid", "reject": "parse", "note": "iki tur birlikte desteklenmiyor"},
     {"id": "U68", "text": "son 24 saatte supernova supernova", "reject": "parse", "note": "tekrarlanan tur sessizce birlestirilmez"},
     {"id": "U69", "text": "son 24 saatte g bandinda r bandinda olaylar", "reject": "parse", "note": "iki bant birlikte desteklenmiyor"},
-    {"id": "U70", "text": "en parlak 5 supernova", "reject": "parse", "note": "'ilk' olmadan tek basina sayi desteklenmiyor"}
+    {"id": "U70", "text": "en parlak 5 supernova", "reject": "parse", "note": "'ilk' olmadan tek basina sayi desteklenmiyor"},
+    {"id": "U71", "text": "son 24 saatteki supernovalara bak", "reject": "parse", "note": "yonelme hali (-lara) desteklenmiyor; yalniz belirtme/tamlayan halleri"}
   ]
 }

@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-11
+Çözümleyici tekil belirtme hallerini tanıyor ("son 24 saatteki supernovayı göster", "asteroidi getir"); değerlendirme seti 180'den 185 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu; yönelme hali "supernovalara" reddedilmeye devam ediyor). SORGU_DEGERLENDIRMESI.md'deki eskimiş ret sayısı (68) ölçüme göre 73 olarak düzeltildi.
+
 ## 2026-11-10
 İki tür ("supernova asteroid"), iki bant ("g bandında r bandında") ve "ilk" olmadan tek başına sayı ("en parlak 5 supernova") yanıltıcı "Desteklenmeyen ifade: ..." yerine açık hata iletisi veriyor (gramer kapsamı aynı, birim testi eklendi). Değerlendirme seti 176'dan 180 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

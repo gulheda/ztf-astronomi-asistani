@@ -4,14 +4,14 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 180 sorgu (108 desteklenen, 72 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 185 sorgu (112 desteklenen, 73 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=108) | 108/108 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=108) | 108/108 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=68) | 68/68 |
-| Boş sonuçlu doğru sorgu | 10 |
+| Koşul çözümleme (desteklenen, n=112) | 112/112 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=112) | 112/112 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=73) | 73/73 |
+| Boş sonuçlu doğru sorgu | 11 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
 Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karşılandı. Bunlar proje kararıdır, bilimsel eşik değildir.
@@ -48,3 +48,5 @@ Henüz çalıştırılmadı. Veri kaynağı (issue #1) kesinleşmeden son görev
 Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlama (0/1), süre (sn), kullanıcı işlemi sayısı, hata sayısı, kısa geri bildirim. Ayrı not edilecekler: işlem sayısının neyi kapsadığı pilot öncesi yazılı tanımlanmalı; pilot (3 kişi) sonuçları nihai örneklemle karıştırılmaz; kurumun gerekli gördüğü etik/katılım süreci danışmanla netleştirilmeli.
 
 **9 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U64–U66, hepsi reddedilen; ölçüm 68/68). Gramer kapsamı değişmedi: olumsuzlama/hariç tutma ("olmayanlar", "haric", "degil") ve sayım soruları ("sayisi", "kac") hâlâ desteklenmiyor, ama önceden genel "Desteklenmeyen ifade" veriyordu; artık "Olumsuzlama veya hariç tutma desteklenmez" ve "Sayım sorusu desteklenmez" iletileri veriliyor.
+
+**11 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S109–S112 desteklenen, U71 reddedilen); üç desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 109/112). S112'nin ilk elle yazılmış hâli bant içermiyordu ve belgelenmiş "en parlak için bant gerekir" kuralına aykırıydı; beklenti düzeltildi (gramer değil). Gramer genişletildi: tekil belirtme halleri "supernovayı/asteroidi/asteroiti". Yönelme hali ("supernovalara") reddedilmeye devam ediyor. Tablodaki eskimiş ret sayısı (n=68) ölçüm çıktısına göre n=73 olarak düzeltildi (71 çözümleme + 2 sorgu reddi).
