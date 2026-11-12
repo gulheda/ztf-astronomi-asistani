@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-12
+Çözümleyici yönelme hallerini tanıyor ("son 24 saatteki supernovalara bak", "asteroide bak"); değerlendirme seti 185'ten 188 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu; ayrılma hali "supernovalardan" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
+
 ## 2026-11-11
 Çözümleyici tekil belirtme hallerini tanıyor ("son 24 saatteki supernovayı göster", "asteroidi getir"); değerlendirme seti 180'den 185 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu; yönelme hali "supernovalara" reddedilmeye devam ediyor). SORGU_DEGERLENDIRMESI.md'deki eskimiş ret sayısı (68) ölçüme göre 73 olarak düzeltildi.
 

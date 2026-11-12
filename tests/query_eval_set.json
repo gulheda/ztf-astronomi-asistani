@@ -186,6 +186,9 @@
     {"id": "U68", "text": "son 24 saatte supernova supernova", "reject": "parse", "note": "tekrarlanan tur sessizce birlestirilmez"},
     {"id": "U69", "text": "son 24 saatte g bandinda r bandinda olaylar", "reject": "parse", "note": "iki bant birlikte desteklenmiyor"},
     {"id": "U70", "text": "en parlak 5 supernova", "reject": "parse", "note": "'ilk' olmadan tek basina sayi desteklenmiyor"},
-    {"id": "U71", "text": "son 24 saatteki supernovalara bak", "reject": "parse", "note": "yonelme hali (-lara) desteklenmiyor; yalniz belirtme/tamlayan halleri"}
+    {"id": "S113", "text": "son 24 saatteki supernovalara bak", "expect": {"hours": 24, "kind": "supernova"}, "note": "yonelme hali + bak"},
+    {"id": "S114", "text": "son 3 gunde asteroide bak", "expect": {"hours": 72, "kind": "asteroid"}, "note": "tekil yonelme hali"},
+    {"id": "S115", "text": "son 12 saatte g bandinda supernovaya bak", "expect": {"hours": 12, "band": "g", "kind": "supernova"}, "note": "yonelme hali + bant"},
+    {"id": "U71", "text": "son 24 saatteki supernovalardan", "reject": "parse", "note": "ayrilma hali (-lardan) desteklenmiyor"}
   ]
 }

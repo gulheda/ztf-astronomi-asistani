@@ -4,7 +4,7 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 185 sorgu (112 desteklenen, 73 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 188 sorgu (115 desteklenen, 73 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
@@ -50,3 +50,5 @@ Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlam
 **9 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U64–U66, hepsi reddedilen; ölçüm 68/68). Gramer kapsamı değişmedi: olumsuzlama/hariç tutma ("olmayanlar", "haric", "degil") ve sayım soruları ("sayisi", "kac") hâlâ desteklenmiyor, ama önceden genel "Desteklenmeyen ifade" veriyordu; artık "Olumsuzlama veya hariç tutma desteklenmez" ve "Sayım sorusu desteklenmez" iletileri veriliyor.
 
 **11 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S109–S112 desteklenen, U71 reddedilen); üç desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 109/112). S112'nin ilk elle yazılmış hâli bant içermiyordu ve belgelenmiş "en parlak için bant gerekir" kuralına aykırıydı; beklenti düzeltildi (gramer değil). Gramer genişletildi: tekil belirtme halleri "supernovayı/asteroidi/asteroiti". Yönelme hali ("supernovalara") reddedilmeye devam ediyor. Tablodaki eskimiş ret sayısı (n=68) ölçüm çıktısına göre n=73 olarak düzeltildi (71 çözümleme + 2 sorgu reddi).
+
+**12 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S113–S115 desteklenen, U71 yeniden yazıldı); S113–S115 önceki gramerde reddediliyordu (ölçüm 112/115). Gramer genişletildi: yönelme halleri "supernovaya/supernovalara/asteroide/asteroidlere/asteroite" ve "bak" dolgu sözcüğü. Ayrılma hali ("supernovalardan") reddedilmeye devam ediyor (U71). Küme 188 sorgu; ölçüm: 115 desteklenen, 73 desteklenmeyen, hata yok.
