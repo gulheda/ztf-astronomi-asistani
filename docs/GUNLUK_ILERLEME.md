@@ -1,3 +1,6 @@
+## 2026-11-13
+Çözümleyici "son 24 saat boyunca" zaman ekini tanıyor; dün/bugün/yarın sözcükleri yanıltıcı "Desteklenmeyen ifade" yerine "Takvim günü desteklenmez" hatası veriyor (kapsam aynı). Değerlendirme seti 188'den 194 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüm çıktısına göre düzeltildi.
+
 # Günlük ilerleme
 
 ## 2026-11-12

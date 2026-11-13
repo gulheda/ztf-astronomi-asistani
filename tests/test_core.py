@@ -32,6 +32,18 @@ class AssistantTests(unittest.TestCase):
                 parse_query(text)
             self.assertIn("Kesirli süre desteklenmez", str(ctx.exception))
 
+    def test_calendar_day_words_have_clear_error(self):
+        for text, word in (("dünkü olaylar", "dunku"), ("bugün supernovalar", "bugun")):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Takvim günü desteklenmez: '%s'" % word, str(ctx.exception))
+
+    def test_boyunca_is_time_suffix(self):
+        self.assertEqual(parse_query("son 24 saat boyunca olaylar").hours, 24)
+        self.assertEqual(parse_query("son hafta boyunca olaylar").hours, 168)
+        with self.assertRaises(ValueError):
+            parse_query("boyunca olaylar")
+
     def test_conjunction_has_clear_error(self):
         for text in ("son 24 saatte supernova veya asteroid", "supernova ve asteroidler",
                      "son 3 gunde supernova ile asteroid"):

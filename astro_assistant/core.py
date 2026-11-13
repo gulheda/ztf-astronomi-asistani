@@ -46,7 +46,7 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(?:(\d+)\s+)?(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde)?\b", text)
+    match = re.search(r"\bson\s+(?:(\d+)\s+)?(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde|\s+boyunca)?\b", text)
     if match:
         recognized = True
         q.hours = int(match[1] or 1) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
@@ -102,6 +102,8 @@ def parse_query(text):
             recognized = recognized or token not in ("lutfen", "bak", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         elif token in ("olmayan", "olmayanlar", "degil", "haric", "disinda", "gozlenmemis", "gozlenmeyen", "gozlenmeyenler"):
             raise ValueError("Olumsuzlama veya hariç tutma desteklenmez: '%s'. Yalnızca istenen tür ve bandı yazın. Örnek: Son 24 saatteki supernovalar" % token)
+        elif token in ("dun", "dunku", "dunun", "bugun", "bugunku", "bugunun", "yarin"):
+            raise ValueError("Takvim günü desteklenmez: '%s'. Göreli süre yazın. Örnek: Son 24 saatteki olaylar" % token)
         elif token in ("sayisi", "sayisini", "kac", "kactir"):
             raise ValueError("Sayım sorusu desteklenmez: '%s'. Olayları listeleyin. Örnek: Son 24 saatteki olaylar" % token)
         elif token in ("ve", "veya", "ile"):

@@ -4,14 +4,14 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 188 sorgu (115 desteklenen, 73 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 194 sorgu (118 desteklenen, 76 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=112) | 112/112 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=112) | 112/112 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=73) | 73/73 |
-| Boş sonuçlu doğru sorgu | 11 |
+| Koşul çözümleme (desteklenen, n=118) | 118/118 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=118) | 118/118 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=76) | 76/76 |
+| Boş sonuçlu doğru sorgu | 13 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
 Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karşılandı. Bunlar proje kararıdır, bilimsel eşik değildir.
@@ -52,3 +52,5 @@ Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlam
 **11 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S109–S112 desteklenen, U71 reddedilen); üç desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 109/112). S112'nin ilk elle yazılmış hâli bant içermiyordu ve belgelenmiş "en parlak için bant gerekir" kuralına aykırıydı; beklenti düzeltildi (gramer değil). Gramer genişletildi: tekil belirtme halleri "supernovayı/asteroidi/asteroiti". Yönelme hali ("supernovalara") reddedilmeye devam ediyor. Tablodaki eskimiş ret sayısı (n=68) ölçüm çıktısına göre n=73 olarak düzeltildi (71 çözümleme + 2 sorgu reddi).
 
 **12 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S113–S115 desteklenen, U71 yeniden yazıldı); S113–S115 önceki gramerde reddediliyordu (ölçüm 112/115). Gramer genişletildi: yönelme halleri "supernovaya/supernovalara/asteroide/asteroidlere/asteroite" ve "bak" dolgu sözcüğü. Ayrılma hali ("supernovalardan") reddedilmeye devam ediyor (U71). Küme 188 sorgu; ölçüm: 115 desteklenen, 73 desteklenmeyen, hata yok.
+
+**13 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S116–S118 desteklenen, U72–U74 reddedilen); S116–S118 önceki gramerde reddediliyordu (ölçüm 115/118). Gramer genişletildi: "son 24 saat boyunca" zaman eki. Takvim günü sözcükleri (dün/bugün/yarın ve -ki biçimleri) "Desteklenmeyen ifade" yerine "Takvim günü desteklenmez" hatası veriyor; kapsam değişmedi. Tablodaki eskimiş n=112 sayıları ölçüm çıktısına göre düzeltildi (118 desteklenen, 76 desteklenmeyen, hata yok).
