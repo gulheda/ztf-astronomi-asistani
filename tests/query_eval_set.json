@@ -195,6 +195,11 @@
     {"id": "S118", "text": "son hafta boyunca gelen adaylar", "expect": {"hours": 168}, "note": "sayisiz birim + boyunca"},
     {"id": "U72", "text": "dunku olaylar", "reject": "parse", "note": "takvim gunu (dun) desteklenmiyor; son N saat/gun kullanilmali"},
     {"id": "U73", "text": "bugunku supernovalar", "reject": "parse", "note": "takvim gunu (bugun) desteklenmiyor"},
-    {"id": "U74", "text": "boyunca olaylar", "reject": "parse", "note": "'boyunca' zaman ifadesi olmadan tek basina taninmaz"}
+    {"id": "U74", "text": "boyunca olaylar", "reject": "parse", "note": "'boyunca' zaman ifadesi olmadan tek basina taninmaz"},
+    {"id": "S119", "text": "son 24 saatteki supernovalari bul", "expect": {"hours": 24, "kind": "supernova"}, "note": "'bul' emir fiili dolgu"},
+    {"id": "S120", "text": "son 2 gunde g bandindaki adaylari bul", "expect": {"hours": 48, "band": "g"}, "note": "bul + bant + aday"},
+    {"id": "S121", "text": "bana son 6 saatteki en parlak r bandi olaylarini bul", "expect": {"hours": 6, "band": "r", "order": "brightest"}, "note": "bana + bul + en parlak"},
+    {"id": "U75", "text": "bul", "reject": "parse", "note": "'bul' tek basina sorgu sayilmaz"},
+    {"id": "U76", "text": "son 24 saatteki olaylari ara", "reject": "parse", "note": "'ara' (arama emri) bilinmeyen soz; desteklenmiyor"}
   ]
 }

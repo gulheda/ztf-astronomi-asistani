@@ -88,7 +88,7 @@ def parse_query(text):
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
-               "goster", "listele", "getir", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
+               "goster", "listele", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and q.kind:
@@ -99,7 +99,7 @@ def parse_query(text):
         elif token.isdigit():
             raise ValueError("Tek başına sayı desteklenmez: '%s'. Sonuç sayısı için 'ilk N' yazın. Örnek: Son 24 saatteki ilk 5 olay" % token)
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "bak", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
+            recognized = recognized or token not in ("lutfen", "bul", "bak", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         elif token in ("olmayan", "olmayanlar", "degil", "haric", "disinda", "gozlenmemis", "gozlenmeyen", "gozlenmeyenler"):
             raise ValueError("Olumsuzlama veya hariç tutma desteklenmez: '%s'. Yalnızca istenen tür ve bandı yazın. Örnek: Son 24 saatteki supernovalar" % token)
         elif token in ("dun", "dunku", "dunun", "bugun", "bugunku", "bugunun", "yarin"):
