@@ -6,6 +6,9 @@
 
 # Günlük ilerleme
 
+## 2026-11-15
+Çözümleyici "uyarı/alert" sözcüklerini ("son 24 saatteki uyarılar", "alertleri göster") dolgu olarak tanıyor; "en son olaylar" artık "en yeni" gibi varsayılan yeni-önce sıralama sayılıyor. Değerlendirme seti 199'dan 203 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-12
 Çözümleyici yönelme hallerini tanıyor ("son 24 saatteki supernovalara bak", "asteroide bak"); değerlendirme seti 185'ten 188 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu; ayrılma hali "supernovalardan" reddedilmeye devam ediyor). README ve SORGU_DEGERLENDIRMESI.md sayıları güncellendi.
 

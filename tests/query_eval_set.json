@@ -200,6 +200,10 @@
     {"id": "S120", "text": "son 2 gunde g bandindaki adaylari bul", "expect": {"hours": 48, "band": "g"}, "note": "bul + bant + aday"},
     {"id": "S121", "text": "bana son 6 saatteki en parlak r bandi olaylarini bul", "expect": {"hours": 6, "band": "r", "order": "brightest"}, "note": "bana + bul + en parlak"},
     {"id": "U75", "text": "bul", "reject": "parse", "note": "'bul' tek basina sorgu sayilmaz"},
-    {"id": "U76", "text": "son 24 saatteki olaylari ara", "reject": "parse", "note": "'ara' (arama emri) bilinmeyen soz; desteklenmiyor"}
+    {"id": "U76", "text": "son 24 saatteki olaylari ara", "reject": "parse", "note": "'ara' (arama emri) bilinmeyen soz; desteklenmiyor"},
+    {"id": "S122", "text": "son 24 saatteki uyarilar", "expect": {"hours": 24}, "note": "'uyari' (alert) dolgu sozcugu"},
+    {"id": "S123", "text": "son 6 saatte g bandindaki alertleri goster", "expect": {"hours": 6, "band": "g"}, "note": "'alert' dolgu + belirtme hali"},
+    {"id": "S124", "text": "en son supernova adaylari", "expect": {"kind": "supernova"}, "note": "'en son' = yeni-once siralama (varsayilan), zaman araligi degil"},
+    {"id": "S125", "text": "en son olaylar", "expect": {}, "note": "'en yeni' ile ayni"}
   ]
 }

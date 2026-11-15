@@ -63,6 +63,10 @@ def parse_query(text):
     elif "en yeni" in text:
         recognized = True
         text = text.replace("en yeni", " ", 1)
+    elif re.search(r"\ben\s+son\b", text):
+        # "en son olaylar": zaman araligi degil, varsayilan yeni-once siralama.
+        recognized = True
+        text = re.sub(r"\ben\s+son\b", " ", text, count=1)
     match = re.search(r"\bilk\s+(\d+)\b", text)
     if match:
         recognized = True
@@ -87,7 +91,8 @@ def parse_query(text):
              "asteroidlere": "asteroid", "asteroite": "asteroid", "asteroitlere": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
-               "olaylarin", "adaylarin", "adaylarinin", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
+               "olaylarin", "adaylarin", "adaylarinin",
+               "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
                "goster", "listele", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
