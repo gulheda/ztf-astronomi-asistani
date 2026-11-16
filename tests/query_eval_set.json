@@ -204,6 +204,10 @@
     {"id": "S122", "text": "son 24 saatteki uyarilar", "expect": {"hours": 24}, "note": "'uyari' (alert) dolgu sozcugu"},
     {"id": "S123", "text": "son 6 saatte g bandindaki alertleri goster", "expect": {"hours": 6, "band": "g"}, "note": "'alert' dolgu + belirtme hali"},
     {"id": "S124", "text": "en son supernova adaylari", "expect": {"kind": "supernova"}, "note": "'en son' = yeni-once siralama (varsayilan), zaman araligi degil"},
-    {"id": "S125", "text": "en son olaylar", "expect": {}, "note": "'en yeni' ile ayni"}
+    {"id": "S125", "text": "en son olaylar", "expect": {}, "note": "'en yeni' ile ayni"},
+    {"id": "S126", "text": "son 24 saatteki yeni olaylar", "expect": {}, "note": "'yeni' = varsayilan yeni-once siralama, dolgu"},
+    {"id": "S127", "text": "yeni supernova adaylari", "expect": {"kind": "supernova"}, "note": "'yeni' dolgu + tur"},
+    {"id": "U78", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu (evet/hayir) desteklenmiyor, listeleme istenmeli"},
+    {"id": "U79", "text": "son 6 saatte g bandında asteroid yok mu", "reject": "parse", "note": "varlik sorusu olumsuz biciminde de reddedilir"}
   ]
 }

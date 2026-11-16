@@ -1,10 +1,13 @@
+# Günlük ilerleme
+
+## 2026-11-16
+Çözümleyici "yeni" sözcüğünü dolgu sayıyor ("son 24 saatteki yeni olaylar"); varlık soruları ("supernova var mı", "yok mu") genel hata yerine "Varlık sorusu desteklenmez" iletisi veriyor (birim testi eklendi). Değerlendirme seti 203'ten 207 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-14
 Çözümleyici "bul" emir fiilini dolgu sözcüğü olarak tanıyor ("son 24 saatteki supernovaları bul"); "ara" reddedilmeye devam ediyor. Değerlendirme seti 194'ten 199 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüm çıktısına göre güncellendi.
 
 ## 2026-11-13
 Çözümleyici "son 24 saat boyunca" zaman ekini tanıyor; dün/bugün/yarın sözcükleri yanıltıcı "Desteklenmeyen ifade" yerine "Takvim günü desteklenmez" hatası veriyor (kapsam aynı). Değerlendirme seti 188'den 194 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüm çıktısına göre düzeltildi.
-
-# Günlük ilerleme
 
 ## 2026-11-15
 Çözümleyici "uyarı/alert" sözcüklerini ("son 24 saatteki uyarılar", "alertleri göster") dolgu olarak tanıyor; "en son olaylar" artık "en yeni" gibi varsayılan yeni-önce sıralama sayılıyor. Değerlendirme seti 199'dan 203 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.

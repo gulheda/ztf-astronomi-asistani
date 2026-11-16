@@ -93,7 +93,7 @@ def parse_query(text):
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
-               "goster", "listele", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
+               "yeni", "goster", "listele", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and q.kind:
@@ -111,6 +111,8 @@ def parse_query(text):
             raise ValueError("Takvim günü desteklenmez: '%s'. Göreli süre yazın. Örnek: Son 24 saatteki olaylar" % token)
         elif token in ("sayisi", "sayisini", "kac", "kactir"):
             raise ValueError("Sayım sorusu desteklenmez: '%s'. Olayları listeleyin. Örnek: Son 24 saatteki olaylar" % token)
+        elif token in ("var", "yok", "mi", "mu"):
+            raise ValueError("Varlık sorusu desteklenmez: '%s'. Olayları listeleyin. Örnek: Son 24 saatteki supernovalar" % token)
         elif token in ("ve", "veya", "ile"):
             raise ValueError("Birleşik sorgu desteklenmez: '%s'. Tek tür ve tek bant kullanın. Örnek: Son 24 saatteki supernovalar" % token)
         else:
