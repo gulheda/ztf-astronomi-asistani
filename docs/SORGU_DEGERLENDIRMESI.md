@@ -4,13 +4,13 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 207 sorgu (127 desteklenen, 80 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 208 sorgu (127 desteklenen, 81 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
 | Koşul çözümleme (desteklenen, n=121) | 121/121 |
 | Sonuç kümesi tam eşleşmesi (desteklenen, n=121) | 121/121 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=80) | 80/80 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=81) | 81/81 |
 | Boş sonuçlu doğru sorgu | 13 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
@@ -58,3 +58,5 @@ Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlam
 **16 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S126–S127 desteklenen, U78–U79 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu. "yeni" dolgu sözcüğü olarak tanındı; varlık soruları ("var mı", "yok mu") açık "Varlık sorusu desteklenmez" iletisiyle reddedilir. Ölçüm: 127 desteklenen, 80 desteklenmeyen, hata yok.
 
 **14 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S119–S121 desteklenen, U75–U76 reddedilen); üç desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 118/121). Gramer genişletildi: "bul" emir fiili dolgu sözcüğü ("getir/listele" gibi; tek başına sorgu sayılmaz). "ara" bilinmeyen sözcük olarak reddedilmeye devam ediyor (U76). Ölçüm: 121 desteklenen, 78 desteklenmeyen, hata yok.
+
+**17 Kasım eklemesi:** U80 ("g veya r bandındaki") reddedilen sorgu olarak eklendi. "g ve r bandındaki" gibi sorgular artık yanıltıcı "Desteklenmeyen ifade: g" yerine "Birleşik sorgu desteklenmez" iletisi veriyor (birim testi eklendi; kapsam aynı). Ölçüm: 127 desteklenen, 81 desteklenmeyen, hata yok.

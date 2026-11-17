@@ -94,6 +94,11 @@ def parse_query(text):
                "olaylarin", "adaylarin", "adaylarinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
                "yeni", "goster", "listele", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
+    if len(tokens) > 1 and any(t.rstrip(".?!,") in ("ve", "veya") for t in tokens):
+        # "g ve r bandindaki": tek harfli bant sozcugunden once birlesik sorgu hatasi ver.
+        conj = next(t.rstrip(".?!,") for t in tokens if t.rstrip(".?!,") in ("ve", "veya"))
+        if any(len(t.rstrip(".?!,")) == 1 and t.rstrip(".?!,") in "gri" for t in tokens):
+            raise ValueError("Birleşik sorgu desteklenmez: '%s'. Tek tür ve tek bant kullanın. Örnek: Son 24 saatteki supernovalar" % conj)
     for token in tokens:
         token = token.rstrip(".?!,")
         if token in kinds and q.kind:

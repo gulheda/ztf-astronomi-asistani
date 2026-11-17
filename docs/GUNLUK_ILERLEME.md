@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-17
+"g ve r bandındaki olaylar" gibi sorgular yanıltıcı "Desteklenmeyen ifade: g" yerine "Birleşik sorgu desteklenmez" iletisi veriyor ("ve"/"veya" için birim testi eklendi; kapsam aynı). Değerlendirme seti 207'den 208 sorguya çıkarıldı (U80 reddedilen); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-16
 Çözümleyici "yeni" sözcüğünü dolgu sayıyor ("son 24 saatteki yeni olaylar"); varlık soruları ("supernova var mı", "yok mu") genel hata yerine "Varlık sorusu desteklenmez" iletisi veriyor (birim testi eklendi). Değerlendirme seti 203'ten 207 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 

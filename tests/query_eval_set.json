@@ -208,6 +208,7 @@
     {"id": "S126", "text": "son 24 saatteki yeni olaylar", "expect": {}, "note": "'yeni' = varsayilan yeni-once siralama, dolgu"},
     {"id": "S127", "text": "yeni supernova adaylari", "expect": {"kind": "supernova"}, "note": "'yeni' dolgu + tur"},
     {"id": "U78", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu (evet/hayir) desteklenmiyor, listeleme istenmeli"},
-    {"id": "U79", "text": "son 6 saatte g bandında asteroid yok mu", "reject": "parse", "note": "varlik sorusu olumsuz biciminde de reddedilir"}
+    {"id": "U79", "text": "son 6 saatte g bandında asteroid yok mu", "reject": "parse", "note": "varlik sorusu olumsuz biciminde de reddedilir"},
+    {"id": "U80", "text": "son 24 saatteki g veya r bandındaki olaylar", "reject": "parse", "note": "'veya' ile bant birlestirme; acik 'Birlesik sorgu' hatasi verir"}
   ]
 }

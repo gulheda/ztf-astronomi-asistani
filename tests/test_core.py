@@ -78,7 +78,9 @@ class AssistantTests(unittest.TestCase):
         cases = {"son 24 saatte supernova asteroid": "Birden fazla tür",
                  "son 24 saatte supernova supernova": "Birden fazla tür",
                  "son 24 saatte g bandinda r bandinda olaylar": "Birden fazla bant",
-                 "en parlak 5 supernova": "Tek başına sayı"}
+                 "en parlak 5 supernova": "Tek başına sayı",
+                 "son 24 saatteki g ve r bandındaki olaylar": "Birleşik sorgu",
+                 "son 24 saatteki g veya r bandındaki olaylar": "Birleşik sorgu"}
         for text, message in cases.items():
             with self.assertRaises(ValueError) as ctx:
                 parse_query(text)
