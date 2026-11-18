@@ -8,8 +8,8 @@ Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 213 sorgu (129
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=121) | 121/121 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=121) | 121/121 |
+| Koşul çözümleme (desteklenen, n=129) | 129/129 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=129) | 129/129 |
 | Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=84) | 84/84 |
 | Boş sonuçlu doğru sorgu | 13 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
