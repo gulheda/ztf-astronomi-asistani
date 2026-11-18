@@ -209,6 +209,11 @@
     {"id": "S127", "text": "yeni supernova adaylari", "expect": {"kind": "supernova"}, "note": "'yeni' dolgu + tur"},
     {"id": "U78", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu (evet/hayir) desteklenmiyor, listeleme istenmeli"},
     {"id": "U79", "text": "son 6 saatte g bandında asteroid yok mu", "reject": "parse", "note": "varlik sorusu olumsuz biciminde de reddedilir"},
-    {"id": "U80", "text": "son 24 saatteki g veya r bandındaki olaylar", "reject": "parse", "note": "'veya' ile bant birlestirme; acik 'Birlesik sorgu' hatasi verir"}
+    {"id": "U80", "text": "son 24 saatteki g veya r bandındaki olaylar", "reject": "parse", "note": "'veya' ile bant birlestirme; acik 'Birlesik sorgu' hatasi verir"},
+    {"id": "S128", "text": "son 24 saatteki supernovalari goruntule", "expect": {"hours": 24, "kind": "supernova"}, "note": "'goruntule' emir fiili dolgu"},
+    {"id": "S129", "text": "son 6 saatte g bandindaki olaylari goruntule", "expect": {"hours": 6, "band": "g"}, "note": "goruntule + bant"},
+    {"id": "U81", "text": "goruntule", "reject": "parse", "note": "'goruntule' tek basina sorgu sayilmaz"},
+    {"id": "U82", "text": "son 24 saatteki en sonuk supernova", "reject": "parse", "note": "'en sonuk' siralamasi desteklenmiyor; acik siralama hatasi verir"},
+    {"id": "U83", "text": "son 2 gunde en zayif olaylar", "reject": "parse", "note": "'en zayif' siralamasi desteklenmiyor"}
   ]
 }

@@ -66,6 +66,14 @@ class AssistantTests(unittest.TestCase):
                 parse_query(text)
             self.assertIn("Sayım sorusu desteklenmez", str(ctx.exception))
 
+    def test_dimmest_ordering_has_clear_error_and_goruntule_is_filler(self):
+        for text in ("son 24 saatteki en sönük supernova", "son 2 günde en zayıf olaylar"):
+            with self.assertRaises(ValueError) as ctx:
+                parse_query(text)
+            self.assertIn("Sıralama desteklenmez", str(ctx.exception))
+        query = parse_query("son 24 saatteki supernovaları görüntüle")
+        self.assertEqual((query.kind, query.hours), ("supernova", 24))
+
     def test_existence_question_has_clear_error_and_yeni_is_filler(self):
         for text in ("son 24 saatte supernova var mı", "son 6 saatte g bandında asteroid yok mu"):
             with self.assertRaises(ValueError) as ctx:

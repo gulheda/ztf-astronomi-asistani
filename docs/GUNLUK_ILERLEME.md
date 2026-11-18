@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-18
+Çözümleyici "görüntüle" emir fiilini dolgu sayıyor; "en sönük/soluk/zayıf" sıralamaları yanıltıcı "Desteklenmeyen ifade: en" yerine "Sıralama desteklenmez" iletisi veriyor (birim testi eklendi). Değerlendirme seti 208'den 213 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-17
 "g ve r bandındaki olaylar" gibi sorgular yanıltıcı "Desteklenmeyen ifade: g" yerine "Birleşik sorgu desteklenmez" iletisi veriyor ("ve"/"veya" için birim testi eklendi; kapsam aynı). Değerlendirme seti 207'den 208 sorguya çıkarıldı (U80 reddedilen); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 
