@@ -74,6 +74,12 @@ class AssistantTests(unittest.TestCase):
         query = parse_query("son 24 saatteki supernovaları görüntüle")
         self.assertEqual((query.kind, query.hours), ("supernova", 24))
 
+    def test_bare_parlak_adjective_has_clear_error_but_en_parlak_works(self):
+        with self.assertRaises(ValueError) as ctx:
+            parse_query("son 24 saatteki parlak olaylar")
+        self.assertIn("en parlak", str(ctx.exception))
+        self.assertEqual(parse_query("son 24 saatteki en parlak olaylar").order, "brightest")
+
     def test_existence_question_has_clear_error_and_yeni_is_filler(self):
         for text in ("son 24 saatte supernova var mı", "son 6 saatte g bandında asteroid yok mu"):
             with self.assertRaises(ValueError) as ctx:

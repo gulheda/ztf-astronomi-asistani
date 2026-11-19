@@ -214,6 +214,7 @@
     {"id": "S129", "text": "son 6 saatte g bandindaki olaylari goruntule", "expect": {"hours": 6, "band": "g"}, "note": "goruntule + bant"},
     {"id": "U81", "text": "goruntule", "reject": "parse", "note": "'goruntule' tek basina sorgu sayilmaz"},
     {"id": "U82", "text": "son 24 saatteki en sonuk supernova", "reject": "parse", "note": "'en sonuk' siralamasi desteklenmiyor; acik siralama hatasi verir"},
-    {"id": "U83", "text": "son 2 gunde en zayif olaylar", "reject": "parse", "note": "'en zayif' siralamasi desteklenmiyor"}
+    {"id": "U83", "text": "son 2 gunde en zayif olaylar", "reject": "parse", "note": "'en zayif' siralamasi desteklenmiyor"},
+    {"id": "U84", "text": "son 24 saatteki parlak olaylar", "reject": "parse", "note": "'en' olmadan 'parlak' sifati desteklenmiyor; acik hata verir"}
   ]
 }

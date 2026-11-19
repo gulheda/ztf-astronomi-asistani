@@ -115,6 +115,8 @@ def parse_query(text):
             recognized = recognized or token not in ("lutfen", "goruntule", "bul", "bak", "bana", "icin", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         elif token in ("olmayan", "olmayanlar", "degil", "haric", "disinda", "gozlenmemis", "gozlenmeyen", "gozlenmeyenler"):
             raise ValueError("Olumsuzlama veya hariç tutma desteklenmez: '%s'. Yalnızca istenen tür ve bandı yazın. Örnek: Son 24 saatteki supernovalar" % token)
+        elif token in ("parlak", "parlaklar"):
+            raise ValueError("Parlaklık sıfatı tek başına desteklenmez: '%s'. Sıralama için 'en parlak' yazın. Örnek: Son 24 saatteki en parlak olaylar" % token)
         elif token in ("dun", "dunku", "dunun", "bugun", "bugunku", "bugunun", "yarin"):
             raise ValueError("Takvim günü desteklenmez: '%s'. Göreli süre yazın. Örnek: Son 24 saatteki olaylar" % token)
         elif token in ("sayisi", "sayisini", "kac", "kactir"):

@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-19
+Çözümleyici "en" olmadan yazılan "parlak" sıfatı için ("son 24 saatteki parlak olaylar") genel "Desteklenmeyen ifade" yerine "en parlak yazın" önerili açık hata veriyor (birim testi eklendi; kapsam aynı). Değerlendirme seti 213'ten 214 sorguya çıkarıldı (U84, beklenen ret önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-18
 Çözümleyici "görüntüle" emir fiilini dolgu sayıyor; "en sönük/soluk/zayıf" sıralamaları yanıltıcı "Desteklenmeyen ifade: en" yerine "Sıralama desteklenmez" iletisi veriyor (birim testi eklendi). Değerlendirme seti 208'den 213 sorguya çıkarıldı (beklenen davranış önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 
