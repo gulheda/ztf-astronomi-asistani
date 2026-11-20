@@ -96,7 +96,7 @@ def parse_query(text):
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
-               "yeni", "goster", "listele", "goruntule", "getir", "bul", "bak", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
+               "yeni", "goster", "listele", "goruntule", "getir", "bul", "bak", "tespit", "edilen", "bulunan", "kaydedilen", "olusan", "nelerdi", "listesini", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     if len(tokens) > 1 and any(t.rstrip(".?!,") in ("ve", "veya") for t in tokens):
         # "g ve r bandindaki": tek harfli bant sozcugunden once birlesik sorgu hatasi ver.
         conj = next(t.rstrip(".?!,") for t in tokens if t.rstrip(".?!,") in ("ve", "veya"))

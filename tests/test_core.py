@@ -74,6 +74,14 @@ class AssistantTests(unittest.TestCase):
         query = parse_query("son 24 saatteki supernovaları görüntüle")
         self.assertEqual((query.kind, query.hours), ("supernova", 24))
 
+    def test_participle_fillers_are_ignored_but_sirala_is_rejected(self):
+        query = parse_query("Son 24 saatte tespit edilen supernovalar")
+        self.assertEqual((query.kind, query.hours), ("supernova", 24))
+        query = parse_query("son 2 günde kaydedilen asteroid adayları")
+        self.assertEqual((query.kind, query.hours), ("asteroid", 48))
+        with self.assertRaises(ValueError):
+            parse_query("son 24 saatteki olayları sırala")
+
     def test_bare_parlak_adjective_has_clear_error_but_en_parlak_works(self):
         with self.assertRaises(ValueError) as ctx:
             parse_query("son 24 saatteki parlak olaylar")

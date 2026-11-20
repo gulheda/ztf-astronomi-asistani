@@ -215,6 +215,13 @@
     {"id": "U81", "text": "goruntule", "reject": "parse", "note": "'goruntule' tek basina sorgu sayilmaz"},
     {"id": "U82", "text": "son 24 saatteki en sonuk supernova", "reject": "parse", "note": "'en sonuk' siralamasi desteklenmiyor; acik siralama hatasi verir"},
     {"id": "U83", "text": "son 2 gunde en zayif olaylar", "reject": "parse", "note": "'en zayif' siralamasi desteklenmiyor"},
-    {"id": "U84", "text": "son 24 saatteki parlak olaylar", "reject": "parse", "note": "'en' olmadan 'parlak' sifati desteklenmiyor; acik hata verir"}
+    {"id": "U84", "text": "son 24 saatteki parlak olaylar", "reject": "parse", "note": "'en' olmadan 'parlak' sifati desteklenmiyor; acik hata verir"},
+    {"id": "S130", "text": "son 24 saatte tespit edilen supernovalar", "expect": {"hours": 24, "kind": "supernova"}, "note": "'tespit edilen' sifat-fiil dolgu"},
+    {"id": "S131", "text": "son 6 saatte bulunan olaylar", "expect": {"hours": 6}, "note": "'bulunan' dolgu"},
+    {"id": "S132", "text": "son 2 gunde kaydedilen asteroid adaylari", "expect": {"hours": 48, "kind": "asteroid"}, "note": "'kaydedilen' dolgu"},
+    {"id": "S133", "text": "son 24 saatte olusan olaylar nelerdi", "expect": {"hours": 24}, "note": "'olusan' ve 'nelerdi' dolgu"},
+    {"id": "S134", "text": "son 24 saatteki g bandindaki olaylarin listesini goster", "expect": {"hours": 24, "band": "g"}, "note": "'listesini' dolgu"},
+    {"id": "U85", "text": "son 24 saatteki olaylari sirala", "reject": "parse", "note": "'sirala' emri desteklenmiyor (siralama yalniz 'en parlak' ile)"},
+    {"id": "S135", "text": "son 24 saatte tespit edilen", "expect": {"hours": 24}, "note": "yalniz zaman + dolgu; zaman araligi tek basina gecerli sorgu"}
   ]
 }
