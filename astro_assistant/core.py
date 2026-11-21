@@ -46,7 +46,7 @@ def parse_query(text):
     q = Query()
     recognized = False
     # Consume the entire supported grammar: never silently ignore unknown filters.
-    match = re.search(r"\bson\s+(?:(\d+)\s+)?(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde|\s+boyunca)?\b", text)
+    match = re.search(r"\bson\s+(?:(\d+)\s+)?(saat|gun|hafta)(?:teki|taki|te|ta|deki|daki|de|da|lik|luk|in|un|nin|i|u|yi|\s+icindeki|\s+icinde|\s+icerisindeki|\s+icerisinde|\s+boyunca|\s+zarfindaki|\s+zarfinda)?\b", text)
     if match:
         recognized = True
         q.hours = int(match[1] or 1) * {"saat": 1, "gun": 24, "hafta": 168}[match[2]]
@@ -93,7 +93,7 @@ def parse_query(text):
              "supernovaya": "supernova", "supernovalara": "supernova", "asteroide": "asteroid",
              "asteroidlere": "asteroid", "asteroite": "asteroid", "asteroitlere": "asteroid"}
     tokens = re.findall(r"\S+", text)
-    fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adaylar", "adaylari", "adaylarini",
+    fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adayini", "olayini", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
                "yeni", "goster", "listele", "goruntule", "getir", "bul", "bak", "tespit", "edilen", "bulunan", "kaydedilen", "olusan", "nelerdi", "listesini", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}

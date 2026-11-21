@@ -38,6 +38,18 @@ class AssistantTests(unittest.TestCase):
                 parse_query(text)
             self.assertIn("Takvim günü desteklenmez: '%s'" % word, str(ctx.exception))
 
+    def test_zarfinda_is_time_suffix(self):
+        self.assertEqual(parse_query("son 24 saat zarfindaki olaylar").hours, 24)
+        self.assertEqual(parse_query("son 3 gun zarfinda olaylar").hours, 72)
+        with self.assertRaises(ValueError):
+            parse_query("zarfinda olaylar")
+        with self.assertRaises(ValueError):
+            parse_query("son 24 saat zarfinda bogus olaylar")
+
+    def test_possessive_accusative_fillers(self):
+        self.assertEqual(parse_query("son 24 saatteki supernova adayini goster").kind, "supernova")
+        self.assertEqual(parse_query("son 2 gunde olayini getir").hours, 48)
+
     def test_boyunca_is_time_suffix(self):
         self.assertEqual(parse_query("son 24 saat boyunca olaylar").hours, 24)
         self.assertEqual(parse_query("son hafta boyunca olaylar").hours, 168)

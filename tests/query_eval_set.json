@@ -222,6 +222,11 @@
     {"id": "S133", "text": "son 24 saatte olusan olaylar nelerdi", "expect": {"hours": 24}, "note": "'olusan' ve 'nelerdi' dolgu"},
     {"id": "S134", "text": "son 24 saatteki g bandindaki olaylarin listesini goster", "expect": {"hours": 24, "band": "g"}, "note": "'listesini' dolgu"},
     {"id": "U85", "text": "son 24 saatteki olaylari sirala", "reject": "parse", "note": "'sirala' emri desteklenmiyor (siralama yalniz 'en parlak' ile)"},
-    {"id": "S135", "text": "son 24 saatte tespit edilen", "expect": {"hours": 24}, "note": "yalniz zaman + dolgu; zaman araligi tek basina gecerli sorgu"}
+    {"id": "S135", "text": "son 24 saatte tespit edilen", "expect": {"hours": 24}, "note": "yalniz zaman + dolgu; zaman araligi tek basina gecerli sorgu"},
+    {"id": "S136", "text": "son 24 saatteki ilk 5 supernova adayini goster", "expect": {"hours": 24, "limit": 5, "kind": "supernova"}, "note": "'adayini' belirtme hali"},
+    {"id": "S137", "text": "son 2 gunde g bandindaki olayini getir", "expect": {"hours": 48, "band": "g"}, "note": "'olayini' belirtme hali"},
+    {"id": "S138", "text": "son 24 saat zarfindaki asteroitler", "expect": {"hours": 24, "kind": "asteroid"}, "note": "'zarfindaki' zaman eki"},
+    {"id": "S139", "text": "son 3 gun zarfinda r bandindaki olaylar", "expect": {"hours": 72, "band": "r"}, "note": "'zarfinda' zaman eki"},
+    {"id": "U86", "text": "son 24 saat zarfindaki bogus olaylar", "reject": "parse", "note": "'bogus' bilinmeyen sozcuk; 'zarfinda' eki tanindiktan sonra da filtre sessizce dusmemeli"}
   ]
 }

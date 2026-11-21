@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-21
+Çözümleyici "zarfında/zarfındaki" zaman eklerini ("son 24 saat zarfındaki olaylar") ve "adayını/olayını" belirtme hallerini tanıyor (birim testi eklendi; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor). Değerlendirme seti 221'den 226 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-20
 Çözümleyici "tespit edilen/bulunan/kaydedilen/oluşan", "nelerdi" ve "listesini" sözcüklerini dolgu sayıyor (birim testi eklendi; "sırala" reddedilmeye devam ediyor). Değerlendirme seti 214'ten 221 sorguya çıkarıldı (beklenen davranış önce elle yazıldı; bir reddetme beklentisi yanlıştı ve düzeltildi); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 

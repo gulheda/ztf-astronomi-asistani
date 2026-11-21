@@ -4,13 +4,13 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 221 sorgu (135 desteklenen, 86 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 226 sorgu (139 desteklenen, 87 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Koşul çözümleme (desteklenen, n=135) | 135/135 |
-| Sonuç kümesi tam eşleşmesi (desteklenen, n=135) | 135/135 |
-| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=86) | 86/86 |
+| Koşul çözümleme (desteklenen, n=139) | 139/139 |
+| Sonuç kümesi tam eşleşmesi (desteklenen, n=139) | 139/139 |
+| Desteklenmeyen sorgunun açıkça reddi (bant belirtilmeden parlaklık sıralaması dahil, n=87) | 87/87 |
 | Boş sonuçlu doğru sorgu | 13 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,05 ms / ≈0,14 ms |
 
@@ -30,6 +30,8 @@ Plan hedefleri (≥%90 tam eşleşme, sessiz filtre kaybı yok) bu kümede karş
 **7 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S107–S108 desteklenen, U58–U60 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 106/108). Gramer genişletildi: "nedir" dolgu sözcüğü ("nelerdir" gibi; tek başına sorgu sayılmaz). Kesirli süreler ("son 1.5 saat", "son 2,5 gün") hâlâ desteklenmiyor, ama önceden yanıltıcı "Desteklenmeyen ifade: son" veriyordu; artık "Kesirli süre desteklenmez ... Tam sayı kullanın" deniyor.
 
 **8 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (U61–U63, hepsi reddedilen). "ve/veya/ile" ile birleştirilen sorgular ("supernova veya asteroid", "g ve r bandı") hâlâ desteklenmiyor, ama önceden genel "Desteklenmeyen ifade: ve" veriyordu; artık "Birleşik sorgu desteklenmez ... Tek tür ve tek bant kullanın" deniyor. Gramer kapsamı değişmedi.
+
+**21 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S136–S139 desteklenen, U86 reddedilen); dört desteklenen sorgu önceki gramerde reddediliyordu. Gramer genişletildi: "zarfında/zarfındaki" zaman ekleri ve "adayını/olayını" belirtme halleri. Ölçüm: 139 desteklenen, 87 desteklenmeyen, hata yok.
 
 Desteklenmeyen sorgu örnekleri (ay/yıl, mutlak tarih, koordinat, olumsuzlama, "ve") bilinçli olarak reddediliyor.
 
