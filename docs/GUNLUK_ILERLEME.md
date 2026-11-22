@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-22
+Çözümleyici "olaylarının/uyarılarının/alertlerin(in)" iyelik biçimlerini dolgu sayıyor ("son 24 saatteki asteroid olaylarının listesi"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 226'dan 229 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-21
 Çözümleyici "zarfında/zarfındaki" zaman eklerini ("son 24 saat zarfındaki olaylar") ve "adayını/olayını" belirtme hallerini tanıyor (birim testi eklendi; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor). Değerlendirme seti 221'den 226 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, dört sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 
