@@ -53,6 +53,11 @@ class AssistantTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_query("son 24 saatteki olaylarinin bogus listesi")
 
+    def test_ver_command_filler(self):
+        self.assertEqual(parse_query("son 24 saatteki supernovalari ver").kind, "supernova")
+        with self.assertRaises(ValueError):
+            parse_query("son 24 saatteki bogus olaylari ver")
+
     def test_possessive_accusative_fillers(self):
         self.assertEqual(parse_query("son 24 saatteki supernova adayini goster").kind, "supernova")
         self.assertEqual(parse_query("son 2 gunde olayini getir").hours, 48)

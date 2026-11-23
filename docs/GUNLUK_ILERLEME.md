@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-23
+Çözümleyici "ver" emir fiilini dolgu sayıyor ("son 24 saatteki supernovaları ver"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 229'dan 232 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-22
 Çözümleyici "olaylarının/uyarılarının/alertlerin(in)" iyelik biçimlerini dolgu sayıyor ("son 24 saatteki asteroid olaylarının listesi"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 226'dan 229 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 
