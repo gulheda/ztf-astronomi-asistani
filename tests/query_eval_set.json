@@ -233,6 +233,10 @@
     {"id": "U88", "text": "son 24 saatteki olaylarının bogus listesi", "reject": "parse", "note": "iyelik eki tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
     {"id": "S142", "text": "son 24 saatteki supernovalari ver", "expect": {"hours": 24, "kind": "supernova"}, "note": "emir fiili ver dolgu"},
     {"id": "S143", "text": "son 6 saatteki r bandindaki olaylari ver", "expect": {"hours": 6, "band": "r"}, "note": "emir fiili ver + bant"},
-    {"id": "U89", "text": "son 24 saatteki bogus olaylari ver", "reject": "parse", "note": "ver dolgu olunca bilinmeyen sozcuk yine reddedilmeli"}
+    {"id": "U89", "text": "son 24 saatteki bogus olaylari ver", "reject": "parse", "note": "ver dolgu olunca bilinmeyen sozcuk yine reddedilmeli"},
+    {"id": "S144", "text": "son 24 saatteki asteroid adayının listesi", "expect": {"hours": 24, "kind": "asteroid"}, "note": "adayinin iyelik dolgu"},
+    {"id": "S145", "text": "son 3 gündeki supernova olayının listesi", "expect": {"hours": 72, "kind": "supernova"}, "note": "olayinin iyelik dolgu"},
+    {"id": "S146", "text": "son 12 saatteki r bandındaki uyarının listesi", "expect": {"hours": 12, "band": "r"}, "note": "uyarinin iyelik dolgu + bant"},
+    {"id": "U90", "text": "son 24 saatteki adayının bogus listesi", "reject": "parse", "note": "iyelik eki tanindiktan sonra bilinmeyen sozcuk reddedilmeli"}
   ]
 }

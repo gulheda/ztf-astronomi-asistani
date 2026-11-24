@@ -94,7 +94,7 @@ def parse_query(text):
              "asteroidlere": "asteroid", "asteroite": "asteroid", "asteroitlere": "asteroid"}
     tokens = re.findall(r"\S+", text)
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adayini", "olayini", "adaylar", "adaylari", "adaylarini",
-               "olaylarin", "adaylarin", "adaylarinin", "olaylarinin", "uyarilarinin", "alertlerin", "alertlerinin",
+               "olaylarin", "adaylarin", "adaylarinin", "adayinin", "olayinin", "uyarinin", "alertin", "olaylarinin", "uyarilarinin", "alertlerin", "alertlerinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
                "yeni", "goster", "listele", "goruntule", "getir", "ver", "bul", "bak", "tespit", "edilen", "bulunan", "kaydedilen", "olusan", "nelerdi", "listesini", "bana", "lutfen", "icin", "tane", "adet", "tum", "butun"}
     if len(tokens) > 1 and any(t.rstrip(".?!,") in ("ve", "veya") for t in tokens):

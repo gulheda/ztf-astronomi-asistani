@@ -58,6 +58,12 @@ class AssistantTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_query("son 24 saatteki bogus olaylari ver")
 
+    def test_singular_possessive_genitive_fillers(self):
+        self.assertEqual(parse_query("son 24 saatteki asteroid adayinin listesi").kind, "asteroid")
+        self.assertEqual(parse_query("son 12 saatteki r bandindaki uyarinin listesi").band, "r")
+        with self.assertRaises(ValueError):
+            parse_query("son 24 saatteki adayinin bogus listesi")
+
     def test_possessive_accusative_fillers(self):
         self.assertEqual(parse_query("son 24 saatteki supernova adayini goster").kind, "supernova")
         self.assertEqual(parse_query("son 2 gunde olayini getir").hours, 48)
