@@ -58,3 +58,30 @@ class InterfaceTests(unittest.TestCase):
         self.assertEqual(len(app.exception), 0)
         self.assertTrue(all(str(value).startswith("DEMO-")
                             for value in app.dataframe[0].value["alert_id"]))
+
+    def test_traditional_filter_matches_turkish_query(self):
+        # Koşul A (filtre) ve koşul B (Türkçe sorgu) aynı sonucu vermeli.
+        app = self.start()
+        app.text_input[0].set_value("Son 3 gündeki g bandında en parlak ilk 4 olay")
+        app.button[0].click().run()
+        turkish_rows = app.dataframe[0].value["alert_id"].tolist()
+        self.assertEqual(len(turkish_rows), 4)
+
+        next(item for item in app.radio if item.label == "Sorgu arayüzü").set_value("Geleneksel filtre").run()
+        self.assertEqual(len(app.exception), 0)
+        next(item for item in app.number_input if item.label == "Son kaç saat").set_value(72)
+        next(item for item in app.number_input if item.label == "Sonuç sayısı").set_value(4)
+        next(item for item in app.selectbox if item.label == "Bant").select("g")
+        next(item for item in app.selectbox if item.label == "Sıralama").select("En parlak")
+        app.button[0].click().run()
+        self.assertEqual(len(app.exception), 0)
+        self.assertEqual(app.dataframe[0].value["alert_id"].tolist(), turkish_rows)
+
+    def test_traditional_filter_brightest_requires_band(self):
+        app = self.start()
+        next(item for item in app.radio if item.label == "Sorgu arayüzü").set_value("Geleneksel filtre").run()
+        next(item for item in app.selectbox if item.label == "Sıralama").select("En parlak")
+        app.button[0].click().run()
+        self.assertEqual(len(app.exception), 0)
+        self.assertEqual(len(app.error), 1)
+        self.assertEqual(len(app.dataframe), 0)

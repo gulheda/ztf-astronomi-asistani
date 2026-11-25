@@ -4,7 +4,7 @@ import json
 import time
 import streamlit as st
 from astro_assistant.archive import load_archive
-from astro_assistant.core import connect, seed_demo, insert_alerts, parse_query, query_alerts, explain
+from astro_assistant.core import Query, connect, seed_demo, insert_alerts, parse_query, query_alerts, explain
 
 st.set_page_config(page_title="Astronomi Asistanı", page_icon="🔭", layout="wide")
 st.title("🔭 Astronomi Asistanı")
@@ -46,17 +46,33 @@ elif archive:
     with st.expander("Arşiv kaynağı ve model soyu"):
         st.json(provenance)
 
-with st.form("query_form"):
-    question = st.text_input(
-        "Astronomik olayları Türkçe sorgulayın",
-        default_question,
-        key="demo_question" if is_demo else "archive_question",
-    )
-    st.form_submit_button("Sorgula")
-if is_demo:
-    st.caption("Örnekler: Son 3 gündeki süpernovalar • Son 48 saatteki asteroidler • En yeni ilk 5 olay")
+interface = st.sidebar.radio("Sorgu arayüzü", ("Türkçe sorgu", "Geleneksel filtre"),
+                             help="Kullanıcı çalışmasında koşul B (Türkçe sorgu) ve koşul A (geleneksel filtre).")
+mode_key = "demo" if is_demo else "archive"
+turkish = interface == "Türkçe sorgu"
+if turkish:
+    with st.form("query_form"):
+        question = st.text_input(
+            "Astronomik olayları Türkçe sorgulayın",
+            default_question,
+            key="demo_question" if is_demo else "archive_question",
+        )
+        st.form_submit_button("Sorgula")
+    if is_demo:
+        st.caption("Örnekler: Son 3 gündeki süpernovalar • Son 48 saatteki asteroidler • En yeni ilk 5 olay")
+    else:
+        st.caption("Örnekler: Son 365 gündeki olaylar • En yeni ilk 5 olay")
 else:
-    st.caption("Örnekler: Son 365 gündeki olaylar • En yeni ilk 5 olay")
+    with st.form("filter_form"):
+        left_col, right_col = st.columns(2)
+        filter_hours = left_col.number_input("Son kaç saat", 1, 8760, 24 if is_demo else 8760,
+                                             key="filter_hours_" + mode_key)
+        filter_limit = right_col.number_input("Sonuç sayısı", 1, 200, 20, key="filter_limit_" + mode_key)
+        filter_band = left_col.selectbox("Bant", ("Tümü", "g", "r", "i"), key="filter_band_" + mode_key)
+        filter_kind = right_col.selectbox("Tür", ("Tümü", "supernova", "asteroid"), key="filter_kind_" + mode_key)
+        filter_order = left_col.selectbox("Sıralama", ("En yeni", "En parlak"), key="filter_order_" + mode_key)
+        st.form_submit_button("Filtrele")
+    st.caption("En parlak sıralaması için bir bant seçilmelidir. Gerçek arşivde tür etiketi yoktur.")
 db = connect()
 try:
     if is_demo:
@@ -64,7 +80,13 @@ try:
     else:
         insert_alerts(db, archive["records"])
     started = time.perf_counter()
-    query = parse_query(question)
+    if turkish:
+        query = parse_query(question)
+    else:
+        query = Query(hours=int(filter_hours), limit=int(filter_limit),
+                      order="brightest" if filter_order == "En parlak" else "recent",
+                      band="" if filter_band == "Tümü" else filter_band,
+                      kind="" if filter_kind == "Tümü" else filter_kind)
     rows = query_alerts(db, query, now, threshold, demo=is_demo)
     elapsed = (time.perf_counter() - started) * 1000
     left, right = st.columns(2)
