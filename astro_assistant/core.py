@@ -37,6 +37,9 @@ def parse_query(text):
     fraction = re.search(r"\bson\s+\d+[.,]\d+\s+(?:saat|gun|hafta)", text)
     if fraction:
         raise ValueError("Kesirli süre desteklenmez: %s. Tam sayı kullanın. Örnek: Son 2 gündeki olaylar" % fraction[0])
+    word_fraction = re.search(r"\bson\s+(?:yarim|\w+\s+bucuk)\s+(?:saat|gun|hafta)", text)
+    if word_fraction:
+        raise ValueError("Kesirli süre desteklenmez: %s. Tam sayı kullanın. Örnek: Son 2 gündeki olaylar" % word_fraction[0])
     text = text.replace(",", " ")
     # Bosluk/sonla cevrili noktalama ayirici sayilir; "2.5" gibi sayilar bozulmaz.
     text = re.sub(r"[.?!;]+(?=\s|$)", " ", text)

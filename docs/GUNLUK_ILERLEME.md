@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-25
+"son yarım saat" ve "son bir buçuk saat" gibi sözcükle yazılan kesirli süreler yanıltıcı "Desteklenmeyen ifade: son" yerine "Kesirli süre desteklenmez" iletisi veriyor (birim testi eklendi; kapsam aynı). Değerlendirme seti 236'dan 238 sorguya çıkarıldı (U91, U92; beklenen ret önce elle yazıldı); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-24
 Çözümleyici "adayının/olayının/uyarının/alertin" tekil iyelik biçimlerini dolgu sayıyor ("son 24 saatteki asteroid adayının listesi"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 232'den 236 sorguya çıkarıldı (beklenen davranış önce elle yazıldı, üç sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 

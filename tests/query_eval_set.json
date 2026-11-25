@@ -231,6 +231,8 @@
     {"id": "S140", "text": "son 24 saatteki asteroid olaylarının listesi", "expect": {"hours": 24, "kind": "asteroid"}, "note": "iyelik eki: olaylarinin listesi"},
     {"id": "S141", "text": "son 6 saatteki g bandındaki alertlerin listesi", "expect": {"hours": 6, "band": "g"}, "note": "alertlerin + listesi"},
     {"id": "U88", "text": "son 24 saatteki olaylarının bogus listesi", "reject": "parse", "note": "iyelik eki tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
+    {"id": "U91", "text": "son yarım saatteki olaylar", "reject": "parse", "note": "sozcukle yazilmis kesirli sure desteklenmez"},
+    {"id": "U92", "text": "son bir buçuk saatteki supernovalar", "reject": "parse", "note": "'bir bucuk' kesirli sure desteklenmez"},
     {"id": "S142", "text": "son 24 saatteki supernovalari ver", "expect": {"hours": 24, "kind": "supernova"}, "note": "emir fiili ver dolgu"},
     {"id": "S143", "text": "son 6 saatteki r bandindaki olaylari ver", "expect": {"hours": 6, "band": "r"}, "note": "emir fiili ver + bant"},
     {"id": "U89", "text": "son 24 saatteki bogus olaylari ver", "reject": "parse", "note": "ver dolgu olunca bilinmeyen sozcuk yine reddedilmeli"},
