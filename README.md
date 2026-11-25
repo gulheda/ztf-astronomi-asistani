@@ -58,6 +58,7 @@ Varsayılan: son 24 saat, en yeni 20 uyarı, skor ≥ 0.5. Zamanlar UTC'dir. “
 | `docs/PROJE_PLANI.md` | İş paketleri, kabul ölçütleri, öncelikler |
 | `docs/VERI_VE_YONTEM.md` | Veri sözleşmesi ve bilimsel kararlar |
 | `docs/DENEY_PLANI.md` | Model ve kullanıcı değerlendirmesi |
+| `docs/KULLANICI_CALISMASI.md` | Kullanıcı çalışması protokolü; analiz: `python -m astro_assistant.calisma_analizi` |
 | `docs/KAYNAKLAR.md` | Doğrulanan kaynaklar ve açık sorular |
 
 ## Gerçek veriye geçiş
