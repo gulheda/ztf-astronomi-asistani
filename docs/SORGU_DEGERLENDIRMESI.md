@@ -4,7 +4,7 @@
 
 ## Ölçüm
 
-Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 238 sorgu (146 desteklenen, 92 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
+Küme: [tests/query_eval_set.json](../tests/query_eval_set.json), 241 sorgu (148 desteklenen, 93 desteklenmeyen; bunların 2'si bant belirtilmeden parlaklık sıralaması). Beklenen koşullar gramerden elle yazıldı. Beklenen sonuç kimlikleri, `parse_query` ve SQL kullanılmadan ayrı bir Python süzgeciyle hesaplandı. Çalıştırma: `python -m tests.query_eval`. Veri sentetik demo kayıtlarıdır; bu bir model veya bilimsel doğruluk ölçümü değildir.
 
 | Ölçüt | Sonuç |
 |---|---:|
@@ -62,3 +62,5 @@ Kayıt alanları: anonim katılımcı kodu, koşul, görev kodu, doğru tamamlam
 **14 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S119–S121 desteklenen, U75–U76 reddedilen); üç desteklenen sorgu önceki gramerde reddediliyordu (ölçüm 118/121). Gramer genişletildi: "bul" emir fiili dolgu sözcüğü ("getir/listele" gibi; tek başına sorgu sayılmaz). "ara" bilinmeyen sözcük olarak reddedilmeye devam ediyor (U76). Ölçüm: 121 desteklenen, 78 desteklenmeyen, hata yok.
 
 **17 Kasım eklemesi:** U80 ("g veya r bandındaki") reddedilen sorgu olarak eklendi. "g ve r bandındaki" gibi sorgular artık yanıltıcı "Desteklenmeyen ifade: g" yerine "Birleşik sorgu desteklenmez" iletisi veriyor (birim testi eklendi; kapsam aynı). Ölçüm: 127 desteklenen, 81 desteklenmeyen, hata yok.
+
+**26 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S147–S148 desteklenen, U93 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu. Gramer genişletildi: "ait" dolgu sözcüğü (tek başına sorgu sayılmaz). Ölçüm: 148 desteklenen, 93 desteklenmeyen, hata yok.
