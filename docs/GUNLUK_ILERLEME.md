@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-27
+Çözümleyici "listeler misin / gösterir misiniz" gibi nazik soru kalıplarını dolgu sayıyor ("son 24 saatteki supernovaları listeler misin"); "var mı" varlık sorusu ve "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi. Değerlendirme seti 241'den 245 sorguya çıkarıldı (S149, S150, U94, U95; beklenen davranış önce elle yazıldı, iki desteklenen sorgu önceki gramerde reddediliyordu); README, DURUM.md ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-26
 Çözümleyici "ait" sözcüğünü dolgu sayıyor ("son 48 saatteki supernovalara ait olaylar"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 238'den 241 sorguya çıkarıldı (S147, S148, U93; beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 

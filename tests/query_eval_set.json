@@ -242,6 +242,10 @@
     {"id": "U90", "text": "son 24 saatteki adayının bogus listesi", "reject": "parse", "note": "iyelik eki tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
     {"id": "S147", "text": "son 48 saatteki supernovalara ait olaylar", "expect": {"hours": 48, "kind": "supernova"}, "note": "'ait' dolgu"},
     {"id": "S148", "text": "son 12 saatteki r bandındaki asteroide ait uyarılar", "expect": {"hours": 12, "kind": "asteroid", "band": "r"}, "note": "'ait' dolgu + bant"},
-    {"id": "U93", "text": "son 24 saatteki olaylara ait bogus", "reject": "parse", "note": "'ait' tanindiktan sonra bilinmeyen sozcuk reddedilmeli"}
+    {"id": "U93", "text": "son 24 saatteki olaylara ait bogus", "reject": "parse", "note": "'ait' tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
+    {"id": "S149", "text": "son 24 saatteki supernovaları listeler misin", "expect": {"hours": 24, "kind": "supernova"}, "note": "nazik soru kalibi 'listeler misin' dolgu"},
+    {"id": "S150", "text": "son 12 saatteki r bandındaki olayları gösterir misiniz", "expect": {"hours": 12, "band": "r"}, "note": "'gosterir misiniz' dolgu + bant"},
+    {"id": "U94", "text": "son 24 saatteki olayları listeler misin bogus", "reject": "parse", "note": "nazik kalip tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
+    {"id": "U95", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu desteklenmez; 'misin' dolgusu bunu gevsetmemeli"}
   ]
 }

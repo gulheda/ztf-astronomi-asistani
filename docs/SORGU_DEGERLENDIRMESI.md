@@ -14,9 +14,9 @@ python -m tests.query_eval      # güncel sayıları yazar; bu belgedeki sayıla
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Sorgu sayısı | 241 (148 desteklenen, 93 desteklenmeyen) |
-| Koşul çözümleme ve sonuç kümesi tam eşleşmesi (desteklenen) | 148/148 |
-| Desteklenmeyen sorgunun açıkça reddi | 93/93 |
+| Sorgu sayısı | 245 (150 desteklenen, 95 desteklenmeyen) |
+| Koşul çözümleme ve sonuç kümesi tam eşleşmesi (desteklenen) | 150/150 |
+| Desteklenmeyen sorgunun açıkça reddi | 95/95 |
 | Boş sonuçlu doğru sorgu | 14 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,02 ms / ≈0,05 ms |
 
