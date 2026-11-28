@@ -37,3 +37,5 @@ Desteklenmeyen sorgu örnekleri (ay/yıl, mutlak tarih, koordinat, olumsuzlama, 
 **17 Kasım eklemesi:** U80 ("g veya r bandındaki") reddedilen sorgu olarak eklendi. "g ve r bandındaki" gibi sorgular artık yanıltıcı "Desteklenmeyen ifade: g" yerine "Birleşik sorgu desteklenmez" iletisi veriyor (birim testi eklendi; kapsam aynı). Ölçüm: 127 desteklenen, 81 desteklenmeyen, hata yok.
 **26 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S147–S148 desteklenen, U93 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu. Gramer genişletildi: "ait" dolgu sözcüğü (tek başına sorgu sayılmaz). Ölçüm: 148 desteklenen, 93 desteklenmeyen, hata yok.
 
+
+**28 Kasım eklemesi:** Beklenen davranış önce elle yazıldı (S151–S152 desteklenen, U96 reddedilen); iki desteklenen sorgu önceki gramerde reddediliyordu. Gramer genişletildi: "tanesi/tanesini" dolgu sözcükleri; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor. Ölçüm 152/152 ve 96/96.

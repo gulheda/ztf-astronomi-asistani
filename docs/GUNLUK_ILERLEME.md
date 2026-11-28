@@ -1,5 +1,8 @@
 # Günlük ilerleme
 
+## 2026-11-28
+Çözümleyici "tanesi/tanesini" biçimlerini dolgu sayıyor ("son 24 saatteki olayların ilk 3 tanesi"; "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi). Değerlendirme seti 245'ten 248 sorguya çıkarıldı (S151, S152, U96; beklenen davranış önce elle yazıldı, iki sorgu önceki gramerde reddediliyordu); README, DURUM.md ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
+
 ## 2026-11-27
 Çözümleyici "listeler misin / gösterir misiniz" gibi nazik soru kalıplarını dolgu sayıyor ("son 24 saatteki supernovaları listeler misin"); "var mı" varlık sorusu ve "bogus" gibi bilinmeyen sözcük reddedilmeye devam ediyor, birim testi eklendi. Değerlendirme seti 241'den 245 sorguya çıkarıldı (S149, S150, U94, U95; beklenen davranış önce elle yazıldı, iki desteklenen sorgu önceki gramerde reddediliyordu); README, DURUM.md ve SORGU_DEGERLENDIRMESI.md sayıları ölçüme göre güncellendi.
 

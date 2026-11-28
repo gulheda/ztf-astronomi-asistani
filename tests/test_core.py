@@ -79,6 +79,15 @@ class AssistantTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_query("ait")
 
+    def test_tanesi_filler(self):
+        self.assertEqual(parse_query("son 24 saatteki olaylarin ilk 3 tanesi").limit, 3)
+        q = parse_query("son 12 saatteki r bandindaki supernovalarin ilk 2 tanesini goster")
+        self.assertEqual((q.limit, q.kind, q.band), (2, "supernova", "r"))
+        with self.assertRaises(ValueError):
+            parse_query("son 24 saatteki olaylarin ilk 3 tanesi bogus")
+        with self.assertRaises(ValueError):
+            parse_query("tanesi")
+
     def test_polite_question_fillers(self):
         self.assertEqual(parse_query("son 24 saatteki supernovalari listeler misin").kind, "supernova")
         self.assertEqual(parse_query("son 12 saatteki r bandindaki olaylari gosterir misiniz").band, "r")

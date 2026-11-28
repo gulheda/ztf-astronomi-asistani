@@ -246,6 +246,9 @@
     {"id": "S149", "text": "son 24 saatteki supernovaları listeler misin", "expect": {"hours": 24, "kind": "supernova"}, "note": "nazik soru kalibi 'listeler misin' dolgu"},
     {"id": "S150", "text": "son 12 saatteki r bandındaki olayları gösterir misiniz", "expect": {"hours": 12, "band": "r"}, "note": "'gosterir misiniz' dolgu + bant"},
     {"id": "U94", "text": "son 24 saatteki olayları listeler misin bogus", "reject": "parse", "note": "nazik kalip tanindiktan sonra bilinmeyen sozcuk reddedilmeli"},
-    {"id": "U95", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu desteklenmez; 'misin' dolgusu bunu gevsetmemeli"}
+    {"id": "U95", "text": "son 24 saatte supernova var mı", "reject": "parse", "note": "varlik sorusu desteklenmez; 'misin' dolgusu bunu gevsetmemeli"},
+    {"id": "S151", "text": "son 24 saatteki olayların ilk 3 tanesi", "expect": {"hours": 24, "limit": 3}, "note": "'tanesi' dolgu"},
+    {"id": "S152", "text": "son 12 saatteki r bandındaki supernovaların ilk 2 tanesini göster", "expect": {"hours": 12, "limit": 2, "kind": "supernova", "band": "r"}, "note": "'tanesini' dolgu + tur + bant"},
+    {"id": "U96", "text": "son 24 saatteki olayların ilk 3 tanesi bogus", "reject": "parse", "note": "'tanesi' tanindiktan sonra bilinmeyen sozcuk reddedilmeli"}
   ]
 }

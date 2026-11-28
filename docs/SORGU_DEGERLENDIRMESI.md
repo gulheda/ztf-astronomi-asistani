@@ -1,6 +1,6 @@
 # Türkçe sorgu değerlendirmesi
 
-Güncel ölçüm 27 Kasım 2026. [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin uygulaması. Kullanıcı çalışması için bkz. [KULLANICI_CALISMASI.md](KULLANICI_CALISMASI.md). Günlük değişiklik ayrıntıları: [SORGU_DEGISIKLIK_GUNLUGU.md](SORGU_DEGISIKLIK_GUNLUGU.md).
+Güncel ölçüm 28 Kasım 2026. [DENEY_PLANI.md](DENEY_PLANI.md) içindeki sorgu değerlendirmesinin uygulaması. Kullanıcı çalışması için bkz. [KULLANICI_CALISMASI.md](KULLANICI_CALISMASI.md). Günlük değişiklik ayrıntıları: [SORGU_DEGISIKLIK_GUNLUGU.md](SORGU_DEGISIKLIK_GUNLUGU.md).
 
 ## Nasıl ölçülür
 
@@ -10,13 +10,13 @@ Küme: [tests/query_eval_set.json](../tests/query_eval_set.json). Beklenen koşu
 python -m tests.query_eval      # güncel sayıları yazar; bu belgedeki sayıları elle güncellemeyin
 ```
 
-## Güncel sonuç (27 Kasım 2026)
+## Güncel sonuç (28 Kasım 2026)
 
 | Ölçüt | Sonuç |
 |---|---:|
-| Sorgu sayısı | 245 (150 desteklenen, 95 desteklenmeyen) |
-| Koşul çözümleme ve sonuç kümesi tam eşleşmesi (desteklenen) | 150/150 |
-| Desteklenmeyen sorgunun açıkça reddi | 95/95 |
+| Sorgu sayısı | 248 (152 desteklenen, 96 desteklenmeyen) |
+| Koşul çözümleme ve sonuç kümesi tam eşleşmesi (desteklenen) | 152/152 |
+| Desteklenmeyen sorgunun açıkça reddi | 96/96 |
 | Boş sonuçlu doğru sorgu | 14 |
 | Yerel p50 / p95 (ayrıştırma + SQLite) | ≈0,02 ms / ≈0,05 ms |
 

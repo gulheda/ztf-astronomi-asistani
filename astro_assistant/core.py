@@ -99,7 +99,7 @@ def parse_query(text):
     fillers = {"olay", "olayi", "olaylar", "olaylari", "olaylarini", "gercek", "aday", "adayi", "adayini", "olayini", "adaylar", "adaylari", "adaylarini",
                "olaylarin", "adaylarin", "adaylarinin", "adayinin", "olayinin", "uyarinin", "alertin", "olaylarinin", "uyarilarinin", "alertlerin", "alertlerinin",
                "uyari", "uyarilar", "uyarilari", "uyarilarini", "uyarilarin", "alert", "alertler", "alertleri", "alertlerini", "listesi", "gozlenen", "gelen", "gozlenmis", "gelmis", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler",
-               "yeni", "goster", "listele", "goruntule", "getir", "ver", "bul", "bak", "tespit", "edilen", "bulunan", "kaydedilen", "olusan", "nelerdi", "listesini", "bana", "lutfen", "icin", "ait", "tane", "adet", "tum", "butun",
+               "yeni", "goster", "listele", "goruntule", "getir", "ver", "bul", "bak", "tespit", "edilen", "bulunan", "kaydedilen", "olusan", "nelerdi", "listesini", "bana", "lutfen", "icin", "ait", "tane", "tanesi", "tanesini", "adet", "tum", "butun",
                "listeler", "listelersin", "listeleyin", "gosterir", "gosterirsin", "getirir", "verir", "misin", "misiniz"}
     if len(tokens) > 1 and any(t.rstrip(".?!,") in ("ve", "veya") for t in tokens):
         # "g ve r bandindaki": tek harfli bant sozcugunden once birlesik sorgu hatasi ver.
@@ -116,7 +116,7 @@ def parse_query(text):
         elif token.isdigit():
             raise ValueError("Tek başına sayı desteklenmez: '%s'. Sonuç sayısı için 'ilk N' yazın. Örnek: Son 24 saatteki ilk 5 olay" % token)
         elif token in fillers:
-            recognized = recognized or token not in ("lutfen", "goruntule", "ver", "bul", "bak", "bana", "icin", "ait", "listeler", "listelersin", "listeleyin", "gosterir", "gosterirsin", "getirir", "verir", "misin", "misiniz", "tane", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
+            recognized = recognized or token not in ("lutfen", "goruntule", "ver", "bul", "bak", "bana", "icin", "ait", "listeler", "listelersin", "listeleyin", "gosterir", "gosterirsin", "getirir", "verir", "misin", "misiniz", "tane", "tanesi", "tanesini", "adet", "tum", "butun", "gozlenen", "gelen", "gozlenmis", "gelmis", "listesi", "olan", "neler", "nelerdir", "nedir", "olanlar", "gelenler", "gozlenenler")
         elif token in ("olmayan", "olmayanlar", "degil", "haric", "disinda", "gozlenmemis", "gozlenmeyen", "gozlenmeyenler"):
             raise ValueError("Olumsuzlama veya hariç tutma desteklenmez: '%s'. Yalnızca istenen tür ve bandı yazın. Örnek: Son 24 saatteki supernovalar" % token)
         elif token in ("parlak", "parlaklar"):

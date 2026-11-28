@@ -1,6 +1,6 @@
 # Güncel durum - 27 Kasım 2026
 
-**Tamam:** Türkçe sorgu arayüzü (demo ve 2 kayıtlı gerçek arşiv), 245 sorgulu değerlendirme seti (150/150 desteklenen, 95/95 reddedilen; sentetik veri, iyimser ölçüm), geleneksel filtre arayüzü (kullanıcı çalışmasının A koşulu), kullanıcı çalışması protokolü ve analiz betiği. Ayrıntı: [SORGU_DEGERLENDIRMESI.md](SORGU_DEGERLENDIRMESI.md), [KULLANICI_CALISMASI.md](KULLANICI_CALISMASI.md).
+**Tamam:** Türkçe sorgu arayüzü (demo ve 2 kayıtlı gerçek arşiv), 248 sorgulu değerlendirme seti (152/152 desteklenen, 96/96 reddedilen; sentetik veri, iyimser ölçüm), geleneksel filtre arayüzü (kullanıcı çalışmasının A koşulu), kullanıcı çalışması protokolü ve analiz betiği. Ayrıntı: [SORGU_DEGERLENDIRMESI.md](SORGU_DEGERLENDIRMESI.md), [KULLANICI_CALISMASI.md](KULLANICI_CALISMASI.md).
 
 **Hâlâ eksik (ana hedef):** üç kanallı (science/reference/difference), insan incelemeli, modelden bağımsız etiketli ZTF verisi bulunamadı; bu yüzden kendi Real/Bogus CNN'imiz ve %85 hedefinin ölçümü yok. SNAD pilotu ayrı bir nominal/artefakt görevidir. Kullanıcı çalışması çalıştırılmadı; gerçek bir gözlem kümesi bağlanmadan görevler anlamlı değil. Teslim tarihi danışmanla netleşmedi. Veri seçenekleri: [ARASTIRMA_NOTLARI_2026-10-17.md](ARASTIRMA_NOTLARI_2026-10-17.md).
 
